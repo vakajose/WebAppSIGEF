@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bf3a76797e64457fb7c2df45f497b113" Name="Modelo de Dominio" ZoomLevel="108" >
+        <EntityTypeShape EntityType="ModelSIGEF.baUnidadFinanciera" Width="2.25" PointX="4.625" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelSIGEF.baModulo" Width="1.5" PointX="4.875" PointY="1.75" />
+        <EntityTypeShape EntityType="ModelSIGEF.baADM_USER" Width="1.75" PointX="1.625" PointY="1.625" />
+        <EntityTypeShape EntityType="ModelSIGEF.baAdmin" Width="2" PointX="1.5" PointY="4.375" />
+        <AssociationConnector Association="ModelSIGEF.baModulobaUnidadFinanciera" />
+        <AssociationConnector Association="ModelSIGEF.baADM_USERbaAdmin" />
+        <AssociationConnector Association="ModelSIGEF.baUnidadFinancierabaAdmin" />
+        <EntityTypeShape EntityType="ModelSIGEF.paSucursal" Width="2" PointX="8.5" PointY="4.625" FillColor="128, 255, 128" />
+        <AssociationConnector Association="ModelSIGEF.baUnidadFinancierapaSucursal" />
+        <EntityTypeShape EntityType="ModelSIGEF.caPAC" Width="1.5" PointX="12.25" PointY="5" FillColor="255, 128, 0" />
+        <AssociationConnector Association="ModelSIGEF.paSucursalcaPAC" />
+        <EntityTypeShape EntityType="ModelSIGEF.caSolitudCaptacion" Width="2.125" PointX="15" PointY="5" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="ModelSIGEF.caTCertificado" Width="1.875" PointX="12" PointY="8.375" FillColor="255, 128, 0" />
+        <InheritanceConnector EntityType="ModelSIGEF.caTCertificado" ManuallyRouted="false" >
+        </InheritanceConnector>
+        <EntityTypeShape EntityType="ModelSIGEF.caTCajaAhorro" Width="1.5" PointX="15.375" PointY="8.5" FillColor="255, 128, 0" />
+        <InheritanceConnector EntityType="ModelSIGEF.caTCajaAhorro" ManuallyRouted="false" >
+        </InheritanceConnector>
+        <EntityTypeShape EntityType="ModelSIGEF.caTDPF" Width="2.25" PointX="18.125" PointY="8.125" FillColor="255, 128, 0" />
+        <InheritanceConnector EntityType="ModelSIGEF.caTDPF" ManuallyRouted="false" >
+        </InheritanceConnector>
+        <EntityTypeShape EntityType="ModelSIGEF.caTTarjetaDebito" Width="1.75" PointX="18.875" PointY="5.125" FillColor="255, 128, 0" />
+        <InheritanceConnector EntityType="ModelSIGEF.caTTarjetaDebito" ManuallyRouted="false" >
+        </InheritanceConnector>
+        <AssociationConnector Association="ModelSIGEF.caPACcaSolitudCaptacion" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

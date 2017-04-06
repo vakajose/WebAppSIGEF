@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="ModelSIGEF.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="ModelSIGEFTargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ModelSIGEF" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ModelSIGEFContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="baUnidadFinanciera" EntityType="ModelSIGEF.baUnidadFinanciera" />
+          <EntitySet Name="baModulo" EntityType="ModelSIGEF.baModulo" />
+          <EntitySet Name="baADM_USER" EntityType="ModelSIGEF.baADM_USER" />
+          <EntitySet Name="baAdmin" EntityType="ModelSIGEF.baAdmin" />
+          <AssociationSet Name="baModulobaUnidadFinanciera" Association="ModelSIGEF.baModulobaUnidadFinanciera">
+            <End Role="baModulo" EntitySet="baModulo" />
+            <End Role="baUnidadFinanciera" EntitySet="baUnidadFinanciera" />
+          </AssociationSet>
+          <AssociationSet Name="baADM_USERbaAdmin" Association="ModelSIGEF.baADM_USERbaAdmin">
+            <End Role="baADM_USER" EntitySet="baADM_USER" />
+            <End Role="baAdmin" EntitySet="baAdmin" />
+          </AssociationSet>
+          <AssociationSet Name="baUnidadFinancierabaAdmin" Association="ModelSIGEF.baUnidadFinancierabaAdmin">
+            <End Role="baUnidadFinanciera" EntitySet="baUnidadFinanciera" />
+            <End Role="baAdmin" EntitySet="baAdmin" />
+          </AssociationSet>
+          <EntitySet Name="paSucursal" EntityType="ModelSIGEF.paSucursal" />
+          <AssociationSet Name="baUnidadFinancierapaSucursal" Association="ModelSIGEF.baUnidadFinancierapaSucursal">
+            <End Role="baUnidadFinanciera" EntitySet="baUnidadFinanciera" />
+            <End Role="paSucursal" EntitySet="paSucursal" />
+          </AssociationSet>
+          <EntitySet Name="caPAC" EntityType="ModelSIGEF.caPAC" />
+          <AssociationSet Name="paSucursalcaPAC" Association="ModelSIGEF.paSucursalcaPAC">
+            <End Role="paSucursal" EntitySet="paSucursal" />
+            <End Role="caPAC" EntitySet="caPAC" />
+          </AssociationSet>
+          <EntitySet Name="caSolitudCaptacion" EntityType="ModelSIGEF.caSolitudCaptacion" />
+          <AssociationSet Name="caPACcaSolitudCaptacion" Association="ModelSIGEF.caPACcaSolitudCaptacion">
+            <End Role="caPAC" EntitySet="caPAC" />
+            <End Role="caSolitudCaptacion" EntitySet="caSolitudCaptacion" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="baUnidadFinanciera">
+          <Documentation>
+            <Summary>Modulo Basico</Summary>
+            <LongDescription>Administracion del sistema y almacenamiendo de credenciales para los desarrolladores y sus diferentes roles (funciones)</LongDescription>
+          </Documentation>
+          <Key>
+            <PropertyRef Name="iBaUnidadFinanciera_id" />
+          </Key>
+          <Property Name="iBaUnidadFinanciera_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sBaUnidadFinanciera_nm" Type="String" Nullable="false" />
+          <Property Name="sBaUnidadFinanciera_NIT" Type="String" Nullable="false" />
+          <Property Name="sBaUnidadFinanciera_dir" Type="String" Nullable="false" />
+          <Property Name="sBaUnidadFinanciera_telf" Type="String" Nullable="false" />
+          <Property Name="sBaUnidadFinanciera_desc" Type="String" Nullable="false" />
+          <Property Name="iBaUnidadFinanciera_cantSuc" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="baModulo" Relationship="ModelSIGEF.baModulobaUnidadFinanciera" FromRole="baUnidadFinanciera" ToRole="baModulo" />
+          <NavigationProperty Name="baAdmin" Relationship="ModelSIGEF.baUnidadFinancierabaAdmin" FromRole="baUnidadFinanciera" ToRole="baAdmin" />
+          <Property Name="iBaAdmin_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="paSucursal" Relationship="ModelSIGEF.baUnidadFinancierapaSucursal" FromRole="baUnidadFinanciera" ToRole="paSucursal" />
+        </EntityType>
+        <EntityType Name="baModulo">
+          <Documentation>
+            <Summary>Modulo Basico</Summary>
+            <LongDescription>Administracion del sistema y almacenamiendo de credenciales para los desarrolladores y sus diferentes roles (funciones)</LongDescription>
+          </Documentation>
+          <Key>
+            <PropertyRef Name="iBaModulo_id" />
+          </Key>
+          <Property Name="iBaModulo_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sBaModulo_nm" Type="String" Nullable="false" />
+          <NavigationProperty Name="baUnidadFinanciera" Relationship="ModelSIGEF.baModulobaUnidadFinanciera" FromRole="baModulo" ToRole="baUnidadFinanciera" />
+        </EntityType>
+        <EntityType Name="baADM_USER">
+          <Documentation>
+            <Summary>Modulo Basico</Summary>
+            <LongDescription>Administracion del sistema y almacenamiendo de credenciales para los desarrolladores y sus diferentes roles (funciones)</LongDescription>
+          </Documentation>
+          <Key>
+            <PropertyRef Name="iBaADM_USER_id" />
+          </Key>
+          <Property Name="iBaADM_USER_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sBaADM_USER_login" Type="String" Nullable="false" />
+          <Property Name="sBaADM_USER_pass" Type="String" Nullable="false" />
+          <NavigationProperty Name="baAdmin" Relationship="ModelSIGEF.baADM_USERbaAdmin" FromRole="baADM_USER" ToRole="baAdmin" />
+        </EntityType>
+        <EntityType Name="baAdmin">
+          <Documentation>
+            <Summary>Modulo Basico</Summary>
+            <LongDescription>Administracion del sistema y almacenamiendo de credenciales para los desarrolladores y sus diferentes roles (funciones)</LongDescription>
+          </Documentation>
+          <Key>
+            <PropertyRef Name="iBaAdmin_id" />
+          </Key>
+          <Property Name="iBaAdmin_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sBaAdmin_nm" Type="String" Nullable="false" />
+          <Property Name="sBaAdmin_apell" Type="String" Nullable="false" />
+          <Property Name="iBaAdmin_funcionEnum" Type="ModelSIGEF.FuncionesAdm" Nullable="false" />
+          <NavigationProperty Name="baADM_USER" Relationship="ModelSIGEF.baADM_USERbaAdmin" FromRole="baAdmin" ToRole="baADM_USER" />
+          <Property Name="iBaADM_USER_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="baUnidadFinanciera" Relationship="ModelSIGEF.baUnidadFinancierabaAdmin" FromRole="baAdmin" ToRole="baUnidadFinanciera" />
+        </EntityType>
+        <EnumType Name="FuncionesAdm">
+          <Member Name="Desarrollador" Value="1" />
+          <Member Name="Disenador" Value="2" />
+          <Member Name="JefeDesarrollador" Value="3" />
+        </EnumType>
+        <Association Name="baModulobaUnidadFinanciera">
+          <End Type="ModelSIGEF.baModulo" Role="baModulo" Multiplicity="*" />
+          <End Type="ModelSIGEF.baUnidadFinanciera" Role="baUnidadFinanciera" Multiplicity="*" />
+        </Association>
+        <Association Name="baADM_USERbaAdmin">
+          <End Type="ModelSIGEF.baADM_USER" Role="baADM_USER" Multiplicity="1" />
+          <End Type="ModelSIGEF.baAdmin" Role="baAdmin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="baADM_USER">
+              <PropertyRef Name="iBaADM_USER_id" />
+            </Principal>
+            <Dependent Role="baAdmin">
+              <PropertyRef Name="iBaADM_USER_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="baUnidadFinancierabaAdmin">
+          <End Type="ModelSIGEF.baUnidadFinanciera" Role="baUnidadFinanciera" Multiplicity="*" />
+          <End Type="ModelSIGEF.baAdmin" Role="baAdmin" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="baAdmin">
+              <PropertyRef Name="iBaAdmin_id" />
+            </Principal>
+            <Dependent Role="baUnidadFinanciera">
+              <PropertyRef Name="iBaAdmin_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="paSucursal">
+          <Documentation>
+            <Summary>Modulo Parametros Administrativos</Summary>
+            <LongDescription>Modulo de </LongDescription>
+          </Documentation>
+          <Key>
+            <PropertyRef Name="iPaSucursal_id" />
+          </Key>
+          <Property Name="iPaSucursal_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sPaSucursal_nm" Type="String" Nullable="false" />
+          <Property Name="sPaSucursal_dir" Type="String" Nullable="false" />
+          <Property Name="sPaSucursal_telf" Type="String" Nullable="true" />
+          <Property Name="isPaSucursal_cantCajas" Type="String" Nullable="false" />
+          <NavigationProperty Name="baUnidadFinanciera" Relationship="ModelSIGEF.baUnidadFinancierapaSucursal" FromRole="paSucursal" ToRole="baUnidadFinanciera" />
+          <Property Name="iBaUnidadFinanciera_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="caPAC" Relationship="ModelSIGEF.paSucursalcaPAC" FromRole="paSucursal" ToRole="caPAC" />
+        </EntityType>
+        <Association Name="baUnidadFinancierapaSucursal">
+          <End Type="ModelSIGEF.baUnidadFinanciera" Role="baUnidadFinanciera" Multiplicity="1" />
+          <End Type="ModelSIGEF.paSucursal" Role="paSucursal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="baUnidadFinanciera">
+              <PropertyRef Name="iBaUnidadFinanciera_id" />
+            </Principal>
+            <Dependent Role="paSucursal">
+              <PropertyRef Name="iBaUnidadFinanciera_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="caPAC">
+          <Key>
+            <PropertyRef Name="iCaPAC_id" />
+          </Key>
+          <Property Name="iCaPAC_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="iCaPAC_num" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="paSucursal" Relationship="ModelSIGEF.paSucursalcaPAC" FromRole="caPAC" ToRole="paSucursal" />
+          <Property Name="iPaSucursal_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="caSolitudCaptacion" Relationship="ModelSIGEF.caPACcaSolitudCaptacion" FromRole="caPAC" ToRole="caSolitudCaptacion" />
+        </EntityType>
+        <Association Name="paSucursalcaPAC">
+          <End Type="ModelSIGEF.paSucursal" Role="paSucursal" Multiplicity="1" />
+          <End Type="ModelSIGEF.caPAC" Role="caPAC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="paSucursal">
+              <PropertyRef Name="iPaSucursal_id" />
+            </Principal>
+            <Dependent Role="caPAC">
+              <PropertyRef Name="iPaSucursal_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="caSolitudCaptacion">
+          <Key>
+            <PropertyRef Name="iCaSolitudCaptacion_id" />
+          </Key>
+          <Property Name="iCaSolitudCaptacion_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dtCaSolitudCaptacion_fecha" Type="DateTime" Nullable="false" />
+          <Property Name="sSaSolitudCaptacion_desc" Type="String" Nullable="false" />
+          <Property Name="iCaSolitudCaptacion_estado" Type="ModelSIGEF.caEstadoSolicitudCaptacion" Nullable="false" />
+          <NavigationProperty Name="caPAC" Relationship="ModelSIGEF.caPACcaSolitudCaptacion" FromRole="caSolitudCaptacion" ToRole="caPAC" />
+          <Property Name="iCaPAC_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EnumType Name="caEstadoSolicitudCaptacion" UnderlyingType="Int16">
+          <Member Name="Atendiendo" Value="1" />
+          <Member Name="Espera" Value="2" />
+          <Member Name="EnProceso" Value="3" />
+          <Member Name="Finalizado" Value="4" />
+        </EnumType>
+        <EntityType Name="caTCertificado" BaseType="ModelSIGEF.caSolitudCaptacion" >
+          <Property Name="iAcCajaAhorro_id" Type="Int32" Nullable="false" >
+            <Documentation>
+              <Summary>Caja de ahorro de debito automatico</Summary>
+            </Documentation>
+          </Property>
+        </EntityType>
+        <EntityType Name="caTCajaAhorro" BaseType="ModelSIGEF.caSolitudCaptacion" >
+          <Property Name="iMoneda_fl" Type="Int16" Nullable="false" />
+          <Property Name="iTipoCaja_fl" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="caTDPF" BaseType="ModelSIGEF.caSolitudCaptacion" >
+          <Property Name="dCaTDPF_monto" Type="Decimal" Nullable="false" />
+          <Property Name="dCaTDPF_interes" Type="Decimal" Nullable="false" />
+          <Property Name="iMoneda_fl" Type="Int16" Nullable="false" />
+          <Property Name="iDuracion_fl" Type="Int16" Nullable="false" />
+          <Property Name="dtCaTDPF_fCaducidad" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="caTTarjetaDebito" BaseType="ModelSIGEF.caSolitudCaptacion" >
+          <Property Name="iAcCajaAhorro_id" Type="Int32" Nullable="false" />
+          <Property Name="sAcTarjetaDebito_id" Type="Int32" Nullable="true" />
+        </EntityType>
+        <Association Name="caPACcaSolitudCaptacion">
+          <End Type="ModelSIGEF.caPAC" Role="caPAC" Multiplicity="1" />
+          <End Type="ModelSIGEF.caSolitudCaptacion" Role="caSolitudCaptacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="caPAC">
+              <PropertyRef Name="iCaPAC_id" />
+            </Principal>
+            <Dependent Role="caSolitudCaptacion">
+              <PropertyRef Name="iCaPAC_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="ModelSIGEF" />
+        <Alias Key="Target" Value="ModelSIGEF.Store" />
+        <EntityContainerMapping CdmEntityContainer="ModelSIGEFContainer" StorageEntityContainer="ModelSIGEFTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+        <DesignerProperty Name="DefaultDatabaseSchema" Value="sigef" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
