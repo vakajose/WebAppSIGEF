@@ -44,6 +44,75 @@
             <End Role="caPAC" EntitySet="caPAC" />
             <End Role="caSolitudCaptacion" EntitySet="caSolitudCaptacion" />
           </AssociationSet>
+          <EntitySet Name="mcCaja" EntityType="ModelSIGEF.mcCaja" />
+          <AssociationSet Name="paSucursalmcCaja" Association="ModelSIGEF.paSucursalmcCaja">
+            <End Role="paSucursal" EntitySet="paSucursal" />
+            <End Role="mcCaja" EntitySet="mcCaja" />
+          </AssociationSet>
+          <EntitySet Name="mcTransaccion" EntityType="ModelSIGEF.mcTransaccion" />
+          <AssociationSet Name="mcCajamcTransaccion" Association="ModelSIGEF.mcCajamcTransaccion">
+            <End Role="mcCaja" EntitySet="mcCaja" />
+            <End Role="mcTransaccion" EntitySet="mcTransaccion" />
+          </AssociationSet>
+          <EntitySet Name="mcLibroCaja" EntityType="ModelSIGEF.mcLibroCaja" />
+          <EntitySet Name="mcConciliacionCaja" EntityType="ModelSIGEF.mcConciliacionCaja" />
+          <AssociationSet Name="mcLibroCajamcTransaccion" Association="ModelSIGEF.mcLibroCajamcTransaccion">
+            <End Role="mcLibroCaja" EntitySet="mcLibroCaja" />
+            <End Role="mcTransaccion" EntitySet="mcTransaccion" />
+          </AssociationSet>
+          <AssociationSet Name="mcConciliacionCajamcCaja" Association="ModelSIGEF.mcConciliacionCajamcCaja">
+            <End Role="mcConciliacionCaja" EntitySet="mcConciliacionCaja" />
+            <End Role="mcCaja" EntitySet="mcCaja" />
+          </AssociationSet>
+          <EntitySet Name="mcDetalleCheque" EntityType="ModelSIGEF.mcDetalleCheque" />
+          <AssociationSet Name="mcTransaccionmcDetalleCheque" Association="ModelSIGEF.mcTransaccionmcDetalleCheque">
+            <End Role="mcTransaccion" EntitySet="mcTransaccion" />
+            <End Role="mcDetalleCheque" EntitySet="mcDetalleCheque" />
+          </AssociationSet>
+          <EntitySet Name="peCliente" EntityType="ModelSIGEF.peCliente" />
+          <EntitySet Name="peCAportacion" EntityType="ModelSIGEF.peCAportacion" />
+          <AssociationSet Name="peSociopeCAportacion" Association="ModelSIGEF.peSociopeCAportacion">
+            <End Role="peSocio" EntitySet="peCliente" />
+            <End Role="peCAportacion" EntitySet="peCAportacion" />
+          </AssociationSet>
+          <EntitySet Name="msFuncionario" EntityType="ModelSIGEF.msFuncionario" />
+          <EntitySet Name="msUsuario" EntityType="ModelSIGEF.msUsuario" />
+          <EntitySet Name="msPassword" EntityType="ModelSIGEF.msPassword" />
+          <AssociationSet Name="msUsuariomsFuncionario" Association="ModelSIGEF.msUsuariomsFuncionario">
+            <End Role="msUsuario" EntitySet="msUsuario" />
+            <End Role="msFuncionario" EntitySet="msFuncionario" />
+          </AssociationSet>
+          <AssociationSet Name="msUsuariomsPassword" Association="ModelSIGEF.msUsuariomsPassword">
+            <End Role="msUsuario" EntitySet="msUsuario" />
+            <End Role="msPassword" EntitySet="msPassword" />
+          </AssociationSet>
+          <EntitySet Name="msRol" EntityType="ModelSIGEF.msRol" />
+          <EntitySet Name="msPrivilegio" EntityType="ModelSIGEF.msPrivilegio" />
+          <AssociationSet Name="msRolmsUsuario" Association="ModelSIGEF.msRolmsUsuario">
+            <End Role="msRol" EntitySet="msRol" />
+            <End Role="msUsuario" EntitySet="msUsuario" />
+          </AssociationSet>
+          <AssociationSet Name="msRolmsPrivilegio" Association="ModelSIGEF.msRolmsPrivilegio">
+            <End Role="msRol" EntitySet="msRol" />
+            <End Role="msPrivilegio" EntitySet="msPrivilegio" />
+          </AssociationSet>
+          <EntitySet Name="msBitacora" EntityType="ModelSIGEF.msBitacora" />
+          <AssociationSet Name="caSolitudCaptacionpeCliente" Association="ModelSIGEF.caSolitudCaptacionpeCliente">
+            <End Role="caSolitudCaptacion" EntitySet="caSolitudCaptacion" />
+            <End Role="peCliente" EntitySet="peCliente" />
+          </AssociationSet>
+          <AssociationSet Name="msUsuariomcCaja" Association="ModelSIGEF.msUsuariomcCaja">
+            <End Role="msUsuario" EntitySet="msUsuario" />
+            <End Role="mcCaja" EntitySet="mcCaja" />
+          </AssociationSet>
+          <AssociationSet Name="caPACmsUsuario" Association="ModelSIGEF.caPACmsUsuario">
+            <End Role="caPAC" EntitySet="caPAC" />
+            <End Role="msUsuario" EntitySet="msUsuario" />
+          </AssociationSet>
+          <AssociationSet Name="peClientemcTransaccion" Association="ModelSIGEF.peClientemcTransaccion">
+            <End Role="peCliente" EntitySet="peCliente" />
+            <End Role="mcTransaccion" EntitySet="mcTransaccion" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="baUnidadFinanciera">
           <Documentation>
@@ -51,18 +120,18 @@
             <LongDescription>Administracion del sistema y almacenamiendo de credenciales para los desarrolladores y sus diferentes roles (funciones)</LongDescription>
           </Documentation>
           <Key>
-            <PropertyRef Name="iBaUnidadFinanciera_id" />
+            <PropertyRef Name="iUnidadFinanciera_id" />
           </Key>
-          <Property Name="iBaUnidadFinanciera_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="sBaUnidadFinanciera_nm" Type="String" Nullable="false" />
-          <Property Name="sBaUnidadFinanciera_NIT" Type="String" Nullable="false" />
-          <Property Name="sBaUnidadFinanciera_dir" Type="String" Nullable="false" />
-          <Property Name="sBaUnidadFinanciera_telf" Type="String" Nullable="false" />
-          <Property Name="sBaUnidadFinanciera_desc" Type="String" Nullable="false" />
-          <Property Name="iBaUnidadFinanciera_cantSuc" Type="Int32" Nullable="false" />
+          <Property Name="iUnidadFinanciera_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sUnidadFinanciera_nm" Type="String" Nullable="false" />
+          <Property Name="sUnidadFinanciera_NIT" Type="String" Nullable="false" />
+          <Property Name="sUnidadFinanciera_dir" Type="String" Nullable="false" />
+          <Property Name="sUnidadFinanciera_telf" Type="String" Nullable="false" />
+          <Property Name="sUnidadFinanciera_desc" Type="String" Nullable="false" />
+          <Property Name="iUnidadFinanciera_cantSuc" Type="Int32" Nullable="false" />
           <NavigationProperty Name="baModulo" Relationship="ModelSIGEF.baModulobaUnidadFinanciera" FromRole="baUnidadFinanciera" ToRole="baModulo" />
           <NavigationProperty Name="baAdmin" Relationship="ModelSIGEF.baUnidadFinancierabaAdmin" FromRole="baUnidadFinanciera" ToRole="baAdmin" />
-          <Property Name="iBaAdmin_id" Type="Int32" Nullable="false" />
+          <Property Name="iAdmin_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="paSucursal" Relationship="ModelSIGEF.baUnidadFinancierapaSucursal" FromRole="baUnidadFinanciera" ToRole="paSucursal" />
         </EntityType>
         <EntityType Name="baModulo">
@@ -71,11 +140,12 @@
             <LongDescription>Administracion del sistema y almacenamiendo de credenciales para los desarrolladores y sus diferentes roles (funciones)</LongDescription>
           </Documentation>
           <Key>
-            <PropertyRef Name="iBaModulo_id" />
+            <PropertyRef Name="iModulo_id" />
           </Key>
-          <Property Name="iBaModulo_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="sBaModulo_nm" Type="String" Nullable="false" />
+          <Property Name="iModulo_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sModulo_nm" Type="String" Nullable="false" />
           <NavigationProperty Name="baUnidadFinanciera" Relationship="ModelSIGEF.baModulobaUnidadFinanciera" FromRole="baModulo" ToRole="baUnidadFinanciera" />
+          <Property Name="sModulo_desc" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="baADM_USER">
           <Documentation>
@@ -83,11 +153,11 @@
             <LongDescription>Administracion del sistema y almacenamiendo de credenciales para los desarrolladores y sus diferentes roles (funciones)</LongDescription>
           </Documentation>
           <Key>
-            <PropertyRef Name="iBaADM_USER_id" />
+            <PropertyRef Name="iADM_USER_id" />
           </Key>
-          <Property Name="iBaADM_USER_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="sBaADM_USER_login" Type="String" Nullable="false" />
-          <Property Name="sBaADM_USER_pass" Type="String" Nullable="false" />
+          <Property Name="iADM_USER_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sADM_USER_login" Type="String" Nullable="false" />
+          <Property Name="sADM_USER_pass" Type="String" Nullable="false" />
           <NavigationProperty Name="baAdmin" Relationship="ModelSIGEF.baADM_USERbaAdmin" FromRole="baADM_USER" ToRole="baAdmin" />
         </EntityType>
         <EntityType Name="baAdmin">
@@ -96,14 +166,14 @@
             <LongDescription>Administracion del sistema y almacenamiendo de credenciales para los desarrolladores y sus diferentes roles (funciones)</LongDescription>
           </Documentation>
           <Key>
-            <PropertyRef Name="iBaAdmin_id" />
+            <PropertyRef Name="iAdmin_id" />
           </Key>
-          <Property Name="iBaAdmin_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="sBaAdmin_nm" Type="String" Nullable="false" />
-          <Property Name="sBaAdmin_apell" Type="String" Nullable="false" />
-          <Property Name="iBaAdmin_funcionEnum" Type="ModelSIGEF.FuncionesAdm" Nullable="false" />
+          <Property Name="iAdmin_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sAdmin_nm" Type="String" Nullable="false" />
+          <Property Name="sAdmin_apell" Type="String" Nullable="false" />
+          <Property Name="iAdmin_funcionEnum" Type="ModelSIGEF.FuncionesAdm" Nullable="false" />
           <NavigationProperty Name="baADM_USER" Relationship="ModelSIGEF.baADM_USERbaAdmin" FromRole="baAdmin" ToRole="baADM_USER" />
-          <Property Name="iBaADM_USER_id" Type="Int32" Nullable="false" />
+          <Property Name="iADM_USER_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="baUnidadFinanciera" Relationship="ModelSIGEF.baUnidadFinancierabaAdmin" FromRole="baAdmin" ToRole="baUnidadFinanciera" />
         </EntityType>
         <EnumType Name="FuncionesAdm">
@@ -120,10 +190,10 @@
           <End Type="ModelSIGEF.baAdmin" Role="baAdmin" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="baADM_USER">
-              <PropertyRef Name="iBaADM_USER_id" />
+              <PropertyRef Name="iADM_USER_id" />
             </Principal>
             <Dependent Role="baAdmin">
-              <PropertyRef Name="iBaADM_USER_id" />
+              <PropertyRef Name="iADM_USER_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -132,10 +202,10 @@
           <End Type="ModelSIGEF.baAdmin" Role="baAdmin" Multiplicity="1" />
           <ReferentialConstraint>
             <Principal Role="baAdmin">
-              <PropertyRef Name="iBaAdmin_id" />
+              <PropertyRef Name="iAdmin_id" />
             </Principal>
             <Dependent Role="baUnidadFinanciera">
-              <PropertyRef Name="iBaAdmin_id" />
+              <PropertyRef Name="iAdmin_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -145,61 +215,65 @@
             <LongDescription>Modulo de </LongDescription>
           </Documentation>
           <Key>
-            <PropertyRef Name="iPaSucursal_id" />
+            <PropertyRef Name="iSucursal_id" />
           </Key>
-          <Property Name="iPaSucursal_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="sPaSucursal_nm" Type="String" Nullable="false" />
-          <Property Name="sPaSucursal_dir" Type="String" Nullable="false" />
-          <Property Name="sPaSucursal_telf" Type="String" Nullable="true" />
-          <Property Name="isPaSucursal_cantCajas" Type="String" Nullable="false" />
+          <Property Name="iSucursal_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sSucursal_nm" Type="String" Nullable="false" />
+          <Property Name="sSucursal_dir" Type="String" Nullable="false" />
+          <Property Name="sSucursal_telf" Type="String" Nullable="true" />
+          <Property Name="iSucursal_cantCajas" Type="Int32" Nullable="false" />
           <NavigationProperty Name="baUnidadFinanciera" Relationship="ModelSIGEF.baUnidadFinancierapaSucursal" FromRole="paSucursal" ToRole="baUnidadFinanciera" />
-          <Property Name="iBaUnidadFinanciera_id" Type="Int32" Nullable="false" />
+          <Property Name="iUnidadFinanciera_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="caPAC" Relationship="ModelSIGEF.paSucursalcaPAC" FromRole="paSucursal" ToRole="caPAC" />
+          <NavigationProperty Name="mcCaja" Relationship="ModelSIGEF.paSucursalmcCaja" FromRole="paSucursal" ToRole="mcCaja" />
         </EntityType>
         <Association Name="baUnidadFinancierapaSucursal">
           <End Type="ModelSIGEF.baUnidadFinanciera" Role="baUnidadFinanciera" Multiplicity="1" />
           <End Type="ModelSIGEF.paSucursal" Role="paSucursal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="baUnidadFinanciera">
-              <PropertyRef Name="iBaUnidadFinanciera_id" />
+              <PropertyRef Name="iUnidadFinanciera_id" />
             </Principal>
             <Dependent Role="paSucursal">
-              <PropertyRef Name="iBaUnidadFinanciera_id" />
+              <PropertyRef Name="iUnidadFinanciera_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <EntityType Name="caPAC">
           <Key>
-            <PropertyRef Name="iCaPAC_id" />
+            <PropertyRef Name="iPAC_id" />
           </Key>
-          <Property Name="iCaPAC_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="iCaPAC_num" Type="Int16" Nullable="false" />
+          <Property Name="iPAC_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="iPAC_num" Type="Int16" Nullable="false" />
           <NavigationProperty Name="paSucursal" Relationship="ModelSIGEF.paSucursalcaPAC" FromRole="caPAC" ToRole="paSucursal" />
-          <Property Name="iPaSucursal_id" Type="Int32" Nullable="false" />
+          <Property Name="iSucursal_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="caSolitudCaptacion" Relationship="ModelSIGEF.caPACcaSolitudCaptacion" FromRole="caPAC" ToRole="caSolitudCaptacion" />
+          <NavigationProperty Name="msUsuario" Relationship="ModelSIGEF.caPACmsUsuario" FromRole="caPAC" ToRole="msUsuario" />
         </EntityType>
         <Association Name="paSucursalcaPAC">
           <End Type="ModelSIGEF.paSucursal" Role="paSucursal" Multiplicity="1" />
           <End Type="ModelSIGEF.caPAC" Role="caPAC" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="paSucursal">
-              <PropertyRef Name="iPaSucursal_id" />
+              <PropertyRef Name="iSucursal_id" />
             </Principal>
             <Dependent Role="caPAC">
-              <PropertyRef Name="iPaSucursal_id" />
+              <PropertyRef Name="iSucursal_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <EntityType Name="caSolitudCaptacion">
           <Key>
-            <PropertyRef Name="iCaSolitudCaptacion_id" />
+            <PropertyRef Name="iSolitudCaptacion_id" />
           </Key>
-          <Property Name="iCaSolitudCaptacion_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="dtCaSolitudCaptacion_fecha" Type="DateTime" Nullable="false" />
-          <Property Name="sSaSolitudCaptacion_desc" Type="String" Nullable="false" />
-          <Property Name="iCaSolitudCaptacion_estado" Type="ModelSIGEF.caEstadoSolicitudCaptacion" Nullable="false" />
+          <Property Name="iSolitudCaptacion_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dtSolitudCaptacion_fecha" Type="DateTime" Nullable="false" />
+          <Property Name="sSolitudCaptacion_desc" Type="String" Nullable="false" />
+          <Property Name="iSolitudCaptacion_estado" Type="ModelSIGEF.caEstadoSolicitudCaptacion" Nullable="false" />
           <NavigationProperty Name="caPAC" Relationship="ModelSIGEF.caPACcaSolitudCaptacion" FromRole="caSolitudCaptacion" ToRole="caPAC" />
-          <Property Name="iCaPAC_id" Type="Int32" Nullable="false" />
+          <Property Name="iPAC_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="peCliente" Relationship="ModelSIGEF.caSolitudCaptacionpeCliente" FromRole="caSolitudCaptacion" ToRole="peCliente" />
+          <Property Name="iCliente_id" Type="Int32" Nullable="false" />
         </EntityType>
         <EnumType Name="caEstadoSolicitudCaptacion" UnderlyingType="Int16">
           <Member Name="Atendiendo" Value="1" />
@@ -208,7 +282,7 @@
           <Member Name="Finalizado" Value="4" />
         </EnumType>
         <EntityType Name="caTCertificado" BaseType="ModelSIGEF.caSolitudCaptacion" >
-          <Property Name="iAcCajaAhorro_id" Type="Int32" Nullable="false" >
+          <Property Name="iCajaAhorro_id" Type="Int32" Nullable="false" >
             <Documentation>
               <Summary>Caja de ahorro de debito automatico</Summary>
             </Documentation>
@@ -219,25 +293,330 @@
           <Property Name="iTipoCaja_fl" Type="Int16" Nullable="false" />
         </EntityType>
         <EntityType Name="caTDPF" BaseType="ModelSIGEF.caSolitudCaptacion" >
-          <Property Name="dCaTDPF_monto" Type="Decimal" Nullable="false" />
-          <Property Name="dCaTDPF_interes" Type="Decimal" Nullable="false" />
+          <Property Name="dTDPF_monto" Type="Decimal" Nullable="false" />
+          <Property Name="dTDPF_interes" Type="Decimal" Nullable="false" />
           <Property Name="iMoneda_fl" Type="Int16" Nullable="false" />
           <Property Name="iDuracion_fl" Type="Int16" Nullable="false" />
-          <Property Name="dtCaTDPF_fCaducidad" Type="DateTime" Nullable="false" />
+          <Property Name="dtTDPF_fCaducidad" Type="DateTime" Nullable="false" />
         </EntityType>
         <EntityType Name="caTTarjetaDebito" BaseType="ModelSIGEF.caSolitudCaptacion" >
-          <Property Name="iAcCajaAhorro_id" Type="Int32" Nullable="false" />
-          <Property Name="sAcTarjetaDebito_id" Type="Int32" Nullable="true" />
+          <Property Name="iCajaAhorro_id" Type="Int32" Nullable="false" />
+          <Property Name="sTarjetaDebito_id" Type="Int32" Nullable="true" />
         </EntityType>
         <Association Name="caPACcaSolitudCaptacion">
           <End Type="ModelSIGEF.caPAC" Role="caPAC" Multiplicity="1" />
           <End Type="ModelSIGEF.caSolitudCaptacion" Role="caSolitudCaptacion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="caPAC">
-              <PropertyRef Name="iCaPAC_id" />
+              <PropertyRef Name="iPAC_id" />
             </Principal>
             <Dependent Role="caSolitudCaptacion">
-              <PropertyRef Name="iCaPAC_id" />
+              <PropertyRef Name="iPAC_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="mcCaja">
+          <Key>
+            <PropertyRef Name="iCaja_id" />
+          </Key>
+          <Property Name="iCaja_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="paSucursal" Relationship="ModelSIGEF.paSucursalmcCaja" FromRole="mcCaja" ToRole="paSucursal" />
+          <Property Name="iSucursal_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="mcTransaccion" Relationship="ModelSIGEF.mcCajamcTransaccion" FromRole="mcCaja" ToRole="mcTransaccion" />
+          <NavigationProperty Name="mcConciliacionCaja" Relationship="ModelSIGEF.mcConciliacionCajamcCaja" FromRole="mcCaja" ToRole="mcConciliacionCaja" />
+          <NavigationProperty Name="msUsuario" Relationship="ModelSIGEF.msUsuariomcCaja" FromRole="mcCaja" ToRole="msUsuario" />
+        </EntityType>
+        <Association Name="paSucursalmcCaja">
+          <End Type="ModelSIGEF.paSucursal" Role="paSucursal" Multiplicity="1" />
+          <End Type="ModelSIGEF.mcCaja" Role="mcCaja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="paSucursal">
+              <PropertyRef Name="iSucursal_id" />
+            </Principal>
+            <Dependent Role="mcCaja">
+              <PropertyRef Name="iSucursal_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="mcTransaccion">
+          <Key>
+            <PropertyRef Name="iTransaccion_id" />
+          </Key>
+          <Property Name="iTransaccion_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="mcCaja" Relationship="ModelSIGEF.mcCajamcTransaccion" FromRole="mcTransaccion" ToRole="mcCaja" />
+          <Property Name="iCaja_id" Type="Int32" Nullable="false" />
+          <Property Name="iTipoTransaccion_fl" Type="String" Nullable="false" />
+          <NavigationProperty Name="mcLibroCaja" Relationship="ModelSIGEF.mcLibroCajamcTransaccion" FromRole="mcTransaccion" ToRole="mcLibroCaja" />
+          <Property Name="dtTransaccion_fecha" Type="DateTime" Nullable="false" />
+          <Property Name="iMoneda_fl" Type="String" Nullable="false" />
+          <Property Name="dTransaccion_monto" Type="Decimal" Nullable="false" />
+          <NavigationProperty Name="mcDetalleCheque" Relationship="ModelSIGEF.mcTransaccionmcDetalleCheque" FromRole="mcTransaccion" ToRole="mcDetalleCheque" />
+          <NavigationProperty Name="peCliente" Relationship="ModelSIGEF.peClientemcTransaccion" FromRole="mcTransaccion" ToRole="peCliente" />
+          <Property Name="iCliente_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="mcCajamcTransaccion">
+          <End Type="ModelSIGEF.mcCaja" Role="mcCaja" Multiplicity="1" />
+          <End Type="ModelSIGEF.mcTransaccion" Role="mcTransaccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mcCaja">
+              <PropertyRef Name="iCaja_id" />
+            </Principal>
+            <Dependent Role="mcTransaccion">
+              <PropertyRef Name="iCaja_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="mcLibroCaja">
+          <Key>
+            <PropertyRef Name="iLibroCaja_id" />
+          </Key>
+          <Property Name="iLibroCaja_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="mcTransaccion" Relationship="ModelSIGEF.mcLibroCajamcTransaccion" FromRole="mcLibroCaja" ToRole="mcTransaccion" />
+          <Property Name="iTransaccion_id" Type="Int32" Nullable="false" />
+          <Property Name="dtLibroCaja_fecha" Type="String" Nullable="false" />
+          <Property Name="iCaja_id" Type="String" Nullable="false" />
+          <Property Name="dDebe_mn" Type="Decimal" Nullable="false" />
+          <Property Name="dDebe_me" Type="Decimal" Nullable="false" />
+          <Property Name="dHaber_mn" Type="Decimal" Nullable="false" />
+          <Property Name="dHaber_me" Type="Decimal" Nullable="false" />
+          <Property Name="dSaldo_mn" Type="Decimal" Nullable="false" />
+          <Property Name="dSaldo_me" Type="Decimal" Nullable="false" />
+        </EntityType>
+        <EntityType Name="mcConciliacionCaja">
+          <Key>
+            <PropertyRef Name="iConciliacionCaja_id" />
+          </Key>
+          <Property Name="iConciliacionCaja_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="mcCaja" Relationship="ModelSIGEF.mcConciliacionCajamcCaja" FromRole="mcConciliacionCaja" ToRole="mcCaja" />
+          <Property Name="iCaja_id" Type="Int32" Nullable="false" />
+          <Property Name="dtConciliacion_fecha" Type="DateTime" Nullable="false" />
+          <Property Name="dDebe_nm" Type="Decimal" Nullable="false" />
+          <Property Name="dDebe_me" Type="Decimal" Nullable="false" />
+          <Property Name="dHaber_mn" Type="Decimal" Nullable="false" />
+          <Property Name="dHaber_me" Type="Decimal" Nullable="false" />
+          <Property Name="dSaldo_mn" Type="Decimal" Nullable="false" />
+          <Property Name="dSaldo_me" Type="Decimal" Nullable="false" />
+        </EntityType>
+        <Association Name="mcLibroCajamcTransaccion">
+          <End Type="ModelSIGEF.mcLibroCaja" Role="mcLibroCaja" Multiplicity="*" />
+          <End Type="ModelSIGEF.mcTransaccion" Role="mcTransaccion" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="mcTransaccion">
+              <PropertyRef Name="iTransaccion_id" />
+            </Principal>
+            <Dependent Role="mcLibroCaja">
+              <PropertyRef Name="iTransaccion_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="mcConciliacionCajamcCaja">
+          <End Type="ModelSIGEF.mcConciliacionCaja" Role="mcConciliacionCaja" Multiplicity="*" />
+          <End Type="ModelSIGEF.mcCaja" Role="mcCaja" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="mcCaja">
+              <PropertyRef Name="iCaja_id" />
+            </Principal>
+            <Dependent Role="mcConciliacionCaja">
+              <PropertyRef Name="iCaja_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="mcDetalleCheque">
+          <Key>
+            <PropertyRef Name="iDetalleCheque_id" />
+          </Key>
+          <Property Name="iDetalleCheque_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sDetalleCheque_num" Type="String" Nullable="false" />
+          <Property Name="sDetalleCheque_banco" Type="String" Nullable="false" />
+          <Property Name="sDetalleCheque_nombre" Type="String" Nullable="false" />
+          <NavigationProperty Name="mcTransaccion" Relationship="ModelSIGEF.mcTransaccionmcDetalleCheque" FromRole="mcDetalleCheque" ToRole="mcTransaccion" />
+          <Property Name="iTransaccion_id" Type="Int32" Nullable="true" />
+        </EntityType>
+        <Association Name="mcTransaccionmcDetalleCheque">
+          <End Type="ModelSIGEF.mcTransaccion" Role="mcTransaccion" Multiplicity="0..1" />
+          <End Type="ModelSIGEF.mcDetalleCheque" Role="mcDetalleCheque" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mcTransaccion">
+              <PropertyRef Name="iTransaccion_id" />
+            </Principal>
+            <Dependent Role="mcDetalleCheque">
+              <PropertyRef Name="iTransaccion_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="peCliente">
+          <Key>
+            <PropertyRef Name="iCliente_id" />
+          </Key>
+          <Property Name="iCliente_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sCliente_nombre" Type="String" Nullable="false" />
+          <Property Name="sCliente_apellido" Type="String" Nullable="false" />
+          <Property Name="sCliente_ci" Type="String" Nullable="false" />
+          <Property Name="sCliente_telf" Type="String" Nullable="false" />
+          <NavigationProperty Name="caSolitudCaptacion" Relationship="ModelSIGEF.caSolitudCaptacionpeCliente" FromRole="peCliente" ToRole="caSolitudCaptacion" />
+          <NavigationProperty Name="mcTransaccion" Relationship="ModelSIGEF.peClientemcTransaccion" FromRole="peCliente" ToRole="mcTransaccion" />
+        </EntityType>
+        <EntityType Name="peSocio" BaseType="ModelSIGEF.peCliente" >
+          <NavigationProperty Name="peCAportacion" Relationship="ModelSIGEF.peSociopeCAportacion" FromRole="peSocio" ToRole="peCAportacion" />
+          <Property Name="dtSocio_fechaAfiliacion" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="peCAportacion">
+          <Key>
+            <PropertyRef Name="iCAportacion_id" />
+          </Key>
+          <Property Name="iCAportacion_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="peSocio" Relationship="ModelSIGEF.peSociopeCAportacion" FromRole="peCAportacion" ToRole="peSocio" />
+          <Property Name="iCliente_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="peSociopeCAportacion">
+          <End Type="ModelSIGEF.peSocio" Role="peSocio" Multiplicity="1" />
+          <End Type="ModelSIGEF.peCAportacion" Role="peCAportacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="peSocio">
+              <PropertyRef Name="iCliente_id" />
+            </Principal>
+            <Dependent Role="peCAportacion">
+              <PropertyRef Name="iCliente_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="msFuncionario">
+          <Key>
+            <PropertyRef Name="iFuncionario_id" />
+          </Key>
+          <Property Name="iFuncionario_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sFuncionario_nombre" Type="String" Nullable="false" />
+          <Property Name="sFuncionario_apellido" Type="String" Nullable="false" />
+          <Property Name="sFuncionario_ci" Type="String" Nullable="false" />
+          <Property Name="dtFuncionario_fechaContratacion" Type="DateTime" Nullable="false" />
+          <Property Name="sFuncionario_email" Type="String" Nullable="false" />
+          <NavigationProperty Name="msUsuario" Relationship="ModelSIGEF.msUsuariomsFuncionario" FromRole="msFuncionario" ToRole="msUsuario" />
+        </EntityType>
+        <EntityType Name="msUsuario">
+          <Key>
+            <PropertyRef Name="iUsuario_id" />
+          </Key>
+          <Property Name="iUsuario_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sUsuario_username" Type="String" Nullable="false" />
+          <Property Name="sUsuario_password" Type="String" Nullable="false" />
+          <NavigationProperty Name="msFuncionario" Relationship="ModelSIGEF.msUsuariomsFuncionario" FromRole="msUsuario" ToRole="msFuncionario" />
+          <Property Name="iFuncionario_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="msPassword" Relationship="ModelSIGEF.msUsuariomsPassword" FromRole="msUsuario" ToRole="msPassword" />
+          <NavigationProperty Name="msRol" Relationship="ModelSIGEF.msRolmsUsuario" FromRole="msUsuario" ToRole="msRol" />
+          <Property Name="iRol_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="mcCaja" Relationship="ModelSIGEF.msUsuariomcCaja" FromRole="msUsuario" ToRole="mcCaja" />
+          <NavigationProperty Name="caPAC" Relationship="ModelSIGEF.caPACmsUsuario" FromRole="msUsuario" ToRole="caPAC" />
+        </EntityType>
+        <EntityType Name="msPassword">
+          <Key>
+            <PropertyRef Name="iPassword_id" />
+          </Key>
+          <Property Name="iPassword_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dtPassword_fechaCambio" Type="DateTime" Nullable="false" />
+          <Property Name="sPassword_anterior" Type="String" Nullable="false" />
+          <NavigationProperty Name="msUsuario" Relationship="ModelSIGEF.msUsuariomsPassword" FromRole="msPassword" ToRole="msUsuario" />
+          <Property Name="iUsuario_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="msUsuariomsFuncionario">
+          <End Type="ModelSIGEF.msUsuario" Role="msUsuario" Multiplicity="*" />
+          <End Type="ModelSIGEF.msFuncionario" Role="msFuncionario" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="msFuncionario">
+              <PropertyRef Name="iFuncionario_id" />
+            </Principal>
+            <Dependent Role="msUsuario">
+              <PropertyRef Name="iFuncionario_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="msUsuariomsPassword">
+          <End Type="ModelSIGEF.msUsuario" Role="msUsuario" Multiplicity="1" />
+          <End Type="ModelSIGEF.msPassword" Role="msPassword" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msUsuario">
+              <PropertyRef Name="iUsuario_id" />
+            </Principal>
+            <Dependent Role="msPassword">
+              <PropertyRef Name="iUsuario_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="msRol">
+          <Key>
+            <PropertyRef Name="iRol_id" />
+          </Key>
+          <Property Name="iRol_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sRol_nombre" Type="String" Nullable="false" />
+          <Property Name="sRol_desc" Type="String" Nullable="false" />
+          <NavigationProperty Name="msUsuario" Relationship="ModelSIGEF.msRolmsUsuario" FromRole="msRol" ToRole="msUsuario" />
+          <NavigationProperty Name="msPrivilegio" Relationship="ModelSIGEF.msRolmsPrivilegio" FromRole="msRol" ToRole="msPrivilegio" />
+        </EntityType>
+        <EntityType Name="msPrivilegio">
+          <Key>
+            <PropertyRef Name="iPrivilegio_id" />
+          </Key>
+          <Property Name="iPrivilegio_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sPrivilegio_nombre" Type="String" Nullable="false" />
+          <Property Name="sPrivilegio_desc" Type="String" Nullable="false" />
+          <Property Name="iCasoDeUso_fl" Type="String" Nullable="false" />
+          <NavigationProperty Name="msRol" Relationship="ModelSIGEF.msRolmsPrivilegio" FromRole="msPrivilegio" ToRole="msRol" />
+        </EntityType>
+        <Association Name="msRolmsUsuario">
+          <End Type="ModelSIGEF.msRol" Role="msRol" Multiplicity="1" />
+          <End Type="ModelSIGEF.msUsuario" Role="msUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msRol">
+              <PropertyRef Name="iRol_id" />
+            </Principal>
+            <Dependent Role="msUsuario">
+              <PropertyRef Name="iRol_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="msRolmsPrivilegio">
+          <End Type="ModelSIGEF.msRol" Role="msRol" Multiplicity="*" />
+          <End Type="ModelSIGEF.msPrivilegio" Role="msPrivilegio" Multiplicity="*" />
+        </Association>
+        <EntityType Name="msBitacora">
+          <Key>
+            <PropertyRef Name="iBitadora_id" />
+          </Key>
+          <Property Name="iBitadora_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dtBitacora_fechaRegistro" Type="String" Nullable="false" />
+          <Property Name="iUsuario_id" Type="String" Nullable="false" />
+          <Property Name="sBitacora_desc" Type="String" Nullable="false" />
+          <Property Name="sTablaModificada" Type="String" Nullable="false" />
+          <Property Name="sOperacionRealizada" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="caSolitudCaptacionpeCliente">
+          <End Type="ModelSIGEF.caSolitudCaptacion" Role="caSolitudCaptacion" Multiplicity="*" />
+          <End Type="ModelSIGEF.peCliente" Role="peCliente" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="peCliente">
+              <PropertyRef Name="iCliente_id" />
+            </Principal>
+            <Dependent Role="caSolitudCaptacion">
+              <PropertyRef Name="iCliente_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="msUsuariomcCaja">
+          <End Type="ModelSIGEF.msUsuario" Role="msUsuario" Multiplicity="*" />
+          <End Type="ModelSIGEF.mcCaja" Role="mcCaja" Multiplicity="*" />
+        </Association>
+        <Association Name="caPACmsUsuario">
+          <End Type="ModelSIGEF.caPAC" Role="caPAC" Multiplicity="*" />
+          <End Type="ModelSIGEF.msUsuario" Role="msUsuario" Multiplicity="*" />
+        </Association>
+        <Association Name="peClientemcTransaccion">
+          <End Type="ModelSIGEF.peCliente" Role="peCliente" Multiplicity="1" />
+          <End Type="ModelSIGEF.mcTransaccion" Role="mcTransaccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="peCliente">
+              <PropertyRef Name="iCliente_id" />
+            </Principal>
+            <Dependent Role="mcTransaccion">
+              <PropertyRef Name="iCliente_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
