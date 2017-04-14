@@ -222,6 +222,21 @@
             <End Role="coCredito" EntitySet="coSolicitudCredito" />
             <End Role="coHistoricoCredito" EntitySet="coHistoricoCredito" />
           </AssociationSet>
+          <EntitySet Name="oaATM" EntityType="ModelSIGEF.oaATM" />
+          <EntitySet Name="oaTarjetaRetenida" EntityType="ModelSIGEF.oaTarjetaRetenida" />
+          <EntitySet Name="oaLibroATM" EntityType="ModelSIGEF.oaLibroATM" />
+          <AssociationSet Name="oaATMmcTransaccion" Association="ModelSIGEF.oaATMmcTransaccion">
+            <End Role="oaATM" EntitySet="oaATM" />
+            <End Role="mcTransaccion" EntitySet="mcTransaccion" />
+          </AssociationSet>
+          <AssociationSet Name="oaLibroATMmcTransaccion" Association="ModelSIGEF.oaLibroATMmcTransaccion">
+            <End Role="oaLibroATM" EntitySet="oaLibroATM" />
+            <End Role="mcTransaccion" EntitySet="mcTransaccion" />
+          </AssociationSet>
+          <AssociationSet Name="oaATMoaTarjetaRetenida" Association="ModelSIGEF.oaATMoaTarjetaRetenida">
+            <End Role="oaATM" EntitySet="oaATM" />
+            <End Role="oaTarjetaRetenida" EntitySet="oaTarjetaRetenida" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="baUnidadFinanciera">
           <Documentation>
@@ -456,7 +471,7 @@
           </Key>
           <Property Name="iTransaccion_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="mcCaja" Relationship="ModelSIGEF.mcCajamcTransaccion" FromRole="mcTransaccion" ToRole="mcCaja" />
-          <Property Name="iCaja_id" Type="Int32" Nullable="false" />
+          <Property Name="iCaja_id" Type="Int32" Nullable="true" />
           <Property Name="iTipoTransaccion_fl" Type="String" Nullable="false" />
           <NavigationProperty Name="mcLibroCaja" Relationship="ModelSIGEF.mcLibroCajamcTransaccion" FromRole="mcTransaccion" ToRole="mcLibroCaja" />
           <Property Name="dtTransaccion_fecha" Type="DateTime" Nullable="false" />
@@ -469,6 +484,10 @@
           <NavigationProperty Name="acDetalleCajaAhorro" Relationship="ModelSIGEF.mcTransaccionacDetalleCajaAhorro" FromRole="mcTransaccion" ToRole="acDetalleCajaAhorro" />
           <NavigationProperty Name="acDetalleDPF" Relationship="ModelSIGEF.acDetalleDPFmcTransaccion" FromRole="mcTransaccion" ToRole="acDetalleDPF" />
           <NavigationProperty Name="acDetalleCredito" Relationship="ModelSIGEF.acDetalleCreditomcTransaccion" FromRole="mcTransaccion" ToRole="acDetalleCredito" />
+          <NavigationProperty Name="oaATM" Relationship="ModelSIGEF.oaATMmcTransaccion" FromRole="mcTransaccion" ToRole="oaATM" />
+          <Property Name="iATM_id" Type="Int32" Nullable="true" />
+          <Property Name="oaLibroATM_oaLibroATM_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="oaLibroATM" Relationship="ModelSIGEF.oaLibroATMmcTransaccion" FromRole="mcTransaccion" ToRole="oaLibroATM" />
         </EntityType>
         <Association Name="mcCajamcTransaccion">
           <End Type="ModelSIGEF.mcCaja" Role="mcCaja" Multiplicity="1" />
@@ -1261,6 +1280,86 @@
             </Principal>
             <Dependent Role="coHistoricoCredito">
               <PropertyRef Name="iSolicitudCredito_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="oaATM">
+          <Key>
+            <PropertyRef Name="iATM_id" />
+          </Key>
+          <Property Name="iATM_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sATM_fabrica" Type="String" Nullable="false" />
+          <Property Name="sATM_dir" Type="String" Nullable="false" />
+          <Property Name="iATM_tipo" Type="String" Nullable="false" />
+          <Property Name="sATM_nombre" Type="String" Nullable="false" />
+          <Property Name="dtATM_ultimaConciliacion" Type="String" Nullable="false" />
+          <Property Name="iATM_estado" Type="String" Nullable="false" />
+          <Property Name="dATM_saldoMN" Type="String" Nullable="false" />
+          <Property Name="dATM_saldoME" Type="String" Nullable="false" />
+          <NavigationProperty Name="mcTransaccion" Relationship="ModelSIGEF.oaATMmcTransaccion" FromRole="oaATM" ToRole="mcTransaccion" />
+          <NavigationProperty Name="oaTarjetaRetenida" Relationship="ModelSIGEF.oaATMoaTarjetaRetenida" FromRole="oaATM" ToRole="oaTarjetaRetenida" />
+        </EntityType>
+        <EntityType Name="oaTarjetaRetenida">
+          <Key>
+            <PropertyRef Name="iTarjetaRetenida_id" />
+          </Key>
+          <Property Name="iTarjetaRetenida_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dtRetenida_fecha" Type="String" Nullable="false" />
+          <Property Name="sTarjetaDebito_num" Type="String" Nullable="false" />
+          <Property Name="sRetenida_desc" Type="String" Nullable="false" />
+          <NavigationProperty Name="oaATM" Relationship="ModelSIGEF.oaATMoaTarjetaRetenida" FromRole="oaTarjetaRetenida" ToRole="oaATM" />
+          <Property Name="iATM_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="oaLibroATM">
+          <Key>
+            <PropertyRef Name="oaLibroATM_id" />
+          </Key>
+          <Property Name="oaLibroATM_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dtLibroATM_fecha" Type="String" Nullable="false" />
+          <Property Name="dDebe_mn" Type="String" Nullable="false" />
+          <Property Name="dDebe_me" Type="String" Nullable="false" />
+          <Property Name="dHaber_mn" Type="String" Nullable="false" />
+          <Property Name="dHaber_me" Type="String" Nullable="false" />
+          <Property Name="dSaldo_mn" Type="String" Nullable="false" />
+          <Property Name="dSaldo_me" Type="String" Nullable="false" />
+          <Property Name="sLibroATM_desc" Type="String" Nullable="false" />
+          <Property Name="iAtm_id" Type="String" Nullable="false" />
+          <NavigationProperty Name="mcTransaccion" Relationship="ModelSIGEF.oaLibroATMmcTransaccion" FromRole="oaLibroATM" ToRole="mcTransaccion" />
+          <Property Name="iTransaccion_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="oaATMmcTransaccion">
+          <End Type="ModelSIGEF.oaATM" Role="oaATM" Multiplicity="1" />
+          <End Type="ModelSIGEF.mcTransaccion" Role="mcTransaccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="oaATM">
+              <PropertyRef Name="iATM_id" />
+            </Principal>
+            <Dependent Role="mcTransaccion">
+              <PropertyRef Name="iATM_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="oaLibroATMmcTransaccion">
+          <End Type="ModelSIGEF.oaLibroATM" Role="oaLibroATM" Multiplicity="*" />
+          <End Type="ModelSIGEF.mcTransaccion" Role="mcTransaccion" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="mcTransaccion">
+              <PropertyRef Name="iTransaccion_id" />
+            </Principal>
+            <Dependent Role="oaLibroATM">
+              <PropertyRef Name="iTransaccion_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="oaATMoaTarjetaRetenida">
+          <End Type="ModelSIGEF.oaATM" Role="oaATM" Multiplicity="1" />
+          <End Type="ModelSIGEF.oaTarjetaRetenida" Role="oaTarjetaRetenida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="oaATM">
+              <PropertyRef Name="iATM_id" />
+            </Principal>
+            <Dependent Role="oaTarjetaRetenida">
+              <PropertyRef Name="iATM_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
