@@ -179,6 +179,11 @@
             <End Role="mcTransaccion" EntitySet="mcTransaccion" />
           </AssociationSet>
           <EntitySet Name="acDetalleCredito" EntityType="ModelSIGEF.acDetalleCredito" />
+          <AssociationSet Name="acDetalleCreditomcTransaccion" Association="ModelSIGEF.acDetalleCreditomcTransaccion">
+            <End Role="acDetalleCredito" EntitySet="acDetalleCredito" />
+            <End Role="mcTransaccion" EntitySet="mcTransaccion" />
+          </AssociationSet>
+          <EntitySet Name="coSolicitudCredito" EntityType="ModelSIGEF.coSolicitudCredito" />
         </EntityContainer>
         <EntityType Name="baUnidadFinanciera">
           <Documentation>
@@ -424,6 +429,7 @@
           <Property Name="sTransaccion_desc" Type="String" Nullable="false" />
           <NavigationProperty Name="acDetalleCajaAhorro" Relationship="ModelSIGEF.mcTransaccionacDetalleCajaAhorro" FromRole="mcTransaccion" ToRole="acDetalleCajaAhorro" />
           <NavigationProperty Name="acDetalleDPF" Relationship="ModelSIGEF.acDetalleDPFmcTransaccion" FromRole="mcTransaccion" ToRole="acDetalleDPF" />
+          <NavigationProperty Name="acDetalleCredito" Relationship="ModelSIGEF.acDetalleCreditomcTransaccion" FromRole="mcTransaccion" ToRole="acDetalleCredito" />
         </EntityType>
         <Association Name="mcCajamcTransaccion">
           <End Type="ModelSIGEF.mcCaja" Role="mcCaja" Multiplicity="1" />
@@ -996,7 +1002,40 @@
             <PropertyRef Name="iDetalleCredito_id" />
           </Key>
           <Property Name="iDetalleCredito_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="mcTransaccion" Relationship="ModelSIGEF.acDetalleCreditomcTransaccion" FromRole="acDetalleCredito" ToRole="mcTransaccion" />
+          <Property Name="iTransaccion_id" Type="Int32" Nullable="false" />
+          <Property Name="dDebe_nm" Type="Decimal" Nullable="false" />
+          <Property Name="dDebe_me" Type="Decimal" Nullable="false" />
+          <Property Name="dHaber_mn" Type="Decimal" Nullable="false" />
+          <Property Name="dHaber_me" Type="Decimal" Nullable="false" />
+          <Property Name="dSaldo_mn" Type="Decimal" Nullable="false" />
+          <Property Name="dSaldo_me" Type="Decimal" Nullable="false" />
+          <Property Name="dtDetalleCredito_fecha" Type="DateTime" Nullable="false" />
         </EntityType>
+        <Association Name="acDetalleCreditomcTransaccion">
+          <End Type="ModelSIGEF.acDetalleCredito" Role="acDetalleCredito" Multiplicity="*" />
+          <End Type="ModelSIGEF.mcTransaccion" Role="mcTransaccion" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="mcTransaccion">
+              <PropertyRef Name="iTransaccion_id" />
+            </Principal>
+            <Dependent Role="acDetalleCredito">
+              <PropertyRef Name="iTransaccion_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="coSolicitudCredito">
+          <Key>
+            <PropertyRef Name="iSolicitudCredito_id" />
+          </Key>
+          <Property Name="iSolicitudCredito_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dtSolicitudCredito_fecha" Type="String" Nullable="false" />
+          <Property Name="iTipoCredito_fl" Type="String" Nullable="false" />
+          <Property Name="dSolicitudCredito_monto" Type="String" Nullable="false" />
+          <Property Name="iMoneda_fl" Type="String" Nullable="false" />
+          <Property Name="iDuracionCredito_fl" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="coCredito" BaseType="ModelSIGEF.coSolicitudCredito" />
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
