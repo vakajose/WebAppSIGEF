@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="bf3a76797e64457fb7c2df45f497b113" Name="Modelo de Dominio" ZoomLevel="94" ShowGrid="true" DisplayType="true" >
+      <Diagram DiagramId="bf3a76797e64457fb7c2df45f497b113" Name="Modelo de Dominio" ZoomLevel="20" ShowGrid="true" DisplayType="true" >
         <EntityTypeShape EntityType="ModelSIGEF.baUnidadFinanciera" Width="2.25" PointX="4.875" PointY="9.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ModelSIGEF.baModulo" Width="1.5" PointX="5.375" PointY="6.375" />
         <EntityTypeShape EntityType="ModelSIGEF.baADM_USER" Width="1.75" PointX="1.875" PointY="7" />
