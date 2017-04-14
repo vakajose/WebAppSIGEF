@@ -4,11 +4,1525 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="ModelSIGEF.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
-        <EntityContainer Name="ModelSIGEFTargetContainer" >
-        </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+    <Schema Namespace="ModelSIGEF.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModelSIGEFStoreContainer">
+    <EntitySet Name="baUnidadFinanciera" EntityType="ModelSIGEF.Store.baUnidadFinanciera" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="baModulo" EntityType="ModelSIGEF.Store.baModulo" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="baADM_USER" EntityType="ModelSIGEF.Store.baADM_USER" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="baAdmin" EntityType="ModelSIGEF.Store.baAdmin" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="paSucursal" EntityType="ModelSIGEF.Store.paSucursal" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="caPAC" EntityType="ModelSIGEF.Store.caPAC" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="caSolitudCaptacion" EntityType="ModelSIGEF.Store.caSolitudCaptacion" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="mcCaja" EntityType="ModelSIGEF.Store.mcCaja" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="mcTransaccion" EntityType="ModelSIGEF.Store.mcTransaccion" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="mcLibroCaja" EntityType="ModelSIGEF.Store.mcLibroCaja" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="mcConciliacionCaja" EntityType="ModelSIGEF.Store.mcConciliacionCaja" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="mcDetalleCheque" EntityType="ModelSIGEF.Store.mcDetalleCheque" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="peCliente" EntityType="ModelSIGEF.Store.peCliente" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="peCAportacion" EntityType="ModelSIGEF.Store.peCAportacion" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="msFuncionario" EntityType="ModelSIGEF.Store.msFuncionario" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="msUsuario" EntityType="ModelSIGEF.Store.msUsuario" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="msPassword" EntityType="ModelSIGEF.Store.msPassword" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="msRol" EntityType="ModelSIGEF.Store.msRol" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="msPrivilegio" EntityType="ModelSIGEF.Store.msPrivilegio" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="msBitacora" EntityType="ModelSIGEF.Store.msBitacora" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="teSolicitudFondo" EntityType="ModelSIGEF.Store.teSolicitudFondo" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="teBoveda" EntityType="ModelSIGEF.Store.teBoveda" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="teLibroMayor" EntityType="ModelSIGEF.Store.teLibroMayor" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="teConciliacionLM" EntityType="ModelSIGEF.Store.teConciliacionLM" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="acCajaAhorro" EntityType="ModelSIGEF.Store.acCajaAhorro" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="acTarjetaDebito" EntityType="ModelSIGEF.Store.acTarjetaDebito" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="acDPF" EntityType="ModelSIGEF.Store.acDPF" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="acDetalleCajaAhorro" EntityType="ModelSIGEF.Store.acDetalleCajaAhorro" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="acDetalleDPF" EntityType="ModelSIGEF.Store.acDetalleDPF" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="acDetalleCredito" EntityType="ModelSIGEF.Store.acDetalleCredito" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="coSolicitudCredito" EntityType="ModelSIGEF.Store.coSolicitudCredito" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="coCouta" EntityType="ModelSIGEF.Store.coCouta" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="coRequisito" EntityType="ModelSIGEF.Store.coRequisito" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="coCarteraVigente" EntityType="ModelSIGEF.Store.coCarteraVigente" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="coCarteraMora" EntityType="ModelSIGEF.Store.coCarteraMora" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="coCarteraEjecucion" EntityType="ModelSIGEF.Store.coCarteraEjecucion" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="coHistoricoCredito" EntityType="ModelSIGEF.Store.coHistoricoCredito" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="oaATM" EntityType="ModelSIGEF.Store.oaATM" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="oaTarjetaRetenida" EntityType="ModelSIGEF.Store.oaTarjetaRetenida" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="oaLibroATM" EntityType="ModelSIGEF.Store.oaLibroATM" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="peCliente_peSocio" EntityType="ModelSIGEF.Store.peCliente_peSocio" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="coSolicitudCredito_coCredito" EntityType="ModelSIGEF.Store.coSolicitudCredito_coCredito" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="caSolitudCaptacion_caTCertificado" EntityType="ModelSIGEF.Store.caSolitudCaptacion_caTCertificado" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="caSolitudCaptacion_caTCajaAhorro" EntityType="ModelSIGEF.Store.caSolitudCaptacion_caTCajaAhorro" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="caSolitudCaptacion_caTDPF" EntityType="ModelSIGEF.Store.caSolitudCaptacion_caTDPF" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="caSolitudCaptacion_caTTarjetaDebito" EntityType="ModelSIGEF.Store.caSolitudCaptacion_caTTarjetaDebito" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="coSolicitudCredito_coSolicitudRechazada" EntityType="ModelSIGEF.Store.coSolicitudCredito_coSolicitudRechazada" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="baModulobaUnidadFinanciera" EntityType="ModelSIGEF.Store.baModulobaUnidadFinanciera" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="msRolmsPrivilegio" EntityType="ModelSIGEF.Store.msRolmsPrivilegio" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="msUsuariomcCaja" EntityType="ModelSIGEF.Store.msUsuariomcCaja" store:Type="Tables" Schema="sigef" />
+    <EntitySet Name="caPACmsUsuario" EntityType="ModelSIGEF.Store.caPACmsUsuario" store:Type="Tables" Schema="sigef" />
+    <AssociationSet Name="FK_baModulobaUnidadFinanciera_baModulo" Association="ModelSIGEF.Store.FK_baModulobaUnidadFinanciera_baModulo">
+      <End Role="baModulo" EntitySet="baModulo" />
+      <End Role="baModulobaUnidadFinanciera" EntitySet="baModulobaUnidadFinanciera" />
+    </AssociationSet>
+    <AssociationSet Name="FK_baModulobaUnidadFinanciera_baUnidadFinanciera" Association="ModelSIGEF.Store.FK_baModulobaUnidadFinanciera_baUnidadFinanciera">
+      <End Role="baUnidadFinanciera" EntitySet="baUnidadFinanciera" />
+      <End Role="baModulobaUnidadFinanciera" EntitySet="baModulobaUnidadFinanciera" />
+    </AssociationSet>
+    <AssociationSet Name="baADM_USERbaAdmin" Association="ModelSIGEF.Store.baADM_USERbaAdmin">
+      <End Role="baADM_USER" EntitySet="baADM_USER" />
+      <End Role="baAdmin" EntitySet="baAdmin" />
+    </AssociationSet>
+    <AssociationSet Name="baUnidadFinancierabaAdmin" Association="ModelSIGEF.Store.baUnidadFinancierabaAdmin">
+      <End Role="baUnidadFinanciera" EntitySet="baUnidadFinanciera" />
+      <End Role="baAdmin" EntitySet="baAdmin" />
+    </AssociationSet>
+    <AssociationSet Name="baUnidadFinancierapaSucursal" Association="ModelSIGEF.Store.baUnidadFinancierapaSucursal">
+      <End Role="baUnidadFinanciera" EntitySet="baUnidadFinanciera" />
+      <End Role="paSucursal" EntitySet="paSucursal" />
+    </AssociationSet>
+    <AssociationSet Name="paSucursalcaPAC" Association="ModelSIGEF.Store.paSucursalcaPAC">
+      <End Role="paSucursal" EntitySet="paSucursal" />
+      <End Role="caPAC" EntitySet="caPAC" />
+    </AssociationSet>
+    <AssociationSet Name="caPACcaSolitudCaptacion" Association="ModelSIGEF.Store.caPACcaSolitudCaptacion">
+      <End Role="caPAC" EntitySet="caPAC" />
+      <End Role="caSolitudCaptacion" EntitySet="caSolitudCaptacion" />
+    </AssociationSet>
+    <AssociationSet Name="paSucursalmcCaja" Association="ModelSIGEF.Store.paSucursalmcCaja">
+      <End Role="paSucursal" EntitySet="paSucursal" />
+      <End Role="mcCaja" EntitySet="mcCaja" />
+    </AssociationSet>
+    <AssociationSet Name="mcCajamcTransaccion" Association="ModelSIGEF.Store.mcCajamcTransaccion">
+      <End Role="mcCaja" EntitySet="mcCaja" />
+      <End Role="mcTransaccion" EntitySet="mcTransaccion" />
+    </AssociationSet>
+    <AssociationSet Name="mcLibroCajamcTransaccion" Association="ModelSIGEF.Store.mcLibroCajamcTransaccion">
+      <End Role="mcLibroCaja" EntitySet="mcLibroCaja" />
+      <End Role="mcTransaccion" EntitySet="mcTransaccion" />
+    </AssociationSet>
+    <AssociationSet Name="mcConciliacionCajamcCaja" Association="ModelSIGEF.Store.mcConciliacionCajamcCaja">
+      <End Role="mcConciliacionCaja" EntitySet="mcConciliacionCaja" />
+      <End Role="mcCaja" EntitySet="mcCaja" />
+    </AssociationSet>
+    <AssociationSet Name="mcTransaccionmcDetalleCheque" Association="ModelSIGEF.Store.mcTransaccionmcDetalleCheque">
+      <End Role="mcTransaccion" EntitySet="mcTransaccion" />
+      <End Role="mcDetalleCheque" EntitySet="mcDetalleCheque" />
+    </AssociationSet>
+    <AssociationSet Name="peSociopeCAportacion" Association="ModelSIGEF.Store.peSociopeCAportacion">
+      <End Role="peSocio" EntitySet="peCliente_peSocio" />
+      <End Role="peCAportacion" EntitySet="peCAportacion" />
+    </AssociationSet>
+    <AssociationSet Name="msUsuariomsFuncionario" Association="ModelSIGEF.Store.msUsuariomsFuncionario">
+      <End Role="msUsuario" EntitySet="msUsuario" />
+      <End Role="msFuncionario" EntitySet="msFuncionario" />
+    </AssociationSet>
+    <AssociationSet Name="msUsuariomsPassword" Association="ModelSIGEF.Store.msUsuariomsPassword">
+      <End Role="msUsuario" EntitySet="msUsuario" />
+      <End Role="msPassword" EntitySet="msPassword" />
+    </AssociationSet>
+    <AssociationSet Name="msRolmsUsuario" Association="ModelSIGEF.Store.msRolmsUsuario">
+      <End Role="msRol" EntitySet="msRol" />
+      <End Role="msUsuario" EntitySet="msUsuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_msRolmsPrivilegio_msRol" Association="ModelSIGEF.Store.FK_msRolmsPrivilegio_msRol">
+      <End Role="msRol" EntitySet="msRol" />
+      <End Role="msRolmsPrivilegio" EntitySet="msRolmsPrivilegio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_msRolmsPrivilegio_msPrivilegio" Association="ModelSIGEF.Store.FK_msRolmsPrivilegio_msPrivilegio">
+      <End Role="msPrivilegio" EntitySet="msPrivilegio" />
+      <End Role="msRolmsPrivilegio" EntitySet="msRolmsPrivilegio" />
+    </AssociationSet>
+    <AssociationSet Name="caSolitudCaptacionpeCliente" Association="ModelSIGEF.Store.caSolitudCaptacionpeCliente">
+      <End Role="caSolitudCaptacion" EntitySet="caSolitudCaptacion" />
+      <End Role="peCliente" EntitySet="peCliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_msUsuariomcCaja_msUsuario" Association="ModelSIGEF.Store.FK_msUsuariomcCaja_msUsuario">
+      <End Role="msUsuario" EntitySet="msUsuario" />
+      <End Role="msUsuariomcCaja" EntitySet="msUsuariomcCaja" />
+    </AssociationSet>
+    <AssociationSet Name="FK_msUsuariomcCaja_mcCaja" Association="ModelSIGEF.Store.FK_msUsuariomcCaja_mcCaja">
+      <End Role="mcCaja" EntitySet="mcCaja" />
+      <End Role="msUsuariomcCaja" EntitySet="msUsuariomcCaja" />
+    </AssociationSet>
+    <AssociationSet Name="FK_caPACmsUsuario_caPAC" Association="ModelSIGEF.Store.FK_caPACmsUsuario_caPAC">
+      <End Role="caPAC" EntitySet="caPAC" />
+      <End Role="caPACmsUsuario" EntitySet="caPACmsUsuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_caPACmsUsuario_msUsuario" Association="ModelSIGEF.Store.FK_caPACmsUsuario_msUsuario">
+      <End Role="msUsuario" EntitySet="msUsuario" />
+      <End Role="caPACmsUsuario" EntitySet="caPACmsUsuario" />
+    </AssociationSet>
+    <AssociationSet Name="peClientemcTransaccion" Association="ModelSIGEF.Store.peClientemcTransaccion">
+      <End Role="peCliente" EntitySet="peCliente" />
+      <End Role="mcTransaccion" EntitySet="mcTransaccion" />
+    </AssociationSet>
+    <AssociationSet Name="teBovedateSolicitudFondo" Association="ModelSIGEF.Store.teBovedateSolicitudFondo">
+      <End Role="teBoveda" EntitySet="teBoveda" />
+      <End Role="teSolicitudFondo" EntitySet="teSolicitudFondo" />
+    </AssociationSet>
+    <AssociationSet Name="teBovedateConciliacionLM" Association="ModelSIGEF.Store.teBovedateConciliacionLM">
+      <End Role="teBoveda" EntitySet="teBoveda" />
+      <End Role="teConciliacionLM" EntitySet="teConciliacionLM" />
+    </AssociationSet>
+    <AssociationSet Name="teLibroMayorteSolicitudFondo" Association="ModelSIGEF.Store.teLibroMayorteSolicitudFondo">
+      <End Role="teLibroMayor" EntitySet="teLibroMayor" />
+      <End Role="teSolicitudFondo" EntitySet="teSolicitudFondo" />
+    </AssociationSet>
+    <AssociationSet Name="teBovedapaSucursal" Association="ModelSIGEF.Store.teBovedapaSucursal">
+      <End Role="teBoveda" EntitySet="teBoveda" />
+      <End Role="paSucursal" EntitySet="paSucursal" />
+    </AssociationSet>
+    <AssociationSet Name="teSolicitudFondomcLibroCaja" Association="ModelSIGEF.Store.teSolicitudFondomcLibroCaja">
+      <End Role="teSolicitudFondo" EntitySet="teSolicitudFondo" />
+      <End Role="mcLibroCaja" EntitySet="mcLibroCaja" />
+    </AssociationSet>
+    <AssociationSet Name="mcCajateSolicitudFondo" Association="ModelSIGEF.Store.mcCajateSolicitudFondo">
+      <End Role="mcCaja" EntitySet="mcCaja" />
+      <End Role="teSolicitudFondo" EntitySet="teSolicitudFondo" />
+    </AssociationSet>
+    <AssociationSet Name="acCajaAhorropeCliente" Association="ModelSIGEF.Store.acCajaAhorropeCliente">
+      <End Role="acCajaAhorro" EntitySet="acCajaAhorro" />
+      <End Role="peCliente" EntitySet="peCliente" />
+    </AssociationSet>
+    <AssociationSet Name="acCajaAhorroacTarjetaDebito" Association="ModelSIGEF.Store.acCajaAhorroacTarjetaDebito">
+      <End Role="acCajaAhorro" EntitySet="acCajaAhorro" />
+      <End Role="acTarjetaDebito" EntitySet="acTarjetaDebito" />
+    </AssociationSet>
+    <AssociationSet Name="acCajaAhorroacDetalleCajaAhorro" Association="ModelSIGEF.Store.acCajaAhorroacDetalleCajaAhorro">
+      <End Role="acCajaAhorro" EntitySet="acCajaAhorro" />
+      <End Role="acDetalleCajaAhorro" EntitySet="acDetalleCajaAhorro" />
+    </AssociationSet>
+    <AssociationSet Name="acDPFpeCliente" Association="ModelSIGEF.Store.acDPFpeCliente">
+      <End Role="acDPF" EntitySet="acDPF" />
+      <End Role="peCliente" EntitySet="peCliente" />
+    </AssociationSet>
+    <AssociationSet Name="acDetalleDPFacDPF" Association="ModelSIGEF.Store.acDetalleDPFacDPF">
+      <End Role="acDetalleDPF" EntitySet="acDetalleDPF" />
+      <End Role="acDPF" EntitySet="acDPF" />
+    </AssociationSet>
+    <AssociationSet Name="acTarjetaDebitopeCliente" Association="ModelSIGEF.Store.acTarjetaDebitopeCliente">
+      <End Role="acTarjetaDebito" EntitySet="acTarjetaDebito" />
+      <End Role="peCliente" EntitySet="peCliente" />
+    </AssociationSet>
+    <AssociationSet Name="mcTransaccionacDetalleCajaAhorro" Association="ModelSIGEF.Store.mcTransaccionacDetalleCajaAhorro">
+      <End Role="mcTransaccion" EntitySet="mcTransaccion" />
+      <End Role="acDetalleCajaAhorro" EntitySet="acDetalleCajaAhorro" />
+    </AssociationSet>
+    <AssociationSet Name="acDetalleDPFmcTransaccion" Association="ModelSIGEF.Store.acDetalleDPFmcTransaccion">
+      <End Role="acDetalleDPF" EntitySet="acDetalleDPF" />
+      <End Role="mcTransaccion" EntitySet="mcTransaccion" />
+    </AssociationSet>
+    <AssociationSet Name="acDetalleCreditomcTransaccion" Association="ModelSIGEF.Store.acDetalleCreditomcTransaccion">
+      <End Role="acDetalleCredito" EntitySet="acDetalleCredito" />
+      <End Role="mcTransaccion" EntitySet="mcTransaccion" />
+    </AssociationSet>
+    <AssociationSet Name="coSolicitudCreditopeSocio" Association="ModelSIGEF.Store.coSolicitudCreditopeSocio">
+      <End Role="coSolicitudCredito" EntitySet="coSolicitudCredito" />
+      <End Role="peSocio" EntitySet="peCliente_peSocio" />
+    </AssociationSet>
+    <AssociationSet Name="msUsuariocoSolicitudCredito" Association="ModelSIGEF.Store.msUsuariocoSolicitudCredito">
+      <End Role="msUsuario" EntitySet="msUsuario" />
+      <End Role="coSolicitudCredito" EntitySet="coSolicitudCredito" />
+    </AssociationSet>
+    <AssociationSet Name="coSolicitudCreditocoRequisito" Association="ModelSIGEF.Store.coSolicitudCreditocoRequisito">
+      <End Role="coSolicitudCredito" EntitySet="coSolicitudCredito" />
+      <End Role="coRequisito" EntitySet="coRequisito" />
+    </AssociationSet>
+    <AssociationSet Name="coCreditocoCouta" Association="ModelSIGEF.Store.coCreditocoCouta">
+      <End Role="coCredito" EntitySet="coSolicitudCredito_coCredito" />
+      <End Role="coCouta" EntitySet="coCouta" />
+    </AssociationSet>
+    <AssociationSet Name="coCreditocoCarteraVigente" Association="ModelSIGEF.Store.coCreditocoCarteraVigente">
+      <End Role="coCredito" EntitySet="coSolicitudCredito_coCredito" />
+      <End Role="coCarteraVigente" EntitySet="coCarteraVigente" />
+    </AssociationSet>
+    <AssociationSet Name="coCreditocoCarteraMora" Association="ModelSIGEF.Store.coCreditocoCarteraMora">
+      <End Role="coCredito" EntitySet="coSolicitudCredito_coCredito" />
+      <End Role="coCarteraMora" EntitySet="coCarteraMora" />
+    </AssociationSet>
+    <AssociationSet Name="coCreditocoCarteraEjecucion" Association="ModelSIGEF.Store.coCreditocoCarteraEjecucion">
+      <End Role="coCredito" EntitySet="coSolicitudCredito_coCredito" />
+      <End Role="coCarteraEjecucion" EntitySet="coCarteraEjecucion" />
+    </AssociationSet>
+    <AssociationSet Name="coCreditocoHistoricoCredito" Association="ModelSIGEF.Store.coCreditocoHistoricoCredito">
+      <End Role="coCredito" EntitySet="coSolicitudCredito_coCredito" />
+      <End Role="coHistoricoCredito" EntitySet="coHistoricoCredito" />
+    </AssociationSet>
+    <AssociationSet Name="oaATMmcTransaccion" Association="ModelSIGEF.Store.oaATMmcTransaccion">
+      <End Role="oaATM" EntitySet="oaATM" />
+      <End Role="mcTransaccion" EntitySet="mcTransaccion" />
+    </AssociationSet>
+    <AssociationSet Name="oaLibroATMmcTransaccion" Association="ModelSIGEF.Store.oaLibroATMmcTransaccion">
+      <End Role="oaLibroATM" EntitySet="oaLibroATM" />
+      <End Role="mcTransaccion" EntitySet="mcTransaccion" />
+    </AssociationSet>
+    <AssociationSet Name="oaATMoaTarjetaRetenida" Association="ModelSIGEF.Store.oaATMoaTarjetaRetenida">
+      <End Role="oaATM" EntitySet="oaATM" />
+      <End Role="oaTarjetaRetenida" EntitySet="oaTarjetaRetenida" />
+    </AssociationSet>
+    <AssociationSet Name="FK_peSocio_inherits_peCliente" Association="ModelSIGEF.Store.FK_peSocio_inherits_peCliente">
+      <End Role="peCliente" EntitySet="peCliente" />
+      <End Role="peSocio" EntitySet="peCliente_peSocio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_coCredito_inherits_coSolicitudCredito" Association="ModelSIGEF.Store.FK_coCredito_inherits_coSolicitudCredito">
+      <End Role="coSolicitudCredito" EntitySet="coSolicitudCredito" />
+      <End Role="coCredito" EntitySet="coSolicitudCredito_coCredito" />
+    </AssociationSet>
+    <AssociationSet Name="FK_caTCertificado_inherits_caSolitudCaptacion" Association="ModelSIGEF.Store.FK_caTCertificado_inherits_caSolitudCaptacion">
+      <End Role="caSolitudCaptacion" EntitySet="caSolitudCaptacion" />
+      <End Role="caTCertificado" EntitySet="caSolitudCaptacion_caTCertificado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_caTCajaAhorro_inherits_caSolitudCaptacion" Association="ModelSIGEF.Store.FK_caTCajaAhorro_inherits_caSolitudCaptacion">
+      <End Role="caSolitudCaptacion" EntitySet="caSolitudCaptacion" />
+      <End Role="caTCajaAhorro" EntitySet="caSolitudCaptacion_caTCajaAhorro" />
+    </AssociationSet>
+    <AssociationSet Name="FK_caTDPF_inherits_caSolitudCaptacion" Association="ModelSIGEF.Store.FK_caTDPF_inherits_caSolitudCaptacion">
+      <End Role="caSolitudCaptacion" EntitySet="caSolitudCaptacion" />
+      <End Role="caTDPF" EntitySet="caSolitudCaptacion_caTDPF" />
+    </AssociationSet>
+    <AssociationSet Name="FK_caTTarjetaDebito_inherits_caSolitudCaptacion" Association="ModelSIGEF.Store.FK_caTTarjetaDebito_inherits_caSolitudCaptacion">
+      <End Role="caSolitudCaptacion" EntitySet="caSolitudCaptacion" />
+      <End Role="caTTarjetaDebito" EntitySet="caSolitudCaptacion_caTTarjetaDebito" />
+    </AssociationSet>
+    <AssociationSet Name="FK_coSolicitudRechazada_inherits_coSolicitudCredito" Association="ModelSIGEF.Store.FK_coSolicitudRechazada_inherits_coSolicitudCredito">
+      <End Role="coSolicitudCredito" EntitySet="coSolicitudCredito" />
+      <End Role="coSolicitudRechazada" EntitySet="coSolicitudCredito_coSolicitudRechazada" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="baUnidadFinanciera">
+    <Key>
+      <PropertyRef Name="iUnidadFinanciera_id" />
+    </Key>
+    <Property Name="iUnidadFinanciera_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sUnidadFinanciera_nm" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sUnidadFinanciera_NIT" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sUnidadFinanciera_dir" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sUnidadFinanciera_telf" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sUnidadFinanciera_desc" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="iUnidadFinanciera_cantSuc" Type="int" Nullable="false" />
+    <Property Name="iAdmin_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="baModulo">
+    <Key>
+      <PropertyRef Name="iModulo_id" />
+    </Key>
+    <Property Name="iModulo_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sModulo_nm" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sModulo_desc" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="baADM_USER">
+    <Key>
+      <PropertyRef Name="iADM_USER_id" />
+    </Key>
+    <Property Name="iADM_USER_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sADM_USER_login" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sADM_USER_pass" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="baAdmin">
+    <Key>
+      <PropertyRef Name="iAdmin_id" />
+    </Key>
+    <Property Name="iAdmin_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sAdmin_nm" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sAdmin_apell" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="iADM_USER_id" Type="int" Nullable="false" />
+    <Property Name="iAdmin_funcionfl" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="paSucursal">
+    <Key>
+      <PropertyRef Name="iSucursal_id" />
+    </Key>
+    <Property Name="iSucursal_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sSucursal_nm" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sSucursal_dir" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sSucursal_telf" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="iSucursal_cantCajas" Type="int" Nullable="false" />
+    <Property Name="iUnidadFinanciera_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="caPAC">
+    <Key>
+      <PropertyRef Name="iPAC_id" />
+    </Key>
+    <Property Name="iPAC_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="iPAC_num" Type="smallint" Nullable="false" />
+    <Property Name="iSucursal_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="caSolitudCaptacion">
+    <Key>
+      <PropertyRef Name="iSolitudCaptacion_id" />
+    </Key>
+    <Property Name="iSolitudCaptacion_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dtSolitudCaptacion_fecha" Type="datetime" Nullable="false" />
+    <Property Name="sSolitudCaptacion_desc" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="iPAC_id" Type="int" Nullable="false" />
+    <Property Name="iCliente_id" Type="int" Nullable="false" />
+    <Property Name="iSolicitudCaptacion_discriminador" Type="int" Nullable="false" />
+    <Property Name="iSolicitudCaptacion_estado" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mcCaja">
+    <Key>
+      <PropertyRef Name="iCaja_id" />
+    </Key>
+    <Property Name="iCaja_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="iSucursal_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mcTransaccion">
+    <Key>
+      <PropertyRef Name="iTransaccion_id" />
+    </Key>
+    <Property Name="iTransaccion_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="iCaja_id" Type="int" Nullable="true" />
+    <Property Name="iTipoTransaccion_fl" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="dtTransaccion_fecha" Type="datetime" Nullable="false" />
+    <Property Name="iMoneda_fl" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="dTransaccion_monto" Type="decimal" Nullable="false" />
+    <Property Name="iCliente_id" Type="int" Nullable="false" />
+    <Property Name="sTransaccion_desc" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="iATM_id" Type="int" Nullable="true" />
+    <Property Name="oaLibroATM_oaLibroATM_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mcLibroCaja">
+    <Key>
+      <PropertyRef Name="iLibroCaja_id" />
+    </Key>
+    <Property Name="iLibroCaja_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="iTransaccion_id" Type="int" Nullable="true" />
+    <Property Name="dtLibroCaja_fecha" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="iCaja_id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="dDebe_mn" Type="decimal" Nullable="false" />
+    <Property Name="dDebe_me" Type="decimal" Nullable="false" />
+    <Property Name="dHaber_mn" Type="decimal" Nullable="false" />
+    <Property Name="dHaber_me" Type="decimal" Nullable="false" />
+    <Property Name="dSaldo_mn" Type="decimal" Nullable="false" />
+    <Property Name="dSaldo_me" Type="decimal" Nullable="false" />
+    <Property Name="iSolicitudFondo_id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="mcConciliacionCaja">
+    <Key>
+      <PropertyRef Name="iConciliacionCaja_id" />
+    </Key>
+    <Property Name="iConciliacionCaja_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="iCaja_id" Type="int" Nullable="false" />
+    <Property Name="dtConciliacion_fecha" Type="datetime" Nullable="false" />
+    <Property Name="dDebe_nm" Type="decimal" Nullable="false" />
+    <Property Name="dDebe_me" Type="decimal" Nullable="false" />
+    <Property Name="dHaber_mn" Type="decimal" Nullable="false" />
+    <Property Name="dHaber_me" Type="decimal" Nullable="false" />
+    <Property Name="dSaldo_mn" Type="decimal" Nullable="false" />
+    <Property Name="dSaldo_me" Type="decimal" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mcDetalleCheque">
+    <Key>
+      <PropertyRef Name="iDetalleCheque_id" />
+    </Key>
+    <Property Name="iDetalleCheque_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sDetalleCheque_num" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sDetalleCheque_banco" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sDetalleCheque_nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="iTransaccion_id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="peCliente">
+    <Key>
+      <PropertyRef Name="iCliente_id" />
+    </Key>
+    <Property Name="iCliente_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sCliente_nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sCliente_apellido" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sCliente_ci" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sCliente_telf" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="iCliente_discriminador" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="peCAportacion">
+    <Key>
+      <PropertyRef Name="iCAportacion_id" />
+    </Key>
+    <Property Name="iCAportacion_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="iCliente_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="msFuncionario">
+    <Key>
+      <PropertyRef Name="iFuncionario_id" />
+    </Key>
+    <Property Name="iFuncionario_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sFuncionario_nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sFuncionario_apellido" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sFuncionario_ci" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="dtFuncionario_fechaContratacion" Type="datetime" Nullable="false" />
+    <Property Name="sFuncionario_email" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="msUsuario">
+    <Key>
+      <PropertyRef Name="iUsuario_id" />
+    </Key>
+    <Property Name="iUsuario_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sUsuario_username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sUsuario_password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="iFuncionario_id" Type="int" Nullable="false" />
+    <Property Name="iRol_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="msPassword">
+    <Key>
+      <PropertyRef Name="iPassword_id" />
+    </Key>
+    <Property Name="iPassword_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dtPassword_fechaCambio" Type="datetime" Nullable="false" />
+    <Property Name="sPassword_anterior" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="iUsuario_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="msRol">
+    <Key>
+      <PropertyRef Name="iRol_id" />
+    </Key>
+    <Property Name="iRol_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sRol_nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sRol_desc" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="msPrivilegio">
+    <Key>
+      <PropertyRef Name="iPrivilegio_id" />
+    </Key>
+    <Property Name="iPrivilegio_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sPrivilegio_nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sPrivilegio_desc" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="iCasoDeUso_fl" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="msBitacora">
+    <Key>
+      <PropertyRef Name="iBitadora_id" />
+    </Key>
+    <Property Name="iBitadora_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dtBitacora_fechaRegistro" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="iUsuario_id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sBitacora_desc" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sTablaModificada" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sOperacionRealizada" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="teSolicitudFondo">
+    <Key>
+      <PropertyRef Name="iSolicitudFondo_id" />
+    </Key>
+    <Property Name="iSolicitudFondo_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dtSolicitud_fecha" Type="datetime" Nullable="false" />
+    <Property Name="dSolicitud_monto" Type="decimal" Nullable="false" />
+    <Property Name="iMoneda_fl" Type="int" Nullable="false" />
+    <Property Name="iBoveda_id" Type="int" Nullable="false" />
+    <Property Name="iCaja_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="teBoveda">
+    <Key>
+      <PropertyRef Name="iBoveda_id" />
+    </Key>
+    <Property Name="iBoveda_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dBoveda_montoActualMN" Type="decimal" Nullable="false" />
+    <Property Name="dBoveda_montoActualME" Type="decimal" Nullable="false" />
+    <Property Name="dtBoveda_ultimaConciliacion" Type="datetime" Nullable="false" />
+    <Property Name="iSucursal_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="teLibroMayor">
+    <Key>
+      <PropertyRef Name="iLibroMayor_id" />
+    </Key>
+    <Property Name="iLibroMayor_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dtLibroMayor_fecha" Type="datetime" Nullable="false" />
+    <Property Name="iSolicitudFondo_id" Type="int" Nullable="false" />
+    <Property Name="Property1" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="teConciliacionLM">
+    <Key>
+      <PropertyRef Name="iConciliacionLM_id" />
+    </Key>
+    <Property Name="iConciliacionLM_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="iBoveda_id" Type="int" Nullable="false" />
+    <Property Name="dDebe_mn" Type="decimal" Nullable="false" />
+    <Property Name="dDebe_me" Type="decimal" Nullable="false" />
+    <Property Name="dHaber_mn" Type="decimal" Nullable="false" />
+    <Property Name="dHaber_me" Type="decimal" Nullable="false" />
+    <Property Name="dSaldo_mn" Type="decimal" Nullable="false" />
+    <Property Name="dSaldo_me" Type="decimal" Nullable="false" />
+    <Property Name="dtConciliacionLM_fecha" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="acCajaAhorro">
+    <Key>
+      <PropertyRef Name="iCajaAhorro_id" />
+    </Key>
+    <Property Name="iCajaAhorro_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sCajaAhorro_num" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="iTipoCaja_fl" Type="int" Nullable="false" />
+    <Property Name="iMoneda_fl" Type="int" Nullable="false" />
+    <Property Name="dCajaAhorro_saldo" Type="decimal" Nullable="false" />
+    <Property Name="dCajaAhorro_montoMaximoRetiro" Type="decimal" Nullable="false" />
+    <Property Name="iEstadoCajaAhorro_fl" Type="int" Nullable="false" />
+    <Property Name="iCliente_id" Type="int" Nullable="false" />
+    <Property Name="iTarjetaDebito_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="acTarjetaDebito">
+    <Key>
+      <PropertyRef Name="iTarjetaDebito_id" />
+    </Key>
+    <Property Name="iTarjetaDebito_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sTarjetaDebito_num" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sTarjetaDebito_cvc" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="iTarjetaDebito_PIN" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="iCliente_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="acDPF">
+    <Key>
+      <PropertyRef Name="iDPF_id" />
+    </Key>
+    <Property Name="iDPF_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dtDPF_fechaInicio" Type="datetime" Nullable="false" />
+    <Property Name="iDuracionDPF_fl" Type="int" Nullable="false" />
+    <Property Name="dtDPF_fechaCaducidad" Type="datetime" Nullable="false" />
+    <Property Name="dDPF_interes" Type="decimal" Nullable="false" />
+    <Property Name="dDPF_monto" Type="decimal" Nullable="false" />
+    <Property Name="iEstadoDPF_fl" Type="int" Nullable="false" />
+    <Property Name="iCliente_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="acDetalleCajaAhorro">
+    <Key>
+      <PropertyRef Name="iDetalleCajaAhorro_id" />
+    </Key>
+    <Property Name="iDetalleCajaAhorro_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="iCajaAhorro_id" Type="int" Nullable="false" />
+    <Property Name="dDebe_caja" Type="decimal" Nullable="false" />
+    <Property Name="dHaber_caja" Type="decimal" Nullable="false" />
+    <Property Name="dSaldo_caja" Type="decimal" Nullable="false" />
+    <Property Name="dtDetalle_fecha" Type="datetime" Nullable="false" />
+    <Property Name="iMoneda_fl" Type="int" Nullable="false" />
+    <Property Name="sDetalle_desc" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="iTransaccion_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="acDetalleDPF">
+    <Key>
+      <PropertyRef Name="iDetalleDPF_id" />
+    </Key>
+    <Property Name="iDetalleDPF_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="iDPF_id" Type="int" Nullable="false" />
+    <Property Name="iTipoTransaccionDPF" Type="int" Nullable="false" />
+    <Property Name="dDetalleDPF_monto" Type="decimal" Nullable="false" />
+    <Property Name="dtDetalleDPF_fecha" Type="datetime" Nullable="false" />
+    <Property Name="sDetalleDPF_desc" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="iTransaccion_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="acDetalleCredito">
+    <Key>
+      <PropertyRef Name="iDetalleCredito_id" />
+    </Key>
+    <Property Name="iDetalleCredito_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="iTransaccion_id" Type="int" Nullable="false" />
+    <Property Name="dDebe_nm" Type="decimal" Nullable="false" />
+    <Property Name="dDebe_me" Type="decimal" Nullable="false" />
+    <Property Name="dHaber_mn" Type="decimal" Nullable="false" />
+    <Property Name="dHaber_me" Type="decimal" Nullable="false" />
+    <Property Name="dSaldo_mn" Type="decimal" Nullable="false" />
+    <Property Name="dSaldo_me" Type="decimal" Nullable="false" />
+    <Property Name="dtDetalleCredito_fecha" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="coSolicitudCredito">
+    <Key>
+      <PropertyRef Name="iSolicitudCredito_id" />
+    </Key>
+    <Property Name="iSolicitudCredito_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dtSolicitudCredito_fecha" Type="datetime" Nullable="false" />
+    <Property Name="iTipoCredito_fl" Type="smallint" Nullable="false" />
+    <Property Name="dSolicitudCredito_monto" Type="decimal" Nullable="false" />
+    <Property Name="iMoneda_fl" Type="smallint" Nullable="false" />
+    <Property Name="iPlazoCredito_fl" Type="smallint" Nullable="false" />
+    <Property Name="dInteresAnual" Type="decimal" Nullable="false" />
+    <Property Name="iCliente_id" Type="int" Nullable="false" />
+    <Property Name="iUsuario_id" Type="int" Nullable="false" />
+    <Property Name="iSolicitudCredito_discriminador" Type="int" Nullable="true" />
+    <Property Name="iSolicitudCredito_estado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="coCouta">
+    <Key>
+      <PropertyRef Name="iCuota_id" />
+    </Key>
+    <Property Name="iCuota_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="iSolicitudCredito_id" Type="int" Nullable="false" />
+    <Property Name="dCuota_capital" Type="decimal" Nullable="false" />
+    <Property Name="dCuota_interes" Type="decimal" Nullable="false" />
+    <Property Name="sCuota_num" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sCuota_monto" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="iMoneda_fl" Type="smallint" Nullable="false" />
+    <Property Name="dtCuota_fecha" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="coRequisito">
+    <Key>
+      <PropertyRef Name="iRequisito_id" />
+    </Key>
+    <Property Name="iRequisito_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="iSolicitudCredito_id" Type="int" Nullable="false" />
+    <Property Name="sRequisito_desc" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sRequisito_estado" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="iRequisito_importancia" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="coCarteraVigente">
+    <Key>
+      <PropertyRef Name="iCarteraVigente_id" />
+    </Key>
+    <Property Name="iCarteraVigente_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="iSolicitudCredito_id" Type="int" Nullable="false" />
+    <Property Name="dtVigente_fechaLimite" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="coCarteraMora">
+    <Key>
+      <PropertyRef Name="iCarteraMora_id" />
+    </Key>
+    <Property Name="iCarteraMora_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="iSolicitudCredito_id" Type="int" Nullable="false" />
+    <Property Name="dtMora_fechaLimite" Type="datetime" Nullable="false" />
+    <Property Name="dtMora_fechaMora" Type="datetime" Nullable="false" />
+    <Property Name="iMora_cuotasAtrasadas" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="coCarteraEjecucion">
+    <Key>
+      <PropertyRef Name="iCarteraEjecucion_id" />
+    </Key>
+    <Property Name="iCarteraEjecucion_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="iSolicitudCredito_id" Type="int" Nullable="false" />
+    <Property Name="dtEjecucion_fecha" Type="decimal" Nullable="false" />
+    <Property Name="iEjecucion_notificacionNum" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="coHistoricoCredito">
+    <Key>
+      <PropertyRef Name="iHistoricoCredito_id" />
+    </Key>
+    <Property Name="iHistoricoCredito_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="iSolicitudCredito_id" Type="int" Nullable="false" />
+    <Property Name="dtHistoricoCredito_cierre" Type="datetime" Nullable="false" />
+    <Property Name="dtHistoricoCredito_ultimaCuota" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oaATM">
+    <Key>
+      <PropertyRef Name="iATM_id" />
+    </Key>
+    <Property Name="iATM_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sATM_fabrica" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sATM_dir" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="iATM_tipo" Type="smallint" Nullable="false" />
+    <Property Name="sATM_nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="dtATM_ultimaConciliacion" Type="datetime" Nullable="false" />
+    <Property Name="iATM_estado" Type="int" Nullable="false" />
+    <Property Name="dATM_saldoMN" Type="decimal" Nullable="false" />
+    <Property Name="dATM_saldoME" Type="decimal" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oaTarjetaRetenida">
+    <Key>
+      <PropertyRef Name="iTarjetaRetenida_id" />
+    </Key>
+    <Property Name="iTarjetaRetenida_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dtRetenida_fecha" Type="datetime" Nullable="false" />
+    <Property Name="sTarjetaDebito_num" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sRetenida_desc" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="iATM_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="oaLibroATM">
+    <Key>
+      <PropertyRef Name="oaLibroATM_id" />
+    </Key>
+    <Property Name="oaLibroATM_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dtLibroATM_fecha" Type="datetime" Nullable="false" />
+    <Property Name="dDebe_mn" Type="decimal" Nullable="false" />
+    <Property Name="dDebe_me" Type="decimal" Nullable="false" />
+    <Property Name="dHaber_mn" Type="decimal" Nullable="false" />
+    <Property Name="dHaber_me" Type="decimal" Nullable="false" />
+    <Property Name="dSaldo_mn" Type="decimal" Nullable="false" />
+    <Property Name="dSaldo_me" Type="decimal" Nullable="false" />
+    <Property Name="sLibroATM_desc" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="iAtm_id" Type="int" Nullable="false" />
+    <Property Name="iTransaccion_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="peCliente_peSocio">
+    <Key>
+      <PropertyRef Name="iCliente_id" />
+    </Key>
+    <Property Name="dtSocio_fechaAfiliacion" Type="datetime" Nullable="false" />
+    <Property Name="sSocio_negocio" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="sSocio_ingresos" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="iCliente_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="coSolicitudCredito_coCredito">
+    <Key>
+      <PropertyRef Name="iSolicitudCredito_id" />
+    </Key>
+    <Property Name="dtCredito_aprobacion" Type="datetime" Nullable="false" />
+    <Property Name="dtCredito_desembolso" Type="datetime" Nullable="false" />
+    <Property Name="iCredito_cuotas" Type="int" Nullable="false" />
+    <Property Name="dtCredito_vencimiento" Type="datetime" Nullable="false" />
+    <Property Name="iCredito_estado" Type="int" Nullable="false" />
+    <Property Name="iSolicitudCredito_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="caSolitudCaptacion_caTCertificado">
+    <Key>
+      <PropertyRef Name="iSolitudCaptacion_id" />
+    </Key>
+    <Property Name="iCajaAhorro_id" Type="int" Nullable="false" />
+    <Property Name="iSolitudCaptacion_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="caSolitudCaptacion_caTCajaAhorro">
+    <Key>
+      <PropertyRef Name="iSolitudCaptacion_id" />
+    </Key>
+    <Property Name="iMoneda_fl" Type="smallint" Nullable="false" />
+    <Property Name="iTipoCaja_fl" Type="smallint" Nullable="false" />
+    <Property Name="iSolitudCaptacion_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="caSolitudCaptacion_caTDPF">
+    <Key>
+      <PropertyRef Name="iSolitudCaptacion_id" />
+    </Key>
+    <Property Name="dTDPF_monto" Type="decimal" Nullable="false" />
+    <Property Name="dTDPF_interes" Type="decimal" Nullable="false" />
+    <Property Name="iMoneda_fl" Type="smallint" Nullable="false" />
+    <Property Name="iDuracion_fl" Type="smallint" Nullable="false" />
+    <Property Name="dtTDPF_fCaducidad" Type="datetime" Nullable="false" />
+    <Property Name="iSolitudCaptacion_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="caSolitudCaptacion_caTTarjetaDebito">
+    <Key>
+      <PropertyRef Name="iSolitudCaptacion_id" />
+    </Key>
+    <Property Name="iCajaAhorro_id" Type="int" Nullable="false" />
+    <Property Name="sTarjetaDebito_id" Type="int" Nullable="true" />
+    <Property Name="iSolitudCaptacion_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="coSolicitudCredito_coSolicitudRechazada">
+    <Key>
+      <PropertyRef Name="iSolicitudCredito_id" />
+    </Key>
+    <Property Name="sRechazado_desc" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="dtRechazado_fecha" Type="datetime" Nullable="false" />
+    <Property Name="iSolicitudCredito_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="baModulobaUnidadFinanciera">
+    <Key>
+      <PropertyRef Name="baModulo_iModulo_id" />
+      <PropertyRef Name="baUnidadFinanciera_iUnidadFinanciera_id" />
+    </Key>
+    <Property Name="baModulo_iModulo_id" Type="int" Nullable="false" />
+    <Property Name="baUnidadFinanciera_iUnidadFinanciera_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="msRolmsPrivilegio">
+    <Key>
+      <PropertyRef Name="msRol_iRol_id" />
+      <PropertyRef Name="msPrivilegio_iPrivilegio_id" />
+    </Key>
+    <Property Name="msRol_iRol_id" Type="int" Nullable="false" />
+    <Property Name="msPrivilegio_iPrivilegio_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="msUsuariomcCaja">
+    <Key>
+      <PropertyRef Name="msUsuario_iUsuario_id" />
+      <PropertyRef Name="mcCaja_iCaja_id" />
+    </Key>
+    <Property Name="msUsuario_iUsuario_id" Type="int" Nullable="false" />
+    <Property Name="mcCaja_iCaja_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="caPACmsUsuario">
+    <Key>
+      <PropertyRef Name="caPAC_iPAC_id" />
+      <PropertyRef Name="msUsuario_iUsuario_id" />
+    </Key>
+    <Property Name="caPAC_iPAC_id" Type="int" Nullable="false" />
+    <Property Name="msUsuario_iUsuario_id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="baADM_USERbaAdmin">
+    <End Role="baADM_USER" Type="ModelSIGEF.Store.baADM_USER" Multiplicity="1" />
+    <End Role="baAdmin" Type="ModelSIGEF.Store.baAdmin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="baADM_USER">
+        <PropertyRef Name="iADM_USER_id" />
+      </Principal>
+      <Dependent Role="baAdmin">
+        <PropertyRef Name="iADM_USER_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="baUnidadFinancierabaAdmin">
+    <End Role="baUnidadFinanciera" Type="ModelSIGEF.Store.baUnidadFinanciera" Multiplicity="*" />
+    <End Role="baAdmin" Type="ModelSIGEF.Store.baAdmin" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="baAdmin">
+        <PropertyRef Name="iAdmin_id" />
+      </Principal>
+      <Dependent Role="baUnidadFinanciera">
+        <PropertyRef Name="iAdmin_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="baUnidadFinancierapaSucursal">
+    <End Role="baUnidadFinanciera" Type="ModelSIGEF.Store.baUnidadFinanciera" Multiplicity="1" />
+    <End Role="paSucursal" Type="ModelSIGEF.Store.paSucursal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="baUnidadFinanciera">
+        <PropertyRef Name="iUnidadFinanciera_id" />
+      </Principal>
+      <Dependent Role="paSucursal">
+        <PropertyRef Name="iUnidadFinanciera_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="paSucursalcaPAC">
+    <End Role="paSucursal" Type="ModelSIGEF.Store.paSucursal" Multiplicity="1" />
+    <End Role="caPAC" Type="ModelSIGEF.Store.caPAC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="paSucursal">
+        <PropertyRef Name="iSucursal_id" />
+      </Principal>
+      <Dependent Role="caPAC">
+        <PropertyRef Name="iSucursal_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="caPACcaSolitudCaptacion">
+    <End Role="caPAC" Type="ModelSIGEF.Store.caPAC" Multiplicity="1" />
+    <End Role="caSolitudCaptacion" Type="ModelSIGEF.Store.caSolitudCaptacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="caPAC">
+        <PropertyRef Name="iPAC_id" />
+      </Principal>
+      <Dependent Role="caSolitudCaptacion">
+        <PropertyRef Name="iPAC_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="paSucursalmcCaja">
+    <End Role="paSucursal" Type="ModelSIGEF.Store.paSucursal" Multiplicity="1" />
+    <End Role="mcCaja" Type="ModelSIGEF.Store.mcCaja" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="paSucursal">
+        <PropertyRef Name="iSucursal_id" />
+      </Principal>
+      <Dependent Role="mcCaja">
+        <PropertyRef Name="iSucursal_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="mcCajamcTransaccion">
+    <End Role="mcCaja" Type="ModelSIGEF.Store.mcCaja" Multiplicity="0..1" />
+    <End Role="mcTransaccion" Type="ModelSIGEF.Store.mcTransaccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mcCaja">
+        <PropertyRef Name="iCaja_id" />
+      </Principal>
+      <Dependent Role="mcTransaccion">
+        <PropertyRef Name="iCaja_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="mcLibroCajamcTransaccion">
+    <End Role="mcLibroCaja" Type="ModelSIGEF.Store.mcLibroCaja" Multiplicity="*" />
+    <End Role="mcTransaccion" Type="ModelSIGEF.Store.mcTransaccion" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="mcTransaccion">
+        <PropertyRef Name="iTransaccion_id" />
+      </Principal>
+      <Dependent Role="mcLibroCaja">
+        <PropertyRef Name="iTransaccion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="mcConciliacionCajamcCaja">
+    <End Role="mcConciliacionCaja" Type="ModelSIGEF.Store.mcConciliacionCaja" Multiplicity="*" />
+    <End Role="mcCaja" Type="ModelSIGEF.Store.mcCaja" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="mcCaja">
+        <PropertyRef Name="iCaja_id" />
+      </Principal>
+      <Dependent Role="mcConciliacionCaja">
+        <PropertyRef Name="iCaja_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="mcTransaccionmcDetalleCheque">
+    <End Role="mcTransaccion" Type="ModelSIGEF.Store.mcTransaccion" Multiplicity="0..1" />
+    <End Role="mcDetalleCheque" Type="ModelSIGEF.Store.mcDetalleCheque" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mcTransaccion">
+        <PropertyRef Name="iTransaccion_id" />
+      </Principal>
+      <Dependent Role="mcDetalleCheque">
+        <PropertyRef Name="iTransaccion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="peSociopeCAportacion">
+    <End Role="peSocio" Type="ModelSIGEF.Store.peCliente_peSocio" Multiplicity="1" />
+    <End Role="peCAportacion" Type="ModelSIGEF.Store.peCAportacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="peSocio">
+        <PropertyRef Name="iCliente_id" />
+      </Principal>
+      <Dependent Role="peCAportacion">
+        <PropertyRef Name="iCliente_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="msUsuariomsFuncionario">
+    <End Role="msUsuario" Type="ModelSIGEF.Store.msUsuario" Multiplicity="*" />
+    <End Role="msFuncionario" Type="ModelSIGEF.Store.msFuncionario" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="msFuncionario">
+        <PropertyRef Name="iFuncionario_id" />
+      </Principal>
+      <Dependent Role="msUsuario">
+        <PropertyRef Name="iFuncionario_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="msUsuariomsPassword">
+    <End Role="msUsuario" Type="ModelSIGEF.Store.msUsuario" Multiplicity="1" />
+    <End Role="msPassword" Type="ModelSIGEF.Store.msPassword" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="msUsuario">
+        <PropertyRef Name="iUsuario_id" />
+      </Principal>
+      <Dependent Role="msPassword">
+        <PropertyRef Name="iUsuario_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="msRolmsUsuario">
+    <End Role="msRol" Type="ModelSIGEF.Store.msRol" Multiplicity="1" />
+    <End Role="msUsuario" Type="ModelSIGEF.Store.msUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="msRol">
+        <PropertyRef Name="iRol_id" />
+      </Principal>
+      <Dependent Role="msUsuario">
+        <PropertyRef Name="iRol_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="caSolitudCaptacionpeCliente">
+    <End Role="caSolitudCaptacion" Type="ModelSIGEF.Store.caSolitudCaptacion" Multiplicity="*" />
+    <End Role="peCliente" Type="ModelSIGEF.Store.peCliente" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="peCliente">
+        <PropertyRef Name="iCliente_id" />
+      </Principal>
+      <Dependent Role="caSolitudCaptacion">
+        <PropertyRef Name="iCliente_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="peClientemcTransaccion">
+    <End Role="peCliente" Type="ModelSIGEF.Store.peCliente" Multiplicity="1" />
+    <End Role="mcTransaccion" Type="ModelSIGEF.Store.mcTransaccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="peCliente">
+        <PropertyRef Name="iCliente_id" />
+      </Principal>
+      <Dependent Role="mcTransaccion">
+        <PropertyRef Name="iCliente_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="teBovedateSolicitudFondo">
+    <End Role="teBoveda" Type="ModelSIGEF.Store.teBoveda" Multiplicity="1" />
+    <End Role="teSolicitudFondo" Type="ModelSIGEF.Store.teSolicitudFondo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="teBoveda">
+        <PropertyRef Name="iBoveda_id" />
+      </Principal>
+      <Dependent Role="teSolicitudFondo">
+        <PropertyRef Name="iBoveda_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="teBovedateConciliacionLM">
+    <End Role="teBoveda" Type="ModelSIGEF.Store.teBoveda" Multiplicity="1" />
+    <End Role="teConciliacionLM" Type="ModelSIGEF.Store.teConciliacionLM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="teBoveda">
+        <PropertyRef Name="iBoveda_id" />
+      </Principal>
+      <Dependent Role="teConciliacionLM">
+        <PropertyRef Name="iBoveda_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="teLibroMayorteSolicitudFondo">
+    <End Role="teLibroMayor" Type="ModelSIGEF.Store.teLibroMayor" Multiplicity="*" />
+    <End Role="teSolicitudFondo" Type="ModelSIGEF.Store.teSolicitudFondo" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="teSolicitudFondo">
+        <PropertyRef Name="iSolicitudFondo_id" />
+      </Principal>
+      <Dependent Role="teLibroMayor">
+        <PropertyRef Name="iSolicitudFondo_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="teBovedapaSucursal">
+    <End Role="teBoveda" Type="ModelSIGEF.Store.teBoveda" Multiplicity="*" />
+    <End Role="paSucursal" Type="ModelSIGEF.Store.paSucursal" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="paSucursal">
+        <PropertyRef Name="iSucursal_id" />
+      </Principal>
+      <Dependent Role="teBoveda">
+        <PropertyRef Name="iSucursal_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="teSolicitudFondomcLibroCaja">
+    <End Role="teSolicitudFondo" Type="ModelSIGEF.Store.teSolicitudFondo" Multiplicity="0..1" />
+    <End Role="mcLibroCaja" Type="ModelSIGEF.Store.mcLibroCaja" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="teSolicitudFondo">
+        <PropertyRef Name="iSolicitudFondo_id" />
+      </Principal>
+      <Dependent Role="mcLibroCaja">
+        <PropertyRef Name="iSolicitudFondo_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="mcCajateSolicitudFondo">
+    <End Role="mcCaja" Type="ModelSIGEF.Store.mcCaja" Multiplicity="1" />
+    <End Role="teSolicitudFondo" Type="ModelSIGEF.Store.teSolicitudFondo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mcCaja">
+        <PropertyRef Name="iCaja_id" />
+      </Principal>
+      <Dependent Role="teSolicitudFondo">
+        <PropertyRef Name="iCaja_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="acCajaAhorropeCliente">
+    <End Role="acCajaAhorro" Type="ModelSIGEF.Store.acCajaAhorro" Multiplicity="*" />
+    <End Role="peCliente" Type="ModelSIGEF.Store.peCliente" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="peCliente">
+        <PropertyRef Name="iCliente_id" />
+      </Principal>
+      <Dependent Role="acCajaAhorro">
+        <PropertyRef Name="iCliente_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="acCajaAhorroacTarjetaDebito">
+    <End Role="acCajaAhorro" Type="ModelSIGEF.Store.acCajaAhorro" Multiplicity="*" />
+    <End Role="acTarjetaDebito" Type="ModelSIGEF.Store.acTarjetaDebito" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="acTarjetaDebito">
+        <PropertyRef Name="iTarjetaDebito_id" />
+      </Principal>
+      <Dependent Role="acCajaAhorro">
+        <PropertyRef Name="iTarjetaDebito_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="acCajaAhorroacDetalleCajaAhorro">
+    <End Role="acCajaAhorro" Type="ModelSIGEF.Store.acCajaAhorro" Multiplicity="1" />
+    <End Role="acDetalleCajaAhorro" Type="ModelSIGEF.Store.acDetalleCajaAhorro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="acCajaAhorro">
+        <PropertyRef Name="iCajaAhorro_id" />
+      </Principal>
+      <Dependent Role="acDetalleCajaAhorro">
+        <PropertyRef Name="iCajaAhorro_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="acDPFpeCliente">
+    <End Role="acDPF" Type="ModelSIGEF.Store.acDPF" Multiplicity="*" />
+    <End Role="peCliente" Type="ModelSIGEF.Store.peCliente" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="peCliente">
+        <PropertyRef Name="iCliente_id" />
+      </Principal>
+      <Dependent Role="acDPF">
+        <PropertyRef Name="iCliente_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="acDetalleDPFacDPF">
+    <End Role="acDetalleDPF" Type="ModelSIGEF.Store.acDetalleDPF" Multiplicity="*" />
+    <End Role="acDPF" Type="ModelSIGEF.Store.acDPF" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="acDPF">
+        <PropertyRef Name="iDPF_id" />
+      </Principal>
+      <Dependent Role="acDetalleDPF">
+        <PropertyRef Name="iDPF_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="acTarjetaDebitopeCliente">
+    <End Role="acTarjetaDebito" Type="ModelSIGEF.Store.acTarjetaDebito" Multiplicity="*" />
+    <End Role="peCliente" Type="ModelSIGEF.Store.peCliente" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="peCliente">
+        <PropertyRef Name="iCliente_id" />
+      </Principal>
+      <Dependent Role="acTarjetaDebito">
+        <PropertyRef Name="iCliente_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="mcTransaccionacDetalleCajaAhorro">
+    <End Role="mcTransaccion" Type="ModelSIGEF.Store.mcTransaccion" Multiplicity="1" />
+    <End Role="acDetalleCajaAhorro" Type="ModelSIGEF.Store.acDetalleCajaAhorro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mcTransaccion">
+        <PropertyRef Name="iTransaccion_id" />
+      </Principal>
+      <Dependent Role="acDetalleCajaAhorro">
+        <PropertyRef Name="iTransaccion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="acDetalleDPFmcTransaccion">
+    <End Role="acDetalleDPF" Type="ModelSIGEF.Store.acDetalleDPF" Multiplicity="*" />
+    <End Role="mcTransaccion" Type="ModelSIGEF.Store.mcTransaccion" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="mcTransaccion">
+        <PropertyRef Name="iTransaccion_id" />
+      </Principal>
+      <Dependent Role="acDetalleDPF">
+        <PropertyRef Name="iTransaccion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="acDetalleCreditomcTransaccion">
+    <End Role="acDetalleCredito" Type="ModelSIGEF.Store.acDetalleCredito" Multiplicity="*" />
+    <End Role="mcTransaccion" Type="ModelSIGEF.Store.mcTransaccion" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="mcTransaccion">
+        <PropertyRef Name="iTransaccion_id" />
+      </Principal>
+      <Dependent Role="acDetalleCredito">
+        <PropertyRef Name="iTransaccion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="coSolicitudCreditopeSocio">
+    <End Role="coSolicitudCredito" Type="ModelSIGEF.Store.coSolicitudCredito" Multiplicity="*" />
+    <End Role="peSocio" Type="ModelSIGEF.Store.peCliente_peSocio" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="peSocio">
+        <PropertyRef Name="iCliente_id" />
+      </Principal>
+      <Dependent Role="coSolicitudCredito">
+        <PropertyRef Name="iCliente_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="msUsuariocoSolicitudCredito">
+    <End Role="msUsuario" Type="ModelSIGEF.Store.msUsuario" Multiplicity="1" />
+    <End Role="coSolicitudCredito" Type="ModelSIGEF.Store.coSolicitudCredito" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="msUsuario">
+        <PropertyRef Name="iUsuario_id" />
+      </Principal>
+      <Dependent Role="coSolicitudCredito">
+        <PropertyRef Name="iUsuario_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="coSolicitudCreditocoRequisito">
+    <End Role="coSolicitudCredito" Type="ModelSIGEF.Store.coSolicitudCredito" Multiplicity="1" />
+    <End Role="coRequisito" Type="ModelSIGEF.Store.coRequisito" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="coSolicitudCredito">
+        <PropertyRef Name="iSolicitudCredito_id" />
+      </Principal>
+      <Dependent Role="coRequisito">
+        <PropertyRef Name="iSolicitudCredito_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="coCreditocoCouta">
+    <End Role="coCredito" Type="ModelSIGEF.Store.coSolicitudCredito_coCredito" Multiplicity="1" />
+    <End Role="coCouta" Type="ModelSIGEF.Store.coCouta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="coCredito">
+        <PropertyRef Name="iSolicitudCredito_id" />
+      </Principal>
+      <Dependent Role="coCouta">
+        <PropertyRef Name="iSolicitudCredito_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="coCreditocoCarteraVigente">
+    <End Role="coCredito" Type="ModelSIGEF.Store.coSolicitudCredito_coCredito" Multiplicity="1" />
+    <End Role="coCarteraVigente" Type="ModelSIGEF.Store.coCarteraVigente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="coCredito">
+        <PropertyRef Name="iSolicitudCredito_id" />
+      </Principal>
+      <Dependent Role="coCarteraVigente">
+        <PropertyRef Name="iSolicitudCredito_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="coCreditocoCarteraMora">
+    <End Role="coCredito" Type="ModelSIGEF.Store.coSolicitudCredito_coCredito" Multiplicity="1" />
+    <End Role="coCarteraMora" Type="ModelSIGEF.Store.coCarteraMora" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="coCredito">
+        <PropertyRef Name="iSolicitudCredito_id" />
+      </Principal>
+      <Dependent Role="coCarteraMora">
+        <PropertyRef Name="iSolicitudCredito_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="coCreditocoCarteraEjecucion">
+    <End Role="coCredito" Type="ModelSIGEF.Store.coSolicitudCredito_coCredito" Multiplicity="1" />
+    <End Role="coCarteraEjecucion" Type="ModelSIGEF.Store.coCarteraEjecucion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="coCredito">
+        <PropertyRef Name="iSolicitudCredito_id" />
+      </Principal>
+      <Dependent Role="coCarteraEjecucion">
+        <PropertyRef Name="iSolicitudCredito_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="coCreditocoHistoricoCredito">
+    <End Role="coCredito" Type="ModelSIGEF.Store.coSolicitudCredito_coCredito" Multiplicity="1" />
+    <End Role="coHistoricoCredito" Type="ModelSIGEF.Store.coHistoricoCredito" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="coCredito">
+        <PropertyRef Name="iSolicitudCredito_id" />
+      </Principal>
+      <Dependent Role="coHistoricoCredito">
+        <PropertyRef Name="iSolicitudCredito_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="oaATMmcTransaccion">
+    <End Role="oaATM" Type="ModelSIGEF.Store.oaATM" Multiplicity="0..1" />
+    <End Role="mcTransaccion" Type="ModelSIGEF.Store.mcTransaccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="oaATM">
+        <PropertyRef Name="iATM_id" />
+      </Principal>
+      <Dependent Role="mcTransaccion">
+        <PropertyRef Name="iATM_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="oaLibroATMmcTransaccion">
+    <End Role="oaLibroATM" Type="ModelSIGEF.Store.oaLibroATM" Multiplicity="*" />
+    <End Role="mcTransaccion" Type="ModelSIGEF.Store.mcTransaccion" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="mcTransaccion">
+        <PropertyRef Name="iTransaccion_id" />
+      </Principal>
+      <Dependent Role="oaLibroATM">
+        <PropertyRef Name="iTransaccion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="oaATMoaTarjetaRetenida">
+    <End Role="oaATM" Type="ModelSIGEF.Store.oaATM" Multiplicity="1" />
+    <End Role="oaTarjetaRetenida" Type="ModelSIGEF.Store.oaTarjetaRetenida" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="oaATM">
+        <PropertyRef Name="iATM_id" />
+      </Principal>
+      <Dependent Role="oaTarjetaRetenida">
+        <PropertyRef Name="iATM_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_baModulobaUnidadFinanciera_baModulo">
+    <End Role="baModulo" Type="ModelSIGEF.Store.baModulo" Multiplicity="1" />
+    <End Role="baModulobaUnidadFinanciera" Type="ModelSIGEF.Store.baModulobaUnidadFinanciera" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="baModulo">
+        <PropertyRef Name="iModulo_id" />
+      </Principal>
+      <Dependent Role="baModulobaUnidadFinanciera">
+        <PropertyRef Name="baModulo_iModulo_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_baModulobaUnidadFinanciera_baUnidadFinanciera">
+    <End Role="baModulobaUnidadFinanciera" Type="ModelSIGEF.Store.baModulobaUnidadFinanciera" Multiplicity="*" />
+    <End Role="baUnidadFinanciera" Type="ModelSIGEF.Store.baUnidadFinanciera" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="baUnidadFinanciera">
+        <PropertyRef Name="iUnidadFinanciera_id" />
+      </Principal>
+      <Dependent Role="baModulobaUnidadFinanciera">
+        <PropertyRef Name="baUnidadFinanciera_iUnidadFinanciera_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_msRolmsPrivilegio_msRol">
+    <End Role="msRol" Type="ModelSIGEF.Store.msRol" Multiplicity="1" />
+    <End Role="msRolmsPrivilegio" Type="ModelSIGEF.Store.msRolmsPrivilegio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="msRol">
+        <PropertyRef Name="iRol_id" />
+      </Principal>
+      <Dependent Role="msRolmsPrivilegio">
+        <PropertyRef Name="msRol_iRol_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_msRolmsPrivilegio_msPrivilegio">
+    <End Role="msRolmsPrivilegio" Type="ModelSIGEF.Store.msRolmsPrivilegio" Multiplicity="*" />
+    <End Role="msPrivilegio" Type="ModelSIGEF.Store.msPrivilegio" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="msPrivilegio">
+        <PropertyRef Name="iPrivilegio_id" />
+      </Principal>
+      <Dependent Role="msRolmsPrivilegio">
+        <PropertyRef Name="msPrivilegio_iPrivilegio_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_msUsuariomcCaja_msUsuario">
+    <End Role="msUsuario" Type="ModelSIGEF.Store.msUsuario" Multiplicity="1" />
+    <End Role="msUsuariomcCaja" Type="ModelSIGEF.Store.msUsuariomcCaja" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="msUsuario">
+        <PropertyRef Name="iUsuario_id" />
+      </Principal>
+      <Dependent Role="msUsuariomcCaja">
+        <PropertyRef Name="msUsuario_iUsuario_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_msUsuariomcCaja_mcCaja">
+    <End Role="msUsuariomcCaja" Type="ModelSIGEF.Store.msUsuariomcCaja" Multiplicity="*" />
+    <End Role="mcCaja" Type="ModelSIGEF.Store.mcCaja" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="mcCaja">
+        <PropertyRef Name="iCaja_id" />
+      </Principal>
+      <Dependent Role="msUsuariomcCaja">
+        <PropertyRef Name="mcCaja_iCaja_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_caPACmsUsuario_caPAC">
+    <End Role="caPAC" Type="ModelSIGEF.Store.caPAC" Multiplicity="1" />
+    <End Role="caPACmsUsuario" Type="ModelSIGEF.Store.caPACmsUsuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="caPAC">
+        <PropertyRef Name="iPAC_id" />
+      </Principal>
+      <Dependent Role="caPACmsUsuario">
+        <PropertyRef Name="caPAC_iPAC_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_caPACmsUsuario_msUsuario">
+    <End Role="caPACmsUsuario" Type="ModelSIGEF.Store.caPACmsUsuario" Multiplicity="*" />
+    <End Role="msUsuario" Type="ModelSIGEF.Store.msUsuario" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="msUsuario">
+        <PropertyRef Name="iUsuario_id" />
+      </Principal>
+      <Dependent Role="caPACmsUsuario">
+        <PropertyRef Name="msUsuario_iUsuario_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_peSocio_inherits_peCliente">
+    <End Role="peCliente" Type="ModelSIGEF.Store.peCliente" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="peSocio" Type="ModelSIGEF.Store.peCliente_peSocio" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="peCliente">
+        <PropertyRef Name="iCliente_id" />
+      </Principal>
+      <Dependent Role="peSocio">
+        <PropertyRef Name="iCliente_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_coCredito_inherits_coSolicitudCredito">
+    <End Role="coSolicitudCredito" Type="ModelSIGEF.Store.coSolicitudCredito" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="coCredito" Type="ModelSIGEF.Store.coSolicitudCredito_coCredito" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="coSolicitudCredito">
+        <PropertyRef Name="iSolicitudCredito_id" />
+      </Principal>
+      <Dependent Role="coCredito">
+        <PropertyRef Name="iSolicitudCredito_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_caTCertificado_inherits_caSolitudCaptacion">
+    <End Role="caSolitudCaptacion" Type="ModelSIGEF.Store.caSolitudCaptacion" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="caTCertificado" Type="ModelSIGEF.Store.caSolitudCaptacion_caTCertificado" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="caSolitudCaptacion">
+        <PropertyRef Name="iSolitudCaptacion_id" />
+      </Principal>
+      <Dependent Role="caTCertificado">
+        <PropertyRef Name="iSolitudCaptacion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_caTCajaAhorro_inherits_caSolitudCaptacion">
+    <End Role="caSolitudCaptacion" Type="ModelSIGEF.Store.caSolitudCaptacion" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="caTCajaAhorro" Type="ModelSIGEF.Store.caSolitudCaptacion_caTCajaAhorro" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="caSolitudCaptacion">
+        <PropertyRef Name="iSolitudCaptacion_id" />
+      </Principal>
+      <Dependent Role="caTCajaAhorro">
+        <PropertyRef Name="iSolitudCaptacion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_caTDPF_inherits_caSolitudCaptacion">
+    <End Role="caSolitudCaptacion" Type="ModelSIGEF.Store.caSolitudCaptacion" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="caTDPF" Type="ModelSIGEF.Store.caSolitudCaptacion_caTDPF" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="caSolitudCaptacion">
+        <PropertyRef Name="iSolitudCaptacion_id" />
+      </Principal>
+      <Dependent Role="caTDPF">
+        <PropertyRef Name="iSolitudCaptacion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_caTTarjetaDebito_inherits_caSolitudCaptacion">
+    <End Role="caSolitudCaptacion" Type="ModelSIGEF.Store.caSolitudCaptacion" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="caTTarjetaDebito" Type="ModelSIGEF.Store.caSolitudCaptacion_caTTarjetaDebito" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="caSolitudCaptacion">
+        <PropertyRef Name="iSolitudCaptacion_id" />
+      </Principal>
+      <Dependent Role="caTTarjetaDebito">
+        <PropertyRef Name="iSolitudCaptacion_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_coSolicitudRechazada_inherits_coSolicitudCredito">
+    <End Role="coSolicitudCredito" Type="ModelSIGEF.Store.coSolicitudCredito" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="coSolicitudRechazada" Type="ModelSIGEF.Store.coSolicitudCredito_coSolicitudRechazada" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="coSolicitudCredito">
+        <PropertyRef Name="iSolicitudCredito_id" />
+      </Principal>
+      <Dependent Role="coSolicitudRechazada">
+        <PropertyRef Name="iSolicitudCredito_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ModelSIGEF" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
@@ -295,16 +1809,11 @@
           <Property Name="iAdmin_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="sAdmin_nm" Type="String" Nullable="false" />
           <Property Name="sAdmin_apell" Type="String" Nullable="false" />
-          <Property Name="iAdmin_funcionEnum" Type="ModelSIGEF.FuncionesAdm" Nullable="false" />
           <NavigationProperty Name="baADM_USER" Relationship="ModelSIGEF.baADM_USERbaAdmin" FromRole="baAdmin" ToRole="baADM_USER" />
           <Property Name="iADM_USER_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="baUnidadFinanciera" Relationship="ModelSIGEF.baUnidadFinancierabaAdmin" FromRole="baAdmin" ToRole="baUnidadFinanciera" />
+          <Property Name="iAdmin_funcionfl" Type="String" Nullable="false" />
         </EntityType>
-        <EnumType Name="FuncionesAdm">
-          <Member Name="Desarrollador" Value="1" />
-          <Member Name="Disenador" Value="2" />
-          <Member Name="JefeDesarrollador" Value="3" />
-        </EnumType>
         <Association Name="baModulobaUnidadFinanciera">
           <End Type="ModelSIGEF.baModulo" Role="baModulo" Multiplicity="*" />
           <End Type="ModelSIGEF.baUnidadFinanciera" Role="baUnidadFinanciera" Multiplicity="*" />
@@ -394,19 +1903,13 @@
           <Property Name="iSolitudCaptacion_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="dtSolitudCaptacion_fecha" Type="DateTime" Nullable="false" />
           <Property Name="sSolitudCaptacion_desc" Type="String" Nullable="false" />
-          <Property Name="iSolitudCaptacion_estado" Type="ModelSIGEF.caEstadoSolicitudCaptacion" Nullable="false" />
           <NavigationProperty Name="caPAC" Relationship="ModelSIGEF.caPACcaSolitudCaptacion" FromRole="caSolitudCaptacion" ToRole="caPAC" />
           <Property Name="iPAC_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="peCliente" Relationship="ModelSIGEF.caSolitudCaptacionpeCliente" FromRole="caSolitudCaptacion" ToRole="peCliente" />
           <Property Name="iCliente_id" Type="Int32" Nullable="false" />
           <Property Name="iSolicitudCaptacion_discriminador" Type="Int32" Nullable="false" />
+          <Property Name="iSolicitudCaptacion_estado" Type="Int16" Nullable="false" />
         </EntityType>
-        <EnumType Name="caEstadoSolicitudCaptacion" UnderlyingType="Int16">
-          <Member Name="Atendiendo" Value="1" />
-          <Member Name="Espera" Value="2" />
-          <Member Name="EnProceso" Value="3" />
-          <Member Name="Finalizado" Value="4" />
-        </EnumType>
         <EntityType Name="caTCertificado" BaseType="ModelSIGEF.caSolitudCaptacion" >
           <Property Name="iCajaAhorro_id" Type="Int32" Nullable="false" >
             <Documentation>
@@ -1371,13 +2874,581 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
-        <Alias Key="Model" Value="ModelSIGEF" />
-        <Alias Key="Target" Value="ModelSIGEF.Store" />
-        <EntityContainerMapping CdmEntityContainer="ModelSIGEFContainer" StorageEntityContainer="ModelSIGEFTargetContainer">
-        </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelSIGEFStoreContainer" CdmEntityContainer="ModelSIGEFContainer">
+    <EntitySetMapping Name="baUnidadFinanciera">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.baUnidadFinanciera)">
+        <MappingFragment StoreEntitySet="baUnidadFinanciera">
+          <ScalarProperty Name="iUnidadFinanciera_id" ColumnName="iUnidadFinanciera_id" />
+          <ScalarProperty Name="sUnidadFinanciera_nm" ColumnName="sUnidadFinanciera_nm" />
+          <ScalarProperty Name="sUnidadFinanciera_NIT" ColumnName="sUnidadFinanciera_NIT" />
+          <ScalarProperty Name="sUnidadFinanciera_dir" ColumnName="sUnidadFinanciera_dir" />
+          <ScalarProperty Name="sUnidadFinanciera_telf" ColumnName="sUnidadFinanciera_telf" />
+          <ScalarProperty Name="sUnidadFinanciera_desc" ColumnName="sUnidadFinanciera_desc" />
+          <ScalarProperty Name="iUnidadFinanciera_cantSuc" ColumnName="iUnidadFinanciera_cantSuc" />
+          <ScalarProperty Name="iAdmin_id" ColumnName="iAdmin_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="baModulo">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.baModulo)">
+        <MappingFragment StoreEntitySet="baModulo">
+          <ScalarProperty Name="iModulo_id" ColumnName="iModulo_id" />
+          <ScalarProperty Name="sModulo_nm" ColumnName="sModulo_nm" />
+          <ScalarProperty Name="sModulo_desc" ColumnName="sModulo_desc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="baADM_USER">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.baADM_USER)">
+        <MappingFragment StoreEntitySet="baADM_USER">
+          <ScalarProperty Name="iADM_USER_id" ColumnName="iADM_USER_id" />
+          <ScalarProperty Name="sADM_USER_login" ColumnName="sADM_USER_login" />
+          <ScalarProperty Name="sADM_USER_pass" ColumnName="sADM_USER_pass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="baAdmin">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.baAdmin)">
+        <MappingFragment StoreEntitySet="baAdmin">
+          <ScalarProperty Name="iAdmin_id" ColumnName="iAdmin_id" />
+          <ScalarProperty Name="sAdmin_nm" ColumnName="sAdmin_nm" />
+          <ScalarProperty Name="sAdmin_apell" ColumnName="sAdmin_apell" />
+          <ScalarProperty Name="iADM_USER_id" ColumnName="iADM_USER_id" />
+          <ScalarProperty Name="iAdmin_funcionfl" ColumnName="iAdmin_funcionfl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="paSucursal">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.paSucursal)">
+        <MappingFragment StoreEntitySet="paSucursal">
+          <ScalarProperty Name="iSucursal_id" ColumnName="iSucursal_id" />
+          <ScalarProperty Name="sSucursal_nm" ColumnName="sSucursal_nm" />
+          <ScalarProperty Name="sSucursal_dir" ColumnName="sSucursal_dir" />
+          <ScalarProperty Name="sSucursal_telf" ColumnName="sSucursal_telf" />
+          <ScalarProperty Name="iSucursal_cantCajas" ColumnName="iSucursal_cantCajas" />
+          <ScalarProperty Name="iUnidadFinanciera_id" ColumnName="iUnidadFinanciera_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="caPAC">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.caPAC)">
+        <MappingFragment StoreEntitySet="caPAC">
+          <ScalarProperty Name="iPAC_id" ColumnName="iPAC_id" />
+          <ScalarProperty Name="iPAC_num" ColumnName="iPAC_num" />
+          <ScalarProperty Name="iSucursal_id" ColumnName="iSucursal_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="caSolitudCaptacion">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.caSolitudCaptacion)">
+        <MappingFragment StoreEntitySet="caSolitudCaptacion">
+          <ScalarProperty Name="iSolitudCaptacion_id" ColumnName="iSolitudCaptacion_id" />
+          <ScalarProperty Name="dtSolitudCaptacion_fecha" ColumnName="dtSolitudCaptacion_fecha" />
+          <ScalarProperty Name="sSolitudCaptacion_desc" ColumnName="sSolitudCaptacion_desc" />
+          <ScalarProperty Name="iPAC_id" ColumnName="iPAC_id" />
+          <ScalarProperty Name="iCliente_id" ColumnName="iCliente_id" />
+          <ScalarProperty Name="iSolicitudCaptacion_discriminador" ColumnName="iSolicitudCaptacion_discriminador" />
+          <ScalarProperty Name="iSolicitudCaptacion_estado" ColumnName="iSolicitudCaptacion_estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.caTCertificado)">
+        <MappingFragment StoreEntitySet="caSolitudCaptacion_caTCertificado">
+          <ScalarProperty Name="iSolitudCaptacion_id" ColumnName="iSolitudCaptacion_id" />
+          <ScalarProperty Name="iCajaAhorro_id" ColumnName="iCajaAhorro_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.caTCajaAhorro)">
+        <MappingFragment StoreEntitySet="caSolitudCaptacion_caTCajaAhorro">
+          <ScalarProperty Name="iSolitudCaptacion_id" ColumnName="iSolitudCaptacion_id" />
+          <ScalarProperty Name="iMoneda_fl" ColumnName="iMoneda_fl" />
+          <ScalarProperty Name="iTipoCaja_fl" ColumnName="iTipoCaja_fl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.caTDPF)">
+        <MappingFragment StoreEntitySet="caSolitudCaptacion_caTDPF">
+          <ScalarProperty Name="iSolitudCaptacion_id" ColumnName="iSolitudCaptacion_id" />
+          <ScalarProperty Name="dTDPF_monto" ColumnName="dTDPF_monto" />
+          <ScalarProperty Name="dTDPF_interes" ColumnName="dTDPF_interes" />
+          <ScalarProperty Name="iMoneda_fl" ColumnName="iMoneda_fl" />
+          <ScalarProperty Name="iDuracion_fl" ColumnName="iDuracion_fl" />
+          <ScalarProperty Name="dtTDPF_fCaducidad" ColumnName="dtTDPF_fCaducidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.caTTarjetaDebito)">
+        <MappingFragment StoreEntitySet="caSolitudCaptacion_caTTarjetaDebito">
+          <ScalarProperty Name="iSolitudCaptacion_id" ColumnName="iSolitudCaptacion_id" />
+          <ScalarProperty Name="iCajaAhorro_id" ColumnName="iCajaAhorro_id" />
+          <ScalarProperty Name="sTarjetaDebito_id" ColumnName="sTarjetaDebito_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mcCaja">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.mcCaja)">
+        <MappingFragment StoreEntitySet="mcCaja">
+          <ScalarProperty Name="iCaja_id" ColumnName="iCaja_id" />
+          <ScalarProperty Name="iSucursal_id" ColumnName="iSucursal_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mcTransaccion">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.mcTransaccion)">
+        <MappingFragment StoreEntitySet="mcTransaccion">
+          <ScalarProperty Name="iTransaccion_id" ColumnName="iTransaccion_id" />
+          <ScalarProperty Name="iCaja_id" ColumnName="iCaja_id" />
+          <ScalarProperty Name="iTipoTransaccion_fl" ColumnName="iTipoTransaccion_fl" />
+          <ScalarProperty Name="dtTransaccion_fecha" ColumnName="dtTransaccion_fecha" />
+          <ScalarProperty Name="iMoneda_fl" ColumnName="iMoneda_fl" />
+          <ScalarProperty Name="dTransaccion_monto" ColumnName="dTransaccion_monto" />
+          <ScalarProperty Name="iCliente_id" ColumnName="iCliente_id" />
+          <ScalarProperty Name="sTransaccion_desc" ColumnName="sTransaccion_desc" />
+          <ScalarProperty Name="iATM_id" ColumnName="iATM_id" />
+          <ScalarProperty Name="oaLibroATM_oaLibroATM_id" ColumnName="oaLibroATM_oaLibroATM_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mcLibroCaja">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.mcLibroCaja)">
+        <MappingFragment StoreEntitySet="mcLibroCaja">
+          <ScalarProperty Name="iLibroCaja_id" ColumnName="iLibroCaja_id" />
+          <ScalarProperty Name="iTransaccion_id" ColumnName="iTransaccion_id" />
+          <ScalarProperty Name="dtLibroCaja_fecha" ColumnName="dtLibroCaja_fecha" />
+          <ScalarProperty Name="iCaja_id" ColumnName="iCaja_id" />
+          <ScalarProperty Name="dDebe_mn" ColumnName="dDebe_mn" />
+          <ScalarProperty Name="dDebe_me" ColumnName="dDebe_me" />
+          <ScalarProperty Name="dHaber_mn" ColumnName="dHaber_mn" />
+          <ScalarProperty Name="dHaber_me" ColumnName="dHaber_me" />
+          <ScalarProperty Name="dSaldo_mn" ColumnName="dSaldo_mn" />
+          <ScalarProperty Name="dSaldo_me" ColumnName="dSaldo_me" />
+          <ScalarProperty Name="iSolicitudFondo_id" ColumnName="iSolicitudFondo_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mcConciliacionCaja">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.mcConciliacionCaja)">
+        <MappingFragment StoreEntitySet="mcConciliacionCaja">
+          <ScalarProperty Name="iConciliacionCaja_id" ColumnName="iConciliacionCaja_id" />
+          <ScalarProperty Name="iCaja_id" ColumnName="iCaja_id" />
+          <ScalarProperty Name="dtConciliacion_fecha" ColumnName="dtConciliacion_fecha" />
+          <ScalarProperty Name="dDebe_nm" ColumnName="dDebe_nm" />
+          <ScalarProperty Name="dDebe_me" ColumnName="dDebe_me" />
+          <ScalarProperty Name="dHaber_mn" ColumnName="dHaber_mn" />
+          <ScalarProperty Name="dHaber_me" ColumnName="dHaber_me" />
+          <ScalarProperty Name="dSaldo_mn" ColumnName="dSaldo_mn" />
+          <ScalarProperty Name="dSaldo_me" ColumnName="dSaldo_me" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mcDetalleCheque">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.mcDetalleCheque)">
+        <MappingFragment StoreEntitySet="mcDetalleCheque">
+          <ScalarProperty Name="iDetalleCheque_id" ColumnName="iDetalleCheque_id" />
+          <ScalarProperty Name="sDetalleCheque_num" ColumnName="sDetalleCheque_num" />
+          <ScalarProperty Name="sDetalleCheque_banco" ColumnName="sDetalleCheque_banco" />
+          <ScalarProperty Name="sDetalleCheque_nombre" ColumnName="sDetalleCheque_nombre" />
+          <ScalarProperty Name="iTransaccion_id" ColumnName="iTransaccion_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="peCliente">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.peCliente)">
+        <MappingFragment StoreEntitySet="peCliente">
+          <ScalarProperty Name="iCliente_id" ColumnName="iCliente_id" />
+          <ScalarProperty Name="sCliente_nombre" ColumnName="sCliente_nombre" />
+          <ScalarProperty Name="sCliente_apellido" ColumnName="sCliente_apellido" />
+          <ScalarProperty Name="sCliente_ci" ColumnName="sCliente_ci" />
+          <ScalarProperty Name="sCliente_telf" ColumnName="sCliente_telf" />
+          <ScalarProperty Name="iCliente_discriminador" ColumnName="iCliente_discriminador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.peSocio)">
+        <MappingFragment StoreEntitySet="peCliente_peSocio">
+          <ScalarProperty Name="iCliente_id" ColumnName="iCliente_id" />
+          <ScalarProperty Name="dtSocio_fechaAfiliacion" ColumnName="dtSocio_fechaAfiliacion" />
+          <ScalarProperty Name="sSocio_negocio" ColumnName="sSocio_negocio" />
+          <ScalarProperty Name="sSocio_ingresos" ColumnName="sSocio_ingresos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="peCAportacion">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.peCAportacion)">
+        <MappingFragment StoreEntitySet="peCAportacion">
+          <ScalarProperty Name="iCAportacion_id" ColumnName="iCAportacion_id" />
+          <ScalarProperty Name="iCliente_id" ColumnName="iCliente_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="msFuncionario">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.msFuncionario)">
+        <MappingFragment StoreEntitySet="msFuncionario">
+          <ScalarProperty Name="iFuncionario_id" ColumnName="iFuncionario_id" />
+          <ScalarProperty Name="sFuncionario_nombre" ColumnName="sFuncionario_nombre" />
+          <ScalarProperty Name="sFuncionario_apellido" ColumnName="sFuncionario_apellido" />
+          <ScalarProperty Name="sFuncionario_ci" ColumnName="sFuncionario_ci" />
+          <ScalarProperty Name="dtFuncionario_fechaContratacion" ColumnName="dtFuncionario_fechaContratacion" />
+          <ScalarProperty Name="sFuncionario_email" ColumnName="sFuncionario_email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="msUsuario">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.msUsuario)">
+        <MappingFragment StoreEntitySet="msUsuario">
+          <ScalarProperty Name="iUsuario_id" ColumnName="iUsuario_id" />
+          <ScalarProperty Name="sUsuario_username" ColumnName="sUsuario_username" />
+          <ScalarProperty Name="sUsuario_password" ColumnName="sUsuario_password" />
+          <ScalarProperty Name="iFuncionario_id" ColumnName="iFuncionario_id" />
+          <ScalarProperty Name="iRol_id" ColumnName="iRol_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="msPassword">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.msPassword)">
+        <MappingFragment StoreEntitySet="msPassword">
+          <ScalarProperty Name="iPassword_id" ColumnName="iPassword_id" />
+          <ScalarProperty Name="dtPassword_fechaCambio" ColumnName="dtPassword_fechaCambio" />
+          <ScalarProperty Name="sPassword_anterior" ColumnName="sPassword_anterior" />
+          <ScalarProperty Name="iUsuario_id" ColumnName="iUsuario_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="msRol">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.msRol)">
+        <MappingFragment StoreEntitySet="msRol">
+          <ScalarProperty Name="iRol_id" ColumnName="iRol_id" />
+          <ScalarProperty Name="sRol_nombre" ColumnName="sRol_nombre" />
+          <ScalarProperty Name="sRol_desc" ColumnName="sRol_desc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="msPrivilegio">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.msPrivilegio)">
+        <MappingFragment StoreEntitySet="msPrivilegio">
+          <ScalarProperty Name="iPrivilegio_id" ColumnName="iPrivilegio_id" />
+          <ScalarProperty Name="sPrivilegio_nombre" ColumnName="sPrivilegio_nombre" />
+          <ScalarProperty Name="sPrivilegio_desc" ColumnName="sPrivilegio_desc" />
+          <ScalarProperty Name="iCasoDeUso_fl" ColumnName="iCasoDeUso_fl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="msBitacora">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.msBitacora)">
+        <MappingFragment StoreEntitySet="msBitacora">
+          <ScalarProperty Name="iBitadora_id" ColumnName="iBitadora_id" />
+          <ScalarProperty Name="dtBitacora_fechaRegistro" ColumnName="dtBitacora_fechaRegistro" />
+          <ScalarProperty Name="iUsuario_id" ColumnName="iUsuario_id" />
+          <ScalarProperty Name="sBitacora_desc" ColumnName="sBitacora_desc" />
+          <ScalarProperty Name="sTablaModificada" ColumnName="sTablaModificada" />
+          <ScalarProperty Name="sOperacionRealizada" ColumnName="sOperacionRealizada" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="teSolicitudFondo">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.teSolicitudFondo)">
+        <MappingFragment StoreEntitySet="teSolicitudFondo">
+          <ScalarProperty Name="iSolicitudFondo_id" ColumnName="iSolicitudFondo_id" />
+          <ScalarProperty Name="dtSolicitud_fecha" ColumnName="dtSolicitud_fecha" />
+          <ScalarProperty Name="dSolicitud_monto" ColumnName="dSolicitud_monto" />
+          <ScalarProperty Name="iMoneda_fl" ColumnName="iMoneda_fl" />
+          <ScalarProperty Name="iBoveda_id" ColumnName="iBoveda_id" />
+          <ScalarProperty Name="iCaja_id" ColumnName="iCaja_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="teBoveda">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.teBoveda)">
+        <MappingFragment StoreEntitySet="teBoveda">
+          <ScalarProperty Name="iBoveda_id" ColumnName="iBoveda_id" />
+          <ScalarProperty Name="dBoveda_montoActualMN" ColumnName="dBoveda_montoActualMN" />
+          <ScalarProperty Name="dBoveda_montoActualME" ColumnName="dBoveda_montoActualME" />
+          <ScalarProperty Name="dtBoveda_ultimaConciliacion" ColumnName="dtBoveda_ultimaConciliacion" />
+          <ScalarProperty Name="iSucursal_id" ColumnName="iSucursal_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="teLibroMayor">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.teLibroMayor)">
+        <MappingFragment StoreEntitySet="teLibroMayor">
+          <ScalarProperty Name="iLibroMayor_id" ColumnName="iLibroMayor_id" />
+          <ScalarProperty Name="dtLibroMayor_fecha" ColumnName="dtLibroMayor_fecha" />
+          <ScalarProperty Name="iSolicitudFondo_id" ColumnName="iSolicitudFondo_id" />
+          <ScalarProperty Name="Property1" ColumnName="Property1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="teConciliacionLM">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.teConciliacionLM)">
+        <MappingFragment StoreEntitySet="teConciliacionLM">
+          <ScalarProperty Name="iConciliacionLM_id" ColumnName="iConciliacionLM_id" />
+          <ScalarProperty Name="iBoveda_id" ColumnName="iBoveda_id" />
+          <ScalarProperty Name="dDebe_mn" ColumnName="dDebe_mn" />
+          <ScalarProperty Name="dDebe_me" ColumnName="dDebe_me" />
+          <ScalarProperty Name="dHaber_mn" ColumnName="dHaber_mn" />
+          <ScalarProperty Name="dHaber_me" ColumnName="dHaber_me" />
+          <ScalarProperty Name="dSaldo_mn" ColumnName="dSaldo_mn" />
+          <ScalarProperty Name="dSaldo_me" ColumnName="dSaldo_me" />
+          <ScalarProperty Name="dtConciliacionLM_fecha" ColumnName="dtConciliacionLM_fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="acCajaAhorro">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.acCajaAhorro)">
+        <MappingFragment StoreEntitySet="acCajaAhorro">
+          <ScalarProperty Name="iCajaAhorro_id" ColumnName="iCajaAhorro_id" />
+          <ScalarProperty Name="sCajaAhorro_num" ColumnName="sCajaAhorro_num" />
+          <ScalarProperty Name="iTipoCaja_fl" ColumnName="iTipoCaja_fl" />
+          <ScalarProperty Name="iMoneda_fl" ColumnName="iMoneda_fl" />
+          <ScalarProperty Name="dCajaAhorro_saldo" ColumnName="dCajaAhorro_saldo" />
+          <ScalarProperty Name="dCajaAhorro_montoMaximoRetiro" ColumnName="dCajaAhorro_montoMaximoRetiro" />
+          <ScalarProperty Name="iEstadoCajaAhorro_fl" ColumnName="iEstadoCajaAhorro_fl" />
+          <ScalarProperty Name="iCliente_id" ColumnName="iCliente_id" />
+          <ScalarProperty Name="iTarjetaDebito_id" ColumnName="iTarjetaDebito_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="acTarjetaDebito">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.acTarjetaDebito)">
+        <MappingFragment StoreEntitySet="acTarjetaDebito">
+          <ScalarProperty Name="iTarjetaDebito_id" ColumnName="iTarjetaDebito_id" />
+          <ScalarProperty Name="sTarjetaDebito_num" ColumnName="sTarjetaDebito_num" />
+          <ScalarProperty Name="sTarjetaDebito_cvc" ColumnName="sTarjetaDebito_cvc" />
+          <ScalarProperty Name="iTarjetaDebito_PIN" ColumnName="iTarjetaDebito_PIN" />
+          <ScalarProperty Name="iCliente_id" ColumnName="iCliente_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="acDPF">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.acDPF)">
+        <MappingFragment StoreEntitySet="acDPF">
+          <ScalarProperty Name="iDPF_id" ColumnName="iDPF_id" />
+          <ScalarProperty Name="dtDPF_fechaInicio" ColumnName="dtDPF_fechaInicio" />
+          <ScalarProperty Name="iDuracionDPF_fl" ColumnName="iDuracionDPF_fl" />
+          <ScalarProperty Name="dtDPF_fechaCaducidad" ColumnName="dtDPF_fechaCaducidad" />
+          <ScalarProperty Name="dDPF_interes" ColumnName="dDPF_interes" />
+          <ScalarProperty Name="dDPF_monto" ColumnName="dDPF_monto" />
+          <ScalarProperty Name="iEstadoDPF_fl" ColumnName="iEstadoDPF_fl" />
+          <ScalarProperty Name="iCliente_id" ColumnName="iCliente_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="acDetalleCajaAhorro">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.acDetalleCajaAhorro)">
+        <MappingFragment StoreEntitySet="acDetalleCajaAhorro">
+          <ScalarProperty Name="iDetalleCajaAhorro_id" ColumnName="iDetalleCajaAhorro_id" />
+          <ScalarProperty Name="iCajaAhorro_id" ColumnName="iCajaAhorro_id" />
+          <ScalarProperty Name="dDebe_caja" ColumnName="dDebe_caja" />
+          <ScalarProperty Name="dHaber_caja" ColumnName="dHaber_caja" />
+          <ScalarProperty Name="dSaldo_caja" ColumnName="dSaldo_caja" />
+          <ScalarProperty Name="dtDetalle_fecha" ColumnName="dtDetalle_fecha" />
+          <ScalarProperty Name="iMoneda_fl" ColumnName="iMoneda_fl" />
+          <ScalarProperty Name="sDetalle_desc" ColumnName="sDetalle_desc" />
+          <ScalarProperty Name="iTransaccion_id" ColumnName="iTransaccion_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="acDetalleDPF">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.acDetalleDPF)">
+        <MappingFragment StoreEntitySet="acDetalleDPF">
+          <ScalarProperty Name="iDetalleDPF_id" ColumnName="iDetalleDPF_id" />
+          <ScalarProperty Name="iDPF_id" ColumnName="iDPF_id" />
+          <ScalarProperty Name="iTipoTransaccionDPF" ColumnName="iTipoTransaccionDPF" />
+          <ScalarProperty Name="dDetalleDPF_monto" ColumnName="dDetalleDPF_monto" />
+          <ScalarProperty Name="dtDetalleDPF_fecha" ColumnName="dtDetalleDPF_fecha" />
+          <ScalarProperty Name="sDetalleDPF_desc" ColumnName="sDetalleDPF_desc" />
+          <ScalarProperty Name="iTransaccion_id" ColumnName="iTransaccion_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="acDetalleCredito">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.acDetalleCredito)">
+        <MappingFragment StoreEntitySet="acDetalleCredito">
+          <ScalarProperty Name="iDetalleCredito_id" ColumnName="iDetalleCredito_id" />
+          <ScalarProperty Name="iTransaccion_id" ColumnName="iTransaccion_id" />
+          <ScalarProperty Name="dDebe_nm" ColumnName="dDebe_nm" />
+          <ScalarProperty Name="dDebe_me" ColumnName="dDebe_me" />
+          <ScalarProperty Name="dHaber_mn" ColumnName="dHaber_mn" />
+          <ScalarProperty Name="dHaber_me" ColumnName="dHaber_me" />
+          <ScalarProperty Name="dSaldo_mn" ColumnName="dSaldo_mn" />
+          <ScalarProperty Name="dSaldo_me" ColumnName="dSaldo_me" />
+          <ScalarProperty Name="dtDetalleCredito_fecha" ColumnName="dtDetalleCredito_fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="coSolicitudCredito">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.coSolicitudCredito)">
+        <MappingFragment StoreEntitySet="coSolicitudCredito">
+          <ScalarProperty Name="iSolicitudCredito_id" ColumnName="iSolicitudCredito_id" />
+          <ScalarProperty Name="dtSolicitudCredito_fecha" ColumnName="dtSolicitudCredito_fecha" />
+          <ScalarProperty Name="iTipoCredito_fl" ColumnName="iTipoCredito_fl" />
+          <ScalarProperty Name="dSolicitudCredito_monto" ColumnName="dSolicitudCredito_monto" />
+          <ScalarProperty Name="iMoneda_fl" ColumnName="iMoneda_fl" />
+          <ScalarProperty Name="iPlazoCredito_fl" ColumnName="iPlazoCredito_fl" />
+          <ScalarProperty Name="dInteresAnual" ColumnName="dInteresAnual" />
+          <ScalarProperty Name="iCliente_id" ColumnName="iCliente_id" />
+          <ScalarProperty Name="iUsuario_id" ColumnName="iUsuario_id" />
+          <ScalarProperty Name="iSolicitudCredito_discriminador" ColumnName="iSolicitudCredito_discriminador" />
+          <ScalarProperty Name="iSolicitudCredito_estado" ColumnName="iSolicitudCredito_estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.coCredito)">
+        <MappingFragment StoreEntitySet="coSolicitudCredito_coCredito">
+          <ScalarProperty Name="iSolicitudCredito_id" ColumnName="iSolicitudCredito_id" />
+          <ScalarProperty Name="dtCredito_aprobacion" ColumnName="dtCredito_aprobacion" />
+          <ScalarProperty Name="dtCredito_desembolso" ColumnName="dtCredito_desembolso" />
+          <ScalarProperty Name="iCredito_cuotas" ColumnName="iCredito_cuotas" />
+          <ScalarProperty Name="dtCredito_vencimiento" ColumnName="dtCredito_vencimiento" />
+          <ScalarProperty Name="iCredito_estado" ColumnName="iCredito_estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.coSolicitudRechazada)">
+        <MappingFragment StoreEntitySet="coSolicitudCredito_coSolicitudRechazada">
+          <ScalarProperty Name="iSolicitudCredito_id" ColumnName="iSolicitudCredito_id" />
+          <ScalarProperty Name="sRechazado_desc" ColumnName="sRechazado_desc" />
+          <ScalarProperty Name="dtRechazado_fecha" ColumnName="dtRechazado_fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="coCouta">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.coCouta)">
+        <MappingFragment StoreEntitySet="coCouta">
+          <ScalarProperty Name="iCuota_id" ColumnName="iCuota_id" />
+          <ScalarProperty Name="iSolicitudCredito_id" ColumnName="iSolicitudCredito_id" />
+          <ScalarProperty Name="dCuota_capital" ColumnName="dCuota_capital" />
+          <ScalarProperty Name="dCuota_interes" ColumnName="dCuota_interes" />
+          <ScalarProperty Name="sCuota_num" ColumnName="sCuota_num" />
+          <ScalarProperty Name="sCuota_monto" ColumnName="sCuota_monto" />
+          <ScalarProperty Name="iMoneda_fl" ColumnName="iMoneda_fl" />
+          <ScalarProperty Name="dtCuota_fecha" ColumnName="dtCuota_fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="coRequisito">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.coRequisito)">
+        <MappingFragment StoreEntitySet="coRequisito">
+          <ScalarProperty Name="iRequisito_id" ColumnName="iRequisito_id" />
+          <ScalarProperty Name="iSolicitudCredito_id" ColumnName="iSolicitudCredito_id" />
+          <ScalarProperty Name="sRequisito_desc" ColumnName="sRequisito_desc" />
+          <ScalarProperty Name="sRequisito_estado" ColumnName="sRequisito_estado" />
+          <ScalarProperty Name="iRequisito_importancia" ColumnName="iRequisito_importancia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="coCarteraVigente">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.coCarteraVigente)">
+        <MappingFragment StoreEntitySet="coCarteraVigente">
+          <ScalarProperty Name="iCarteraVigente_id" ColumnName="iCarteraVigente_id" />
+          <ScalarProperty Name="iSolicitudCredito_id" ColumnName="iSolicitudCredito_id" />
+          <ScalarProperty Name="dtVigente_fechaLimite" ColumnName="dtVigente_fechaLimite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="coCarteraMora">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.coCarteraMora)">
+        <MappingFragment StoreEntitySet="coCarteraMora">
+          <ScalarProperty Name="iCarteraMora_id" ColumnName="iCarteraMora_id" />
+          <ScalarProperty Name="iSolicitudCredito_id" ColumnName="iSolicitudCredito_id" />
+          <ScalarProperty Name="dtMora_fechaLimite" ColumnName="dtMora_fechaLimite" />
+          <ScalarProperty Name="dtMora_fechaMora" ColumnName="dtMora_fechaMora" />
+          <ScalarProperty Name="iMora_cuotasAtrasadas" ColumnName="iMora_cuotasAtrasadas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="coCarteraEjecucion">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.coCarteraEjecucion)">
+        <MappingFragment StoreEntitySet="coCarteraEjecucion">
+          <ScalarProperty Name="iCarteraEjecucion_id" ColumnName="iCarteraEjecucion_id" />
+          <ScalarProperty Name="iSolicitudCredito_id" ColumnName="iSolicitudCredito_id" />
+          <ScalarProperty Name="dtEjecucion_fecha" ColumnName="dtEjecucion_fecha" />
+          <ScalarProperty Name="iEjecucion_notificacionNum" ColumnName="iEjecucion_notificacionNum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="coHistoricoCredito">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.coHistoricoCredito)">
+        <MappingFragment StoreEntitySet="coHistoricoCredito">
+          <ScalarProperty Name="iHistoricoCredito_id" ColumnName="iHistoricoCredito_id" />
+          <ScalarProperty Name="iSolicitudCredito_id" ColumnName="iSolicitudCredito_id" />
+          <ScalarProperty Name="dtHistoricoCredito_cierre" ColumnName="dtHistoricoCredito_cierre" />
+          <ScalarProperty Name="dtHistoricoCredito_ultimaCuota" ColumnName="dtHistoricoCredito_ultimaCuota" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oaATM">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.oaATM)">
+        <MappingFragment StoreEntitySet="oaATM">
+          <ScalarProperty Name="iATM_id" ColumnName="iATM_id" />
+          <ScalarProperty Name="sATM_fabrica" ColumnName="sATM_fabrica" />
+          <ScalarProperty Name="sATM_dir" ColumnName="sATM_dir" />
+          <ScalarProperty Name="iATM_tipo" ColumnName="iATM_tipo" />
+          <ScalarProperty Name="sATM_nombre" ColumnName="sATM_nombre" />
+          <ScalarProperty Name="dtATM_ultimaConciliacion" ColumnName="dtATM_ultimaConciliacion" />
+          <ScalarProperty Name="iATM_estado" ColumnName="iATM_estado" />
+          <ScalarProperty Name="dATM_saldoMN" ColumnName="dATM_saldoMN" />
+          <ScalarProperty Name="dATM_saldoME" ColumnName="dATM_saldoME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oaTarjetaRetenida">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.oaTarjetaRetenida)">
+        <MappingFragment StoreEntitySet="oaTarjetaRetenida">
+          <ScalarProperty Name="iTarjetaRetenida_id" ColumnName="iTarjetaRetenida_id" />
+          <ScalarProperty Name="dtRetenida_fecha" ColumnName="dtRetenida_fecha" />
+          <ScalarProperty Name="sTarjetaDebito_num" ColumnName="sTarjetaDebito_num" />
+          <ScalarProperty Name="sRetenida_desc" ColumnName="sRetenida_desc" />
+          <ScalarProperty Name="iATM_id" ColumnName="iATM_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oaLibroATM">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelSIGEF.oaLibroATM)">
+        <MappingFragment StoreEntitySet="oaLibroATM">
+          <ScalarProperty Name="oaLibroATM_id" ColumnName="oaLibroATM_id" />
+          <ScalarProperty Name="dtLibroATM_fecha" ColumnName="dtLibroATM_fecha" />
+          <ScalarProperty Name="dDebe_mn" ColumnName="dDebe_mn" />
+          <ScalarProperty Name="dDebe_me" ColumnName="dDebe_me" />
+          <ScalarProperty Name="dHaber_mn" ColumnName="dHaber_mn" />
+          <ScalarProperty Name="dHaber_me" ColumnName="dHaber_me" />
+          <ScalarProperty Name="dSaldo_mn" ColumnName="dSaldo_mn" />
+          <ScalarProperty Name="dSaldo_me" ColumnName="dSaldo_me" />
+          <ScalarProperty Name="sLibroATM_desc" ColumnName="sLibroATM_desc" />
+          <ScalarProperty Name="iAtm_id" ColumnName="iAtm_id" />
+          <ScalarProperty Name="iTransaccion_id" ColumnName="iTransaccion_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="baModulobaUnidadFinanciera" TypeName="ModelSIGEF.baModulobaUnidadFinanciera" StoreEntitySet="baModulobaUnidadFinanciera">
+      <EndProperty Name="baModulo">
+        <ScalarProperty Name="iModulo_id" ColumnName="baModulo_iModulo_id" />
+      </EndProperty>
+      <EndProperty Name="baUnidadFinanciera">
+        <ScalarProperty Name="iUnidadFinanciera_id" ColumnName="baUnidadFinanciera_iUnidadFinanciera_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="msRolmsPrivilegio" TypeName="ModelSIGEF.msRolmsPrivilegio" StoreEntitySet="msRolmsPrivilegio">
+      <EndProperty Name="msRol">
+        <ScalarProperty Name="iRol_id" ColumnName="msRol_iRol_id" />
+      </EndProperty>
+      <EndProperty Name="msPrivilegio">
+        <ScalarProperty Name="iPrivilegio_id" ColumnName="msPrivilegio_iPrivilegio_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="msUsuariomcCaja" TypeName="ModelSIGEF.msUsuariomcCaja" StoreEntitySet="msUsuariomcCaja">
+      <EndProperty Name="msUsuario">
+        <ScalarProperty Name="iUsuario_id" ColumnName="msUsuario_iUsuario_id" />
+      </EndProperty>
+      <EndProperty Name="mcCaja">
+        <ScalarProperty Name="iCaja_id" ColumnName="mcCaja_iCaja_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="caPACmsUsuario" TypeName="ModelSIGEF.caPACmsUsuario" StoreEntitySet="caPACmsUsuario">
+      <EndProperty Name="caPAC">
+        <ScalarProperty Name="iPAC_id" ColumnName="caPAC_iPAC_id" />
+      </EndProperty>
+      <EndProperty Name="msUsuario">
+        <ScalarProperty Name="iUsuario_id" ColumnName="msUsuario_iUsuario_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
@@ -1392,6 +3463,7 @@
         <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
         <DesignerProperty Name="DefaultDatabaseSchema" Value="sigef" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
       </DesignerInfoPropertySet>
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->

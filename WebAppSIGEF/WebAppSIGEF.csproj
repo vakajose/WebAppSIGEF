@@ -175,13 +175,164 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\acCajaAhorro.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\acDetalleCajaAhorro.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\acDetalleCredito.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\acDetalleDPF.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\acDPF.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\acTarjetaDebito.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\baAdmin.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\baADM_USER.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\baModulo.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\baUnidadFinanciera.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\caPAC.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\caSolitudCaptacion.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\caTCajaAhorro.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\caTCertificado.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\caTDPF.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\caTTarjetaDebito.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\coCarteraEjecucion.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\coCarteraMora.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\coCarteraVigente.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\coCouta.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\coCredito.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\coHistoricoCredito.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\coRequisito.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\coSolicitudCredito.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\coSolicitudRechazada.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\mcCaja.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mcConciliacionCaja.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mcDetalleCheque.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mcLibroCaja.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\mcTransaccion.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelSIGEF.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSIGEF.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ModelSIGEF.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ModelSIGEF.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelSIGEF.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\msBitacora.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\msFuncionario.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\msPassword.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\msPrivilegio.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\msRol.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\msUsuario.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\oaATM.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\oaLibroATM.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\oaTarjetaRetenida.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\paSucursal.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\peCAportacion.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\peCliente.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\peSocio.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\teBoveda.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\teConciliacionLM.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\teLibroMayor.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\teSolicitudFondo.cs">
+      <DependentUpon>ModelSIGEF.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -193,6 +344,17 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\ModelSIGEF.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelSIGEF.Context.cs</LastGenOutput>
+      <DependentUpon>ModelSIGEF.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\ModelSIGEF.edmx.sql" />
+    <Content Include="Models\ModelSIGEF.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelSIGEF.cs</LastGenOutput>
+      <DependentUpon>ModelSIGEF.edmx</DependentUpon>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
@@ -259,6 +421,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
