@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="bf3a76797e64457fb7c2df45f497b113" Name="Modelo de Dominio" ZoomLevel="18" ShowGrid="true" DisplayType="true" >
+      <Diagram DiagramId="bf3a76797e64457fb7c2df45f497b113" Name="Modelo de Dominio" ZoomLevel="60" ShowGrid="true" DisplayType="true" >
         <EntityTypeShape EntityType="ModelSIGEF.baUnidadFinanciera" Width="2.25" PointX="4.25" PointY="9.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ModelSIGEF.baModulo" Width="1.5" PointX="4.625" PointY="6" />
         <EntityTypeShape EntityType="ModelSIGEF.baADM_USER" Width="1.75" PointX="1.25" PointY="6.625" />
@@ -12,11 +12,11 @@
         <AssociationConnector Association="ModelSIGEF.baModulobaUnidadFinanciera" />
         <AssociationConnector Association="ModelSIGEF.baADM_USERbaAdmin" />
         <AssociationConnector Association="ModelSIGEF.baUnidadFinancierabaAdmin" />
-        <EntityTypeShape EntityType="ModelSIGEF.paSucursal" Width="2" PointX="7.75" PointY="8.25" FillColor="128, 255, 128" />
+        <EntityTypeShape EntityType="ModelSIGEF.paSucursal" Width="2" PointX="7.75" PointY="7.75" FillColor="128, 255, 128" />
         <AssociationConnector Association="ModelSIGEF.baUnidadFinancierapaSucursal" />
-        <EntityTypeShape EntityType="ModelSIGEF.caPAC" Width="1.375" PointX="6.25" PointY="14.25" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="ModelSIGEF.caPAC" Width="1.375" PointX="6" PointY="14" FillColor="255, 128, 0" />
         <AssociationConnector Association="ModelSIGEF.paSucursalcaPAC" />
-        <EntityTypeShape EntityType="ModelSIGEF.caSolitudCaptacion" Width="2" PointX="2.25" PointY="14.75" FillColor="255, 128, 0" />
+        <EntityTypeShape EntityType="ModelSIGEF.caSolitudCaptacion" Width="2.625" PointX="1.5" PointY="14" FillColor="255, 128, 0" />
         <EntityTypeShape EntityType="ModelSIGEF.caTCertificado" Width="1.75" PointX="0.625" PointY="19.75" FillColor="255, 128, 0" />
         <InheritanceConnector EntityType="ModelSIGEF.caTCertificado" ManuallyRouted="false" >
         </InheritanceConnector>
@@ -30,9 +30,9 @@
         <InheritanceConnector EntityType="ModelSIGEF.caTTarjetaDebito" ManuallyRouted="false" >
         </InheritanceConnector>
         <AssociationConnector Association="ModelSIGEF.caPACcaSolitudCaptacion" />
-        <EntityTypeShape EntityType="ModelSIGEF.mcCaja" Width="1.5" PointX="14" PointY="5" FillColor="0, 192, 192" />
+        <EntityTypeShape EntityType="ModelSIGEF.mcCaja" Width="1.5" PointX="13.875" PointY="5" FillColor="0, 192, 192" />
         <AssociationConnector Association="ModelSIGEF.paSucursalmcCaja" />
-        <EntityTypeShape EntityType="ModelSIGEF.mcTransaccion" Width="3.75" PointX="18.625" PointY="4.5" FillColor="0, 192, 192" />
+        <EntityTypeShape EntityType="ModelSIGEF.mcTransaccion" Width="3.75" PointX="17.25" PointY="4.625" FillColor="0, 192, 192" />
         <AssociationConnector Association="ModelSIGEF.mcCajamcTransaccion" />
         <EntityTypeShape EntityType="ModelSIGEF.mcLibroCaja" Width="2" PointX="16.875" PointY="0.5" FillColor="0, 192, 192" />
         <EntityTypeShape EntityType="ModelSIGEF.mcConciliacionCaja" Width="3.25" PointX="12.625" PointY="0.5" FillColor="0, 192, 192" />
@@ -40,18 +40,18 @@
         <AssociationConnector Association="ModelSIGEF.mcConciliacionCajamcCaja" />
         <EntityTypeShape EntityType="ModelSIGEF.mcDetalleCheque" Width="2.5" PointX="19.875" PointY="0.875" FillColor="0, 192, 192" />
         <AssociationConnector Association="ModelSIGEF.mcTransaccionmcDetalleCheque" />
-        <EntityTypeShape EntityType="ModelSIGEF.peCliente" Width="2.375" PointX="11.5" PointY="10.5" FillColor="Yellow" />
-        <EntityTypeShape EntityType="ModelSIGEF.peSocio" Width="2.375" PointX="11.375" PointY="8.25" FillColor="Yellow" />
+        <EntityTypeShape EntityType="ModelSIGEF.peCliente" Width="2.375" PointX="11" PointY="7.875" FillColor="Yellow" />
+        <EntityTypeShape EntityType="ModelSIGEF.peSocio" Width="2.375" PointX="11" PointY="11.25" FillColor="Yellow" />
         <InheritanceConnector EntityType="ModelSIGEF.peSocio" />
-        <EntityTypeShape EntityType="ModelSIGEF.peCAportacion" Width="2.25" PointX="15.75" PointY="8.25" FillColor="Yellow" />
+        <EntityTypeShape EntityType="ModelSIGEF.peCAportacion" Width="2.25" PointX="10.875" PointY="13.75" FillColor="Yellow" />
         <AssociationConnector Association="ModelSIGEF.peSociopeCAportacion" />
         <EntityTypeShape EntityType="ModelSIGEF.msFuncionario" Width="2.25" PointX="8" PointY="17.5" FillColor="Black" />
-        <EntityTypeShape EntityType="ModelSIGEF.msUsuario" Width="2.375" PointX="10.875" PointY="14.5" FillColor="Black" />
+        <EntityTypeShape EntityType="ModelSIGEF.msUsuario" Width="2.375" PointX="11" PointY="15.875" FillColor="Black" />
         <EntityTypeShape EntityType="ModelSIGEF.msPassword" Width="2.5" PointX="8" PointY="20.5" FillColor="Black" />
         <AssociationConnector Association="ModelSIGEF.msUsuariomsFuncionario" ManuallyRouted="false" >
         </AssociationConnector>
         <AssociationConnector Association="ModelSIGEF.msUsuariomsPassword" />
-        <EntityTypeShape EntityType="ModelSIGEF.msRol" Width="1.5" PointX="12.125" PointY="19.25" FillColor="Black" />
+        <EntityTypeShape EntityType="ModelSIGEF.msRol" Width="1.5" PointX="12.125" PointY="19.875" FillColor="Black" />
         <EntityTypeShape EntityType="ModelSIGEF.msPrivilegio" Width="1.875" PointX="11.875" PointY="22.625" FillColor="Black" />
         <AssociationConnector Association="ModelSIGEF.msRolmsUsuario" />
         <AssociationConnector Association="ModelSIGEF.msRolmsPrivilegio" />
@@ -72,11 +72,11 @@
         </AssociationConnector>
         <AssociationConnector Association="ModelSIGEF.teSolicitudFondomcLibroCaja" />
         <AssociationConnector Association="ModelSIGEF.mcCajateSolicitudFondo" />
-        <EntityTypeShape EntityType="ModelSIGEF.acCajaAhorro" Width="2.375" PointX="25.75" PointY="8.375" FillColor="255, 128, 128" />
-        <EntityTypeShape EntityType="ModelSIGEF.acTarjetaDebito" Width="2.375" PointX="22.125" PointY="8.75" FillColor="255, 128, 128" />
-        <EntityTypeShape EntityType="ModelSIGEF.acDPF" Width="2.75" PointX="15.875" PointY="13.125" FillColor="255, 128, 128" />
-        <EntityTypeShape EntityType="ModelSIGEF.acDetalleCajaAhorro" Width="2.625" PointX="24.625" PointY="3.375" FillColor="255, 128, 128" />
-        <EntityTypeShape EntityType="ModelSIGEF.acDetalleDPF" Width="2.75" PointX="23.625" PointY="13.375" FillColor="255, 128, 128" />
+        <EntityTypeShape EntityType="ModelSIGEF.acCajaAhorro" Width="2.375" PointX="26.125" PointY="4.625" FillColor="255, 128, 128" />
+        <EntityTypeShape EntityType="ModelSIGEF.acTarjetaDebito" Width="2.375" PointX="24.25" PointY="10.25" FillColor="255, 128, 128" />
+        <EntityTypeShape EntityType="ModelSIGEF.acDPF" Width="2.75" PointX="16.25" PointY="10" FillColor="255, 128, 128" />
+        <EntityTypeShape EntityType="ModelSIGEF.acDetalleCajaAhorro" Width="2.625" PointX="23.125" PointY="0.5" FillColor="255, 128, 128" />
+        <EntityTypeShape EntityType="ModelSIGEF.acDetalleDPF" Width="2.75" PointX="20.5" PointY="10.125" FillColor="255, 128, 128" />
         <AssociationConnector Association="ModelSIGEF.acCajaAhorropeCliente" />
         <AssociationConnector Association="ModelSIGEF.acCajaAhorroacTarjetaDebito" />
         <AssociationConnector Association="ModelSIGEF.acCajaAhorroacDetalleCajaAhorro" />
@@ -85,11 +85,27 @@
         <AssociationConnector Association="ModelSIGEF.acTarjetaDebitopeCliente" />
         <AssociationConnector Association="ModelSIGEF.mcTransaccionacDetalleCajaAhorro" />
         <AssociationConnector Association="ModelSIGEF.acDetalleDPFmcTransaccion" />
-        <EntityTypeShape EntityType="ModelSIGEF.acDetalleCredito" Width="2.5" PointX="19.75" PointY="12.25" FillColor="255, 128, 128" />
+        <EntityTypeShape EntityType="ModelSIGEF.acDetalleCredito" Width="2.5" PointX="23" PointY="4.75" FillColor="255, 128, 128" />
         <AssociationConnector Association="ModelSIGEF.acDetalleCreditomcTransaccion" />
-        <EntityTypeShape EntityType="ModelSIGEF.coSolicitudCredito" Width="2.75" PointX="30.125" PointY="11.875" />
-        <EntityTypeShape EntityType="ModelSIGEF.coCredito" Width="1.5" PointX="30.5" PointY="14.875" />
+        <EntityTypeShape EntityType="ModelSIGEF.coSolicitudCredito" Width="2.75" PointX="16.125" PointY="16.125" />
+        <EntityTypeShape EntityType="ModelSIGEF.coCredito" Width="2" PointX="20.625" PointY="15.625" />
         <InheritanceConnector EntityType="ModelSIGEF.coCredito" />
+        <EntityTypeShape EntityType="ModelSIGEF.coCouta" Width="2.375" PointX="24.75" PointY="15.625" />
+        <EntityTypeShape EntityType="ModelSIGEF.coRequisito" Width="2.5" PointX="15.625" PointY="21" />
+        <EntityTypeShape EntityType="ModelSIGEF.coSolicitudRechazada" Width="1.5" PointX="16.75" PointY="13.5" />
+        <InheritanceConnector EntityType="ModelSIGEF.coSolicitudRechazada" />
+        <EntityTypeShape EntityType="ModelSIGEF.coCarteraVigente" Width="2.75" PointX="21.375" PointY="21.5" />
+        <EntityTypeShape EntityType="ModelSIGEF.coCarteraMora" Width="2.625" PointX="25.375" PointY="21.375" />
+        <EntityTypeShape EntityType="ModelSIGEF.coCarteraEjecucion" Width="2.75" PointX="24.125" PointY="18.875" />
+        <EntityTypeShape EntityType="ModelSIGEF.coHistoricoCredito" Width="2.375" PointX="18.625" PointY="21.5" />
+        <AssociationConnector Association="ModelSIGEF.coSolicitudCreditopeSocio" />
+        <AssociationConnector Association="ModelSIGEF.msUsuariocoSolicitudCredito" />
+        <AssociationConnector Association="ModelSIGEF.coSolicitudCreditocoRequisito" />
+        <AssociationConnector Association="ModelSIGEF.coCreditocoCouta" />
+        <AssociationConnector Association="ModelSIGEF.coCreditocoCarteraVigente" />
+        <AssociationConnector Association="ModelSIGEF.coCreditocoCarteraMora" />
+        <AssociationConnector Association="ModelSIGEF.coCreditocoCarteraEjecucion" />
+        <AssociationConnector Association="ModelSIGEF.coCreditocoHistoricoCredito" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

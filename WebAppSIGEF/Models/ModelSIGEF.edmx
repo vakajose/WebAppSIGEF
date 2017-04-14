@@ -184,7 +184,45 @@
             <End Role="mcTransaccion" EntitySet="mcTransaccion" />
           </AssociationSet>
           <EntitySet Name="coSolicitudCredito" EntityType="ModelSIGEF.coSolicitudCredito" />
-        </EntityContainer>
+          <EntitySet Name="coCouta" EntityType="ModelSIGEF.coCouta" />
+          <EntitySet Name="coRequisito" EntityType="ModelSIGEF.coRequisito" />
+          <EntitySet Name="coCarteraVigente" EntityType="ModelSIGEF.coCarteraVigente" />
+          <EntitySet Name="coCarteraMora" EntityType="ModelSIGEF.coCarteraMora" />
+          <EntitySet Name="coCarteraEjecucion" EntityType="ModelSIGEF.coCarteraEjecucion" />
+          <EntitySet Name="coHistoricoCredito" EntityType="ModelSIGEF.coHistoricoCredito" />
+          <AssociationSet Name="coSolicitudCreditopeSocio" Association="ModelSIGEF.coSolicitudCreditopeSocio">
+            <End Role="coSolicitudCredito" EntitySet="coSolicitudCredito" />
+            <End Role="peSocio" EntitySet="peCliente" />
+          </AssociationSet>
+          <AssociationSet Name="msUsuariocoSolicitudCredito" Association="ModelSIGEF.msUsuariocoSolicitudCredito">
+            <End Role="msUsuario" EntitySet="msUsuario" />
+            <End Role="coSolicitudCredito" EntitySet="coSolicitudCredito" />
+          </AssociationSet>
+          <AssociationSet Name="coSolicitudCreditocoRequisito" Association="ModelSIGEF.coSolicitudCreditocoRequisito">
+            <End Role="coSolicitudCredito" EntitySet="coSolicitudCredito" />
+            <End Role="coRequisito" EntitySet="coRequisito" />
+          </AssociationSet>
+          <AssociationSet Name="coCreditocoCouta" Association="ModelSIGEF.coCreditocoCouta">
+            <End Role="coCredito" EntitySet="coSolicitudCredito" />
+            <End Role="coCouta" EntitySet="coCouta" />
+          </AssociationSet>
+          <AssociationSet Name="coCreditocoCarteraVigente" Association="ModelSIGEF.coCreditocoCarteraVigente">
+            <End Role="coCredito" EntitySet="coSolicitudCredito" />
+            <End Role="coCarteraVigente" EntitySet="coCarteraVigente" />
+          </AssociationSet>
+          <AssociationSet Name="coCreditocoCarteraMora" Association="ModelSIGEF.coCreditocoCarteraMora">
+            <End Role="coCredito" EntitySet="coSolicitudCredito" />
+            <End Role="coCarteraMora" EntitySet="coCarteraMora" />
+          </AssociationSet>
+          <AssociationSet Name="coCreditocoCarteraEjecucion" Association="ModelSIGEF.coCreditocoCarteraEjecucion">
+            <End Role="coCredito" EntitySet="coSolicitudCredito" />
+            <End Role="coCarteraEjecucion" EntitySet="coCarteraEjecucion" />
+          </AssociationSet>
+          <AssociationSet Name="coCreditocoHistoricoCredito" Association="ModelSIGEF.coCreditocoHistoricoCredito">
+            <End Role="coCredito" EntitySet="coSolicitudCredito" />
+            <End Role="coHistoricoCredito" EntitySet="coHistoricoCredito" />
+          </AssociationSet>
+          </EntityContainer>
         <EntityType Name="baUnidadFinanciera">
           <Documentation>
             <Summary>Modulo Basico</Summary>
@@ -346,6 +384,7 @@
           <Property Name="iPAC_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="peCliente" Relationship="ModelSIGEF.caSolitudCaptacionpeCliente" FromRole="caSolitudCaptacion" ToRole="peCliente" />
           <Property Name="iCliente_id" Type="Int32" Nullable="false" />
+          <Property Name="iSolicitudCaptacion_discriminador" Type="Int32" Nullable="false" />
         </EntityType>
         <EnumType Name="caEstadoSolicitudCaptacion" UnderlyingType="Int16">
           <Member Name="Atendiendo" Value="1" />
@@ -537,10 +576,14 @@
           <NavigationProperty Name="acCajaAhorro" Relationship="ModelSIGEF.acCajaAhorropeCliente" FromRole="peCliente" ToRole="acCajaAhorro" />
           <NavigationProperty Name="acDPF" Relationship="ModelSIGEF.acDPFpeCliente" FromRole="peCliente" ToRole="acDPF" />
           <NavigationProperty Name="acTarjetaDebito" Relationship="ModelSIGEF.acTarjetaDebitopeCliente" FromRole="peCliente" ToRole="acTarjetaDebito" />
+          <Property Name="iCliente_discriminador" Type="Int32" Nullable="true" />
         </EntityType>
         <EntityType Name="peSocio" BaseType="ModelSIGEF.peCliente" >
           <NavigationProperty Name="peCAportacion" Relationship="ModelSIGEF.peSociopeCAportacion" FromRole="peSocio" ToRole="peCAportacion" />
           <Property Name="dtSocio_fechaAfiliacion" Type="DateTime" Nullable="false" />
+          <Property Name="sSocio_negocio" Type="String" Nullable="false" />
+          <Property Name="sSocio_ingresos" Type="String" Nullable="false" />
+          <NavigationProperty Name="coSolicitudCredito" Relationship="ModelSIGEF.coSolicitudCreditopeSocio" FromRole="peSocio" ToRole="coSolicitudCredito" />
         </EntityType>
         <EntityType Name="peCAportacion">
           <Key>
@@ -588,6 +631,7 @@
           <Property Name="iRol_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="mcCaja" Relationship="ModelSIGEF.msUsuariomcCaja" FromRole="msUsuario" ToRole="mcCaja" />
           <NavigationProperty Name="caPAC" Relationship="ModelSIGEF.caPACmsUsuario" FromRole="msUsuario" ToRole="caPAC" />
+          <NavigationProperty Name="coSolicitudCredito" Relationship="ModelSIGEF.msUsuariocoSolicitudCredito" FromRole="msUsuario" ToRole="coSolicitudCredito" />
         </EntityType>
         <EntityType Name="msPassword">
           <Key>
@@ -1033,9 +1077,193 @@
           <Property Name="iTipoCredito_fl" Type="String" Nullable="false" />
           <Property Name="dSolicitudCredito_monto" Type="String" Nullable="false" />
           <Property Name="iMoneda_fl" Type="String" Nullable="false" />
-          <Property Name="iDuracionCredito_fl" Type="String" Nullable="false" />
+          <Property Name="iPlazoCredito_fl" Type="String" Nullable="false" />
+          <Property Name="dInteresAnual" Type="String" Nullable="false" />
+          <NavigationProperty Name="peSocio" Relationship="ModelSIGEF.coSolicitudCreditopeSocio" FromRole="coSolicitudCredito" ToRole="peSocio" />
+          <Property Name="iCliente_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="msUsuario" Relationship="ModelSIGEF.msUsuariocoSolicitudCredito" FromRole="coSolicitudCredito" ToRole="msUsuario" />
+          <Property Name="iUsuario_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="coRequisito" Relationship="ModelSIGEF.coSolicitudCreditocoRequisito" FromRole="coSolicitudCredito" ToRole="coRequisito" />
+          <Property Name="iSolicitudCredito_discriminador" Type="Int32" Nullable="true" />
+          <Property Name="iSolicitudCredito_estado" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="coCredito" BaseType="ModelSIGEF.coSolicitudCredito" />
+        <EntityType Name="coCredito" BaseType="ModelSIGEF.coSolicitudCredito" >
+          <NavigationProperty Name="coCouta" Relationship="ModelSIGEF.coCreditocoCouta" FromRole="coCredito" ToRole="coCouta" />
+          <NavigationProperty Name="coCarteraVigente" Relationship="ModelSIGEF.coCreditocoCarteraVigente" FromRole="coCredito" ToRole="coCarteraVigente" />
+          <NavigationProperty Name="coCarteraMora" Relationship="ModelSIGEF.coCreditocoCarteraMora" FromRole="coCredito" ToRole="coCarteraMora" />
+          <NavigationProperty Name="coCarteraEjecucion" Relationship="ModelSIGEF.coCreditocoCarteraEjecucion" FromRole="coCredito" ToRole="coCarteraEjecucion" />
+          <NavigationProperty Name="coHistoricoCredito" Relationship="ModelSIGEF.coCreditocoHistoricoCredito" FromRole="coCredito" ToRole="coHistoricoCredito" />
+          <Property Name="dtCredito_aprobacion" Type="String" Nullable="false" />
+          <Property Name="dtCredito_desembolso" Type="String" Nullable="false" />
+          <Property Name="iCredito_cuotas" Type="String" Nullable="false" />
+          <Property Name="dtCredito_vencimiento" Type="String" Nullable="false" />
+          <Property Name="iCredito_estado" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="coCouta">
+          <Key>
+            <PropertyRef Name="iCuota_id" />
+          </Key>
+          <Property Name="iCuota_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="coCredito" Relationship="ModelSIGEF.coCreditocoCouta" FromRole="coCouta" ToRole="coCredito" />
+          <Property Name="iSolicitudCredito_id" Type="Int32" Nullable="false" />
+          <Property Name="dCuota_capital" Type="String" Nullable="false" />
+          <Property Name="dCuota_interes" Type="String" Nullable="false" />
+          <Property Name="sCuota_num" Type="String" Nullable="false" />
+          <Property Name="sCuota_monto" Type="String" Nullable="false" />
+          <Property Name="iMoneda_fl" Type="String" Nullable="false" />
+          <Property Name="dtCuota_fecha" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="coRequisito">
+          <Key>
+            <PropertyRef Name="iRequisito_id" />
+          </Key>
+          <Property Name="iRequisito_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="coSolicitudCredito" Relationship="ModelSIGEF.coSolicitudCreditocoRequisito" FromRole="coRequisito" ToRole="coSolicitudCredito" />
+          <Property Name="iSolicitudCredito_id" Type="Int32" Nullable="false" />
+          <Property Name="sRequisito_desc" Type="String" Nullable="false" />
+          <Property Name="sRequisito_estado" Type="String" Nullable="false" />
+          <Property Name="iRequisito_importancia" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="coSolicitudRechazada" BaseType="ModelSIGEF.coSolicitudCredito" >
+          <Property Name="sRechazado_desc" Type="String" Nullable="false" />
+          <Property Name="dtRechazado_fecha" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="coCarteraVigente">
+          <Key>
+            <PropertyRef Name="iCarteraVigente_id" />
+          </Key>
+          <Property Name="iCarteraVigente_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="coCredito" Relationship="ModelSIGEF.coCreditocoCarteraVigente" FromRole="coCarteraVigente" ToRole="coCredito" />
+          <Property Name="iSolicitudCredito_id" Type="Int32" Nullable="false" />
+          <Property Name="dtVigente_fechaLimite" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="coCarteraMora">
+          <Key>
+            <PropertyRef Name="iCarteraMora_id" />
+          </Key>
+          <Property Name="iCarteraMora_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="coCredito" Relationship="ModelSIGEF.coCreditocoCarteraMora" FromRole="coCarteraMora" ToRole="coCredito" />
+          <Property Name="coCredito_iSolicitudCredito_id" Type="Int32" Nullable="false" />
+          <Property Name="dtMora_fechaLimite" Type="String" Nullable="false" />
+          <Property Name="dtMora_fechaMora" Type="String" Nullable="false" />
+          <Property Name="iMora_cuotasAtrasadas" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="coCarteraEjecucion">
+          <Key>
+            <PropertyRef Name="iCarteraEjecucion_id" />
+          </Key>
+          <Property Name="iCarteraEjecucion_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="coCredito" Relationship="ModelSIGEF.coCreditocoCarteraEjecucion" FromRole="coCarteraEjecucion" ToRole="coCredito" />
+          <Property Name="coCredito_iSolicitudCredito_id" Type="Int32" Nullable="false" />
+          <Property Name="dtEjecucion_fecha" Type="String" Nullable="false" />
+          <Property Name="iEjecucion_notificacionNum" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="coHistoricoCredito">
+          <Key>
+            <PropertyRef Name="iHistoricoCredito_id" />
+          </Key>
+          <Property Name="iHistoricoCredito_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="coCredito" Relationship="ModelSIGEF.coCreditocoHistoricoCredito" FromRole="coHistoricoCredito" ToRole="coCredito" />
+          <Property Name="iSolicitudCredito_id" Type="Int32" Nullable="false" />
+          <Property Name="dtHistoricoCredito_cierre" Type="String" Nullable="false" />
+          <Property Name="dtHistoricoCredito_ultimaCuota" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="coSolicitudCreditopeSocio">
+          <End Type="ModelSIGEF.coSolicitudCredito" Role="coSolicitudCredito" Multiplicity="*" />
+          <End Type="ModelSIGEF.peSocio" Role="peSocio" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="peSocio">
+              <PropertyRef Name="iCliente_id" />
+            </Principal>
+            <Dependent Role="coSolicitudCredito">
+              <PropertyRef Name="iCliente_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="msUsuariocoSolicitudCredito">
+          <End Type="ModelSIGEF.msUsuario" Role="msUsuario" Multiplicity="1" />
+          <End Type="ModelSIGEF.coSolicitudCredito" Role="coSolicitudCredito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="msUsuario">
+              <PropertyRef Name="iUsuario_id" />
+            </Principal>
+            <Dependent Role="coSolicitudCredito">
+              <PropertyRef Name="iUsuario_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="coSolicitudCreditocoRequisito">
+          <End Type="ModelSIGEF.coSolicitudCredito" Role="coSolicitudCredito" Multiplicity="1" />
+          <End Type="ModelSIGEF.coRequisito" Role="coRequisito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="coSolicitudCredito">
+              <PropertyRef Name="iSolicitudCredito_id" />
+            </Principal>
+            <Dependent Role="coRequisito">
+              <PropertyRef Name="iSolicitudCredito_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="coCreditocoCouta">
+          <End Type="ModelSIGEF.coCredito" Role="coCredito" Multiplicity="1" />
+          <End Type="ModelSIGEF.coCouta" Role="coCouta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="coCredito">
+              <PropertyRef Name="iSolicitudCredito_id" />
+            </Principal>
+            <Dependent Role="coCouta">
+              <PropertyRef Name="iSolicitudCredito_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="coCreditocoCarteraVigente">
+          <End Type="ModelSIGEF.coCredito" Role="coCredito" Multiplicity="1" />
+          <End Type="ModelSIGEF.coCarteraVigente" Role="coCarteraVigente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="coCredito">
+              <PropertyRef Name="iSolicitudCredito_id" />
+            </Principal>
+            <Dependent Role="coCarteraVigente">
+              <PropertyRef Name="iSolicitudCredito_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="coCreditocoCarteraMora">
+          <End Type="ModelSIGEF.coCredito" Role="coCredito" Multiplicity="1" />
+          <End Type="ModelSIGEF.coCarteraMora" Role="coCarteraMora" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="coCredito">
+              <PropertyRef Name="iSolicitudCredito_id" />
+            </Principal>
+            <Dependent Role="coCarteraMora">
+              <PropertyRef Name="coCredito_iSolicitudCredito_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="coCreditocoCarteraEjecucion">
+          <End Type="ModelSIGEF.coCredito" Role="coCredito" Multiplicity="1" />
+          <End Type="ModelSIGEF.coCarteraEjecucion" Role="coCarteraEjecucion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="coCredito">
+              <PropertyRef Name="iSolicitudCredito_id" />
+            </Principal>
+            <Dependent Role="coCarteraEjecucion">
+              <PropertyRef Name="coCredito_iSolicitudCredito_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="coCreditocoHistoricoCredito">
+          <End Type="ModelSIGEF.coCredito" Role="coCredito" Multiplicity="1" />
+          <End Type="ModelSIGEF.coHistoricoCredito" Role="coHistoricoCredito" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="coCredito">
+              <PropertyRef Name="iSolicitudCredito_id" />
+            </Principal>
+            <Dependent Role="coHistoricoCredito">
+              <PropertyRef Name="iSolicitudCredito_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
