@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="bf3a76797e64457fb7c2df45f497b113" Name="Modelo de Dominio" ZoomLevel="26" ShowGrid="true" DisplayType="true" >
+      <Diagram DiagramId="bf3a76797e64457fb7c2df45f497b113" Name="Modelo de Dominio" ZoomLevel="17" ShowGrid="true" DisplayType="true" >
         <EntityTypeShape EntityType="ModelSIGEF.baUnidadFinanciera" Width="2.25" PointX="4.25" PointY="9.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ModelSIGEF.baModulo" Width="1.5" PointX="4.625" PointY="6" />
         <EntityTypeShape EntityType="ModelSIGEF.baADM_USER" Width="1.75" PointX="1.25" PointY="6.625" />
@@ -88,7 +88,7 @@
         <EntityTypeShape EntityType="ModelSIGEF.acDetalleCredito" Width="2.5" PointX="23" PointY="4.75" FillColor="255, 128, 128" />
         <AssociationConnector Association="ModelSIGEF.acDetalleCreditomcTransaccion" />
         <EntityTypeShape EntityType="ModelSIGEF.coSolicitudCredito" Width="2.75" PointX="15.625" PointY="16.125" FillColor="Olive" />
-        <EntityTypeShape EntityType="ModelSIGEF.coCredito" Width="2" PointX="20.5" PointY="17.125" FillColor="Olive" />
+        <EntityTypeShape EntityType="ModelSIGEF.coCredito" Width="2.375" PointX="20.5" PointY="17.125" FillColor="Olive" />
         <InheritanceConnector EntityType="ModelSIGEF.coCredito" />
         <EntityTypeShape EntityType="ModelSIGEF.coCouta" Width="2.375" PointX="24.75" PointY="16.625" FillColor="Olive" />
         <EntityTypeShape EntityType="ModelSIGEF.coRequisito" Width="2.5" PointX="15.5" PointY="21" FillColor="Olive" />
@@ -97,7 +97,7 @@
         <EntityTypeShape EntityType="ModelSIGEF.coCarteraVigente" Width="2.75" PointX="21.25" PointY="21.25" FillColor="Olive" />
         <EntityTypeShape EntityType="ModelSIGEF.coCarteraMora" Width="2.625" PointX="24.75" PointY="22.125" FillColor="Olive" />
         <EntityTypeShape EntityType="ModelSIGEF.coCarteraEjecucion" Width="2.75" PointX="24.75" PointY="19.75" FillColor="Olive" />
-        <EntityTypeShape EntityType="ModelSIGEF.coHistoricoCredito" Width="2.375" PointX="18.375" PointY="21.125" FillColor="Olive" />
+        <EntityTypeShape EntityType="ModelSIGEF.coHistoricoCredito" Width="2.625" PointX="18.375" PointY="21.125" FillColor="Olive" />
         <AssociationConnector Association="ModelSIGEF.coSolicitudCreditopeSocio" />
         <AssociationConnector Association="ModelSIGEF.msUsuariocoSolicitudCredito" />
         <AssociationConnector Association="ModelSIGEF.coSolicitudCreditocoRequisito" />

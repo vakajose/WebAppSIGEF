@@ -490,7 +490,7 @@
           <NavigationProperty Name="oaLibroATM" Relationship="ModelSIGEF.oaLibroATMmcTransaccion" FromRole="mcTransaccion" ToRole="oaLibroATM" />
         </EntityType>
         <Association Name="mcCajamcTransaccion">
-          <End Type="ModelSIGEF.mcCaja" Role="mcCaja" Multiplicity="1" />
+          <End Type="ModelSIGEF.mcCaja" Role="mcCaja" Multiplicity="0..1" />
           <End Type="ModelSIGEF.mcTransaccion" Role="mcTransaccion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="mcCaja">
@@ -536,7 +536,7 @@
         </EntityType>
         <Association Name="mcLibroCajamcTransaccion">
           <End Type="ModelSIGEF.mcLibroCaja" Role="mcLibroCaja" Multiplicity="*" />
-          <End Type="ModelSIGEF.mcTransaccion" Role="mcTransaccion" Multiplicity="1" />
+          <End Type="ModelSIGEF.mcTransaccion" Role="mcTransaccion" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="mcTransaccion">
               <PropertyRef Name="iTransaccion_id" />
@@ -867,7 +867,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="teSolicitudFondomcLibroCaja">
-          <End Type="ModelSIGEF.teSolicitudFondo" Role="teSolicitudFondo" Multiplicity="1" />
+          <End Type="ModelSIGEF.teSolicitudFondo" Role="teSolicitudFondo" Multiplicity="0..1" />
           <End Type="ModelSIGEF.mcLibroCaja" Role="mcLibroCaja" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="teSolicitudFondo">
@@ -948,7 +948,7 @@
           <Property Name="iMoneda_fl" Type="Int32" Nullable="false" />
           <Property Name="sDetalle_desc" Type="String" Nullable="false" />
           <NavigationProperty Name="mcTransaccion" Relationship="ModelSIGEF.mcTransaccionacDetalleCajaAhorro" FromRole="acDetalleCajaAhorro" ToRole="mcTransaccion" />
-          <Property Name="iTransaccion_id" Type="Int32" Nullable="true" />
+          <Property Name="iTransaccion_id" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="acDetalleDPF">
           <Key>
@@ -962,7 +962,7 @@
           <Property Name="dtDetalleDPF_fecha" Type="DateTime" Nullable="false" />
           <Property Name="sDetalleDPF_desc" Type="String" Nullable="false" />
           <NavigationProperty Name="mcTransaccion" Relationship="ModelSIGEF.acDetalleDPFmcTransaccion" FromRole="acDetalleDPF" ToRole="mcTransaccion" />
-          <Property Name="iTransaccion_id" Type="Int32" Nullable="true" />
+          <Property Name="iTransaccion_id" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="acCajaAhorropeCliente">
           <End Type="ModelSIGEF.acCajaAhorro" Role="acCajaAhorro" Multiplicity="*" />
@@ -1092,12 +1092,12 @@
             <PropertyRef Name="iSolicitudCredito_id" />
           </Key>
           <Property Name="iSolicitudCredito_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="dtSolicitudCredito_fecha" Type="String" Nullable="false" />
-          <Property Name="iTipoCredito_fl" Type="String" Nullable="false" />
-          <Property Name="dSolicitudCredito_monto" Type="String" Nullable="false" />
-          <Property Name="iMoneda_fl" Type="String" Nullable="false" />
-          <Property Name="iPlazoCredito_fl" Type="String" Nullable="false" />
-          <Property Name="dInteresAnual" Type="String" Nullable="false" />
+          <Property Name="dtSolicitudCredito_fecha" Type="DateTime" Nullable="false" />
+          <Property Name="iTipoCredito_fl" Type="Int16" Nullable="false" />
+          <Property Name="dSolicitudCredito_monto" Type="Decimal" Nullable="false" />
+          <Property Name="iMoneda_fl" Type="Int16" Nullable="false" />
+          <Property Name="iPlazoCredito_fl" Type="Int16" Nullable="false" />
+          <Property Name="dInteresAnual" Type="Decimal" Nullable="false" />
           <NavigationProperty Name="peSocio" Relationship="ModelSIGEF.coSolicitudCreditopeSocio" FromRole="coSolicitudCredito" ToRole="peSocio" />
           <Property Name="iCliente_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="msUsuario" Relationship="ModelSIGEF.msUsuariocoSolicitudCredito" FromRole="coSolicitudCredito" ToRole="msUsuario" />
@@ -1112,11 +1112,11 @@
           <NavigationProperty Name="coCarteraMora" Relationship="ModelSIGEF.coCreditocoCarteraMora" FromRole="coCredito" ToRole="coCarteraMora" />
           <NavigationProperty Name="coCarteraEjecucion" Relationship="ModelSIGEF.coCreditocoCarteraEjecucion" FromRole="coCredito" ToRole="coCarteraEjecucion" />
           <NavigationProperty Name="coHistoricoCredito" Relationship="ModelSIGEF.coCreditocoHistoricoCredito" FromRole="coCredito" ToRole="coHistoricoCredito" />
-          <Property Name="dtCredito_aprobacion" Type="String" Nullable="false" />
-          <Property Name="dtCredito_desembolso" Type="String" Nullable="false" />
-          <Property Name="iCredito_cuotas" Type="String" Nullable="false" />
-          <Property Name="dtCredito_vencimiento" Type="String" Nullable="false" />
-          <Property Name="iCredito_estado" Type="String" Nullable="false" />
+          <Property Name="dtCredito_aprobacion" Type="DateTime" Nullable="false" />
+          <Property Name="dtCredito_desembolso" Type="DateTime" Nullable="false" />
+          <Property Name="iCredito_cuotas" Type="Int32" Nullable="false" />
+          <Property Name="dtCredito_vencimiento" Type="DateTime" Nullable="false" />
+          <Property Name="iCredito_estado" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="coCouta">
           <Key>
@@ -1125,12 +1125,12 @@
           <Property Name="iCuota_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="coCredito" Relationship="ModelSIGEF.coCreditocoCouta" FromRole="coCouta" ToRole="coCredito" />
           <Property Name="iSolicitudCredito_id" Type="Int32" Nullable="false" />
-          <Property Name="dCuota_capital" Type="String" Nullable="false" />
-          <Property Name="dCuota_interes" Type="String" Nullable="false" />
+          <Property Name="dCuota_capital" Type="Decimal" Nullable="false" />
+          <Property Name="dCuota_interes" Type="Decimal" Nullable="false" />
           <Property Name="sCuota_num" Type="String" Nullable="false" />
           <Property Name="sCuota_monto" Type="String" Nullable="false" />
-          <Property Name="iMoneda_fl" Type="String" Nullable="false" />
-          <Property Name="dtCuota_fecha" Type="String" Nullable="false" />
+          <Property Name="iMoneda_fl" Type="Int16" Nullable="false" />
+          <Property Name="dtCuota_fecha" Type="DateTime" Nullable="false" />
         </EntityType>
         <EntityType Name="coRequisito">
           <Key>
@@ -1141,11 +1141,11 @@
           <Property Name="iSolicitudCredito_id" Type="Int32" Nullable="false" />
           <Property Name="sRequisito_desc" Type="String" Nullable="false" />
           <Property Name="sRequisito_estado" Type="String" Nullable="false" />
-          <Property Name="iRequisito_importancia" Type="String" Nullable="false" />
+          <Property Name="iRequisito_importancia" Type="Int16" Nullable="false" />
         </EntityType>
         <EntityType Name="coSolicitudRechazada" BaseType="ModelSIGEF.coSolicitudCredito" >
           <Property Name="sRechazado_desc" Type="String" Nullable="false" />
-          <Property Name="dtRechazado_fecha" Type="String" Nullable="false" />
+          <Property Name="dtRechazado_fecha" Type="DateTime" Nullable="false" />
         </EntityType>
         <EntityType Name="coCarteraVigente">
           <Key>
@@ -1154,7 +1154,7 @@
           <Property Name="iCarteraVigente_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="coCredito" Relationship="ModelSIGEF.coCreditocoCarteraVigente" FromRole="coCarteraVigente" ToRole="coCredito" />
           <Property Name="iSolicitudCredito_id" Type="Int32" Nullable="false" />
-          <Property Name="dtVigente_fechaLimite" Type="String" Nullable="false" />
+          <Property Name="dtVigente_fechaLimite" Type="DateTime" Nullable="false" />
         </EntityType>
         <EntityType Name="coCarteraMora">
           <Key>
@@ -1162,10 +1162,10 @@
           </Key>
           <Property Name="iCarteraMora_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="coCredito" Relationship="ModelSIGEF.coCreditocoCarteraMora" FromRole="coCarteraMora" ToRole="coCredito" />
-          <Property Name="coCredito_iSolicitudCredito_id" Type="Int32" Nullable="false" />
-          <Property Name="dtMora_fechaLimite" Type="String" Nullable="false" />
-          <Property Name="dtMora_fechaMora" Type="String" Nullable="false" />
-          <Property Name="iMora_cuotasAtrasadas" Type="String" Nullable="false" />
+          <Property Name="iSolicitudCredito_id" Type="Int32" Nullable="false" />
+          <Property Name="dtMora_fechaLimite" Type="DateTime" Nullable="false" />
+          <Property Name="dtMora_fechaMora" Type="DateTime" Nullable="false" />
+          <Property Name="iMora_cuotasAtrasadas" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="coCarteraEjecucion">
           <Key>
@@ -1173,9 +1173,13 @@
           </Key>
           <Property Name="iCarteraEjecucion_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="coCredito" Relationship="ModelSIGEF.coCreditocoCarteraEjecucion" FromRole="coCarteraEjecucion" ToRole="coCredito" />
-          <Property Name="coCredito_iSolicitudCredito_id" Type="Int32" Nullable="false" />
-          <Property Name="dtEjecucion_fecha" Type="String" Nullable="false" />
-          <Property Name="iEjecucion_notificacionNum" Type="String" Nullable="false" />
+          <Property Name="iSolicitudCredito_id" Type="Int32" Nullable="false" />
+          <Property Name="dtEjecucion_fecha" Type="Decimal" Nullable="false" />
+          <Property Name="iEjecucion_notificacionNum" Type="Int32" Nullable="false" >
+            <Documentation>
+              <LongDescription>numero de notificaciones</LongDescription>
+            </Documentation>
+          </Property>
         </EntityType>
         <EntityType Name="coHistoricoCredito">
           <Key>
@@ -1184,8 +1188,8 @@
           <Property Name="iHistoricoCredito_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="coCredito" Relationship="ModelSIGEF.coCreditocoHistoricoCredito" FromRole="coHistoricoCredito" ToRole="coCredito" />
           <Property Name="iSolicitudCredito_id" Type="Int32" Nullable="false" />
-          <Property Name="dtHistoricoCredito_cierre" Type="String" Nullable="false" />
-          <Property Name="dtHistoricoCredito_ultimaCuota" Type="String" Nullable="false" />
+          <Property Name="dtHistoricoCredito_cierre" Type="DateTime" Nullable="false" />
+          <Property Name="dtHistoricoCredito_ultimaCuota" Type="DateTime" Nullable="false" />
         </EntityType>
         <Association Name="coSolicitudCreditopeSocio">
           <End Type="ModelSIGEF.coSolicitudCredito" Role="coSolicitudCredito" Multiplicity="*" />
@@ -1255,7 +1259,7 @@
               <PropertyRef Name="iSolicitudCredito_id" />
             </Principal>
             <Dependent Role="coCarteraMora">
-              <PropertyRef Name="coCredito_iSolicitudCredito_id" />
+              <PropertyRef Name="iSolicitudCredito_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1267,7 +1271,7 @@
               <PropertyRef Name="iSolicitudCredito_id" />
             </Principal>
             <Dependent Role="coCarteraEjecucion">
-              <PropertyRef Name="coCredito_iSolicitudCredito_id" />
+              <PropertyRef Name="iSolicitudCredito_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1290,12 +1294,12 @@
           <Property Name="iATM_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="sATM_fabrica" Type="String" Nullable="false" />
           <Property Name="sATM_dir" Type="String" Nullable="false" />
-          <Property Name="iATM_tipo" Type="String" Nullable="false" />
+          <Property Name="iATM_tipo" Type="Int16" Nullable="false" />
           <Property Name="sATM_nombre" Type="String" Nullable="false" />
-          <Property Name="dtATM_ultimaConciliacion" Type="String" Nullable="false" />
-          <Property Name="iATM_estado" Type="String" Nullable="false" />
-          <Property Name="dATM_saldoMN" Type="String" Nullable="false" />
-          <Property Name="dATM_saldoME" Type="String" Nullable="false" />
+          <Property Name="dtATM_ultimaConciliacion" Type="DateTime" Nullable="false" />
+          <Property Name="iATM_estado" Type="Int32" Nullable="false" />
+          <Property Name="dATM_saldoMN" Type="Decimal" Nullable="false" />
+          <Property Name="dATM_saldoME" Type="Decimal" Nullable="false" />
           <NavigationProperty Name="mcTransaccion" Relationship="ModelSIGEF.oaATMmcTransaccion" FromRole="oaATM" ToRole="mcTransaccion" />
           <NavigationProperty Name="oaTarjetaRetenida" Relationship="ModelSIGEF.oaATMoaTarjetaRetenida" FromRole="oaATM" ToRole="oaTarjetaRetenida" />
         </EntityType>
@@ -1304,7 +1308,7 @@
             <PropertyRef Name="iTarjetaRetenida_id" />
           </Key>
           <Property Name="iTarjetaRetenida_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="dtRetenida_fecha" Type="String" Nullable="false" />
+          <Property Name="dtRetenida_fecha" Type="DateTime" Nullable="false" />
           <Property Name="sTarjetaDebito_num" Type="String" Nullable="false" />
           <Property Name="sRetenida_desc" Type="String" Nullable="false" />
           <NavigationProperty Name="oaATM" Relationship="ModelSIGEF.oaATMoaTarjetaRetenida" FromRole="oaTarjetaRetenida" ToRole="oaATM" />
@@ -1315,20 +1319,20 @@
             <PropertyRef Name="oaLibroATM_id" />
           </Key>
           <Property Name="oaLibroATM_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="dtLibroATM_fecha" Type="String" Nullable="false" />
-          <Property Name="dDebe_mn" Type="String" Nullable="false" />
-          <Property Name="dDebe_me" Type="String" Nullable="false" />
-          <Property Name="dHaber_mn" Type="String" Nullable="false" />
-          <Property Name="dHaber_me" Type="String" Nullable="false" />
-          <Property Name="dSaldo_mn" Type="String" Nullable="false" />
-          <Property Name="dSaldo_me" Type="String" Nullable="false" />
+          <Property Name="dtLibroATM_fecha" Type="DateTime" Nullable="false" />
+          <Property Name="dDebe_mn" Type="Decimal" Nullable="false" />
+          <Property Name="dDebe_me" Type="Decimal" Nullable="false" />
+          <Property Name="dHaber_mn" Type="Decimal" Nullable="false" />
+          <Property Name="dHaber_me" Type="Decimal" Nullable="false" />
+          <Property Name="dSaldo_mn" Type="Decimal" Nullable="false" />
+          <Property Name="dSaldo_me" Type="Decimal" Nullable="false" />
           <Property Name="sLibroATM_desc" Type="String" Nullable="false" />
-          <Property Name="iAtm_id" Type="String" Nullable="false" />
+          <Property Name="iAtm_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="mcTransaccion" Relationship="ModelSIGEF.oaLibroATMmcTransaccion" FromRole="oaLibroATM" ToRole="mcTransaccion" />
           <Property Name="iTransaccion_id" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="oaATMmcTransaccion">
-          <End Type="ModelSIGEF.oaATM" Role="oaATM" Multiplicity="1" />
+          <End Type="ModelSIGEF.oaATM" Role="oaATM" Multiplicity="0..1" />
           <End Type="ModelSIGEF.mcTransaccion" Role="mcTransaccion" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="oaATM">
