@@ -113,6 +113,72 @@
             <End Role="peCliente" EntitySet="peCliente" />
             <End Role="mcTransaccion" EntitySet="mcTransaccion" />
           </AssociationSet>
+          <EntitySet Name="teSolicitudFondo" EntityType="ModelSIGEF.teSolicitudFondo" />
+          <EntitySet Name="teBoveda" EntityType="ModelSIGEF.teBoveda" />
+          <EntitySet Name="teLibroMayor" EntityType="ModelSIGEF.teLibroMayor" />
+          <EntitySet Name="teConciliacionLM" EntityType="ModelSIGEF.teConciliacionLM" />
+          <AssociationSet Name="teBovedateSolicitudFondo" Association="ModelSIGEF.teBovedateSolicitudFondo">
+            <End Role="teBoveda" EntitySet="teBoveda" />
+            <End Role="teSolicitudFondo" EntitySet="teSolicitudFondo" />
+          </AssociationSet>
+          <AssociationSet Name="teBovedateConciliacionLM" Association="ModelSIGEF.teBovedateConciliacionLM">
+            <End Role="teBoveda" EntitySet="teBoveda" />
+            <End Role="teConciliacionLM" EntitySet="teConciliacionLM" />
+          </AssociationSet>
+          <AssociationSet Name="teLibroMayorteSolicitudFondo" Association="ModelSIGEF.teLibroMayorteSolicitudFondo">
+            <End Role="teLibroMayor" EntitySet="teLibroMayor" />
+            <End Role="teSolicitudFondo" EntitySet="teSolicitudFondo" />
+          </AssociationSet>
+          <AssociationSet Name="teBovedapaSucursal" Association="ModelSIGEF.teBovedapaSucursal">
+            <End Role="teBoveda" EntitySet="teBoveda" />
+            <End Role="paSucursal" EntitySet="paSucursal" />
+          </AssociationSet>
+          <AssociationSet Name="teSolicitudFondomcLibroCaja" Association="ModelSIGEF.teSolicitudFondomcLibroCaja">
+            <End Role="teSolicitudFondo" EntitySet="teSolicitudFondo" />
+            <End Role="mcLibroCaja" EntitySet="mcLibroCaja" />
+          </AssociationSet>
+          <AssociationSet Name="mcCajateSolicitudFondo" Association="ModelSIGEF.mcCajateSolicitudFondo">
+            <End Role="mcCaja" EntitySet="mcCaja" />
+            <End Role="teSolicitudFondo" EntitySet="teSolicitudFondo" />
+          </AssociationSet>
+          <EntitySet Name="acCajaAhorro" EntityType="ModelSIGEF.acCajaAhorro" />
+          <EntitySet Name="acTarjetaDebito" EntityType="ModelSIGEF.acTarjetaDebito" />
+          <EntitySet Name="acDPF" EntityType="ModelSIGEF.acDPF" />
+          <EntitySet Name="acDetalleCajaAhorro" EntityType="ModelSIGEF.acDetalleCajaAhorro" />
+          <EntitySet Name="acDetalleDPF" EntityType="ModelSIGEF.acDetalleDPF" />
+          <AssociationSet Name="acCajaAhorropeCliente" Association="ModelSIGEF.acCajaAhorropeCliente">
+            <End Role="acCajaAhorro" EntitySet="acCajaAhorro" />
+            <End Role="peCliente" EntitySet="peCliente" />
+          </AssociationSet>
+          <AssociationSet Name="acCajaAhorroacTarjetaDebito" Association="ModelSIGEF.acCajaAhorroacTarjetaDebito">
+            <End Role="acCajaAhorro" EntitySet="acCajaAhorro" />
+            <End Role="acTarjetaDebito" EntitySet="acTarjetaDebito" />
+          </AssociationSet>
+          <AssociationSet Name="acCajaAhorroacDetalleCajaAhorro" Association="ModelSIGEF.acCajaAhorroacDetalleCajaAhorro">
+            <End Role="acCajaAhorro" EntitySet="acCajaAhorro" />
+            <End Role="acDetalleCajaAhorro" EntitySet="acDetalleCajaAhorro" />
+          </AssociationSet>
+          <AssociationSet Name="acDPFpeCliente" Association="ModelSIGEF.acDPFpeCliente">
+            <End Role="acDPF" EntitySet="acDPF" />
+            <End Role="peCliente" EntitySet="peCliente" />
+          </AssociationSet>
+          <AssociationSet Name="acDetalleDPFacDPF" Association="ModelSIGEF.acDetalleDPFacDPF">
+            <End Role="acDetalleDPF" EntitySet="acDetalleDPF" />
+            <End Role="acDPF" EntitySet="acDPF" />
+          </AssociationSet>
+          <AssociationSet Name="acTarjetaDebitopeCliente" Association="ModelSIGEF.acTarjetaDebitopeCliente">
+            <End Role="acTarjetaDebito" EntitySet="acTarjetaDebito" />
+            <End Role="peCliente" EntitySet="peCliente" />
+          </AssociationSet>
+          <AssociationSet Name="mcTransaccionacDetalleCajaAhorro" Association="ModelSIGEF.mcTransaccionacDetalleCajaAhorro">
+            <End Role="mcTransaccion" EntitySet="mcTransaccion" />
+            <End Role="acDetalleCajaAhorro" EntitySet="acDetalleCajaAhorro" />
+          </AssociationSet>
+          <AssociationSet Name="acDetalleDPFmcTransaccion" Association="ModelSIGEF.acDetalleDPFmcTransaccion">
+            <End Role="acDetalleDPF" EntitySet="acDetalleDPF" />
+            <End Role="mcTransaccion" EntitySet="mcTransaccion" />
+          </AssociationSet>
+          <EntitySet Name="acDetalleCredito" EntityType="ModelSIGEF.acDetalleCredito" />
         </EntityContainer>
         <EntityType Name="baUnidadFinanciera">
           <Documentation>
@@ -226,6 +292,7 @@
           <Property Name="iUnidadFinanciera_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="caPAC" Relationship="ModelSIGEF.paSucursalcaPAC" FromRole="paSucursal" ToRole="caPAC" />
           <NavigationProperty Name="mcCaja" Relationship="ModelSIGEF.paSucursalmcCaja" FromRole="paSucursal" ToRole="mcCaja" />
+          <NavigationProperty Name="teBoveda" Relationship="ModelSIGEF.teBovedapaSucursal" FromRole="paSucursal" ToRole="teBoveda" />
         </EntityType>
         <Association Name="baUnidadFinancierapaSucursal">
           <End Type="ModelSIGEF.baUnidadFinanciera" Role="baUnidadFinanciera" Multiplicity="1" />
@@ -325,6 +392,7 @@
           <NavigationProperty Name="mcTransaccion" Relationship="ModelSIGEF.mcCajamcTransaccion" FromRole="mcCaja" ToRole="mcTransaccion" />
           <NavigationProperty Name="mcConciliacionCaja" Relationship="ModelSIGEF.mcConciliacionCajamcCaja" FromRole="mcCaja" ToRole="mcConciliacionCaja" />
           <NavigationProperty Name="msUsuario" Relationship="ModelSIGEF.msUsuariomcCaja" FromRole="mcCaja" ToRole="msUsuario" />
+          <NavigationProperty Name="teSolicitudFondo" Relationship="ModelSIGEF.mcCajateSolicitudFondo" FromRole="mcCaja" ToRole="teSolicitudFondo" />
         </EntityType>
         <Association Name="paSucursalmcCaja">
           <End Type="ModelSIGEF.paSucursal" Role="paSucursal" Multiplicity="1" />
@@ -353,6 +421,9 @@
           <NavigationProperty Name="mcDetalleCheque" Relationship="ModelSIGEF.mcTransaccionmcDetalleCheque" FromRole="mcTransaccion" ToRole="mcDetalleCheque" />
           <NavigationProperty Name="peCliente" Relationship="ModelSIGEF.peClientemcTransaccion" FromRole="mcTransaccion" ToRole="peCliente" />
           <Property Name="iCliente_id" Type="Int32" Nullable="false" />
+          <Property Name="sTransaccion_desc" Type="String" Nullable="false" />
+          <NavigationProperty Name="acDetalleCajaAhorro" Relationship="ModelSIGEF.mcTransaccionacDetalleCajaAhorro" FromRole="mcTransaccion" ToRole="acDetalleCajaAhorro" />
+          <NavigationProperty Name="acDetalleDPF" Relationship="ModelSIGEF.acDetalleDPFmcTransaccion" FromRole="mcTransaccion" ToRole="acDetalleDPF" />
         </EntityType>
         <Association Name="mcCajamcTransaccion">
           <End Type="ModelSIGEF.mcCaja" Role="mcCaja" Multiplicity="1" />
@@ -372,7 +443,7 @@
           </Key>
           <Property Name="iLibroCaja_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="mcTransaccion" Relationship="ModelSIGEF.mcLibroCajamcTransaccion" FromRole="mcLibroCaja" ToRole="mcTransaccion" />
-          <Property Name="iTransaccion_id" Type="Int32" Nullable="false" />
+          <Property Name="iTransaccion_id" Type="Int32" Nullable="true" />
           <Property Name="dtLibroCaja_fecha" Type="String" Nullable="false" />
           <Property Name="iCaja_id" Type="String" Nullable="false" />
           <Property Name="dDebe_mn" Type="Decimal" Nullable="false" />
@@ -381,6 +452,8 @@
           <Property Name="dHaber_me" Type="Decimal" Nullable="false" />
           <Property Name="dSaldo_mn" Type="Decimal" Nullable="false" />
           <Property Name="dSaldo_me" Type="Decimal" Nullable="false" />
+          <NavigationProperty Name="teSolicitudFondo" Relationship="ModelSIGEF.teSolicitudFondomcLibroCaja" FromRole="mcLibroCaja" ToRole="teSolicitudFondo" />
+          <Property Name="iSolicitudFondo_id" Type="Int32" Nullable="true" />
         </EntityType>
         <EntityType Name="mcConciliacionCaja">
           <Key>
@@ -455,6 +528,9 @@
           <Property Name="sCliente_telf" Type="String" Nullable="false" />
           <NavigationProperty Name="caSolitudCaptacion" Relationship="ModelSIGEF.caSolitudCaptacionpeCliente" FromRole="peCliente" ToRole="caSolitudCaptacion" />
           <NavigationProperty Name="mcTransaccion" Relationship="ModelSIGEF.peClientemcTransaccion" FromRole="peCliente" ToRole="mcTransaccion" />
+          <NavigationProperty Name="acCajaAhorro" Relationship="ModelSIGEF.acCajaAhorropeCliente" FromRole="peCliente" ToRole="acCajaAhorro" />
+          <NavigationProperty Name="acDPF" Relationship="ModelSIGEF.acDPFpeCliente" FromRole="peCliente" ToRole="acDPF" />
+          <NavigationProperty Name="acTarjetaDebito" Relationship="ModelSIGEF.acTarjetaDebitopeCliente" FromRole="peCliente" ToRole="acTarjetaDebito" />
         </EntityType>
         <EntityType Name="peSocio" BaseType="ModelSIGEF.peCliente" >
           <NavigationProperty Name="peCAportacion" Relationship="ModelSIGEF.peSociopeCAportacion" FromRole="peSocio" ToRole="peCAportacion" />
@@ -620,6 +696,307 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="teSolicitudFondo">
+          <Key>
+            <PropertyRef Name="iSolicitudFondo_id" />
+          </Key>
+          <Property Name="iSolicitudFondo_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dtSolicitud_fecha" Type="DateTime" Nullable="false" />
+          <Property Name="dSolicitud_monto" Type="Decimal" Nullable="false" />
+          <Property Name="iMoneda_fl" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="teBoveda" Relationship="ModelSIGEF.teBovedateSolicitudFondo" FromRole="teSolicitudFondo" ToRole="teBoveda" />
+          <Property Name="iBoveda_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="teLibroMayor" Relationship="ModelSIGEF.teLibroMayorteSolicitudFondo" FromRole="teSolicitudFondo" ToRole="teLibroMayor" />
+          <NavigationProperty Name="mcLibroCaja" Relationship="ModelSIGEF.teSolicitudFondomcLibroCaja" FromRole="teSolicitudFondo" ToRole="mcLibroCaja" />
+          <NavigationProperty Name="mcCaja" Relationship="ModelSIGEF.mcCajateSolicitudFondo" FromRole="teSolicitudFondo" ToRole="mcCaja" />
+          <Property Name="iCaja_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="teBoveda">
+          <Key>
+            <PropertyRef Name="iBoveda_id" />
+          </Key>
+          <Property Name="iBoveda_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dBoveda_montoActualMN" Type="Decimal" Nullable="false" />
+          <Property Name="dBoveda_montoActualME" Type="Decimal" Nullable="false" />
+          <Property Name="dtBoveda_ultimaConciliacion" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="teSolicitudFondo" Relationship="ModelSIGEF.teBovedateSolicitudFondo" FromRole="teBoveda" ToRole="teSolicitudFondo" />
+          <NavigationProperty Name="teConciliacionLM" Relationship="ModelSIGEF.teBovedateConciliacionLM" FromRole="teBoveda" ToRole="teConciliacionLM" />
+          <NavigationProperty Name="paSucursal" Relationship="ModelSIGEF.teBovedapaSucursal" FromRole="teBoveda" ToRole="paSucursal" />
+          <Property Name="iSucursal_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="teLibroMayor">
+          <Key>
+            <PropertyRef Name="iLibroMayor_id" />
+          </Key>
+          <Property Name="iLibroMayor_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dtLibroMayor_fecha" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="teSolicitudFondo" Relationship="ModelSIGEF.teLibroMayorteSolicitudFondo" FromRole="teLibroMayor" ToRole="teSolicitudFondo" />
+          <Property Name="iSolicitudFondo_id" Type="Int32" Nullable="false" />
+          <Property Name="Property1" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="teConciliacionLM">
+          <Key>
+            <PropertyRef Name="iConciliacionLM_id" />
+          </Key>
+          <Property Name="iConciliacionLM_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="teBoveda" Relationship="ModelSIGEF.teBovedateConciliacionLM" FromRole="teConciliacionLM" ToRole="teBoveda" />
+          <Property Name="iBoveda_id" Type="Int32" Nullable="false" />
+          <Property Name="dDebe_mn" Type="Decimal" Nullable="false" />
+          <Property Name="dDebe_me" Type="Decimal" Nullable="false" />
+          <Property Name="dHaber_mn" Type="Decimal" Nullable="false" />
+          <Property Name="dHaber_me" Type="Decimal" Nullable="false" />
+          <Property Name="dSaldo_mn" Type="Decimal" Nullable="false" />
+          <Property Name="dSaldo_me" Type="Decimal" Nullable="false" />
+          <Property Name="dtConciliacionLM_fecha" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <Association Name="teBovedateSolicitudFondo">
+          <End Type="ModelSIGEF.teBoveda" Role="teBoveda" Multiplicity="1" />
+          <End Type="ModelSIGEF.teSolicitudFondo" Role="teSolicitudFondo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="teBoveda">
+              <PropertyRef Name="iBoveda_id" />
+            </Principal>
+            <Dependent Role="teSolicitudFondo">
+              <PropertyRef Name="iBoveda_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="teBovedateConciliacionLM">
+          <End Type="ModelSIGEF.teBoveda" Role="teBoveda" Multiplicity="1" />
+          <End Type="ModelSIGEF.teConciliacionLM" Role="teConciliacionLM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="teBoveda">
+              <PropertyRef Name="iBoveda_id" />
+            </Principal>
+            <Dependent Role="teConciliacionLM">
+              <PropertyRef Name="iBoveda_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="teLibroMayorteSolicitudFondo">
+          <End Type="ModelSIGEF.teLibroMayor" Role="teLibroMayor" Multiplicity="*" />
+          <End Type="ModelSIGEF.teSolicitudFondo" Role="teSolicitudFondo" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="teSolicitudFondo">
+              <PropertyRef Name="iSolicitudFondo_id" />
+            </Principal>
+            <Dependent Role="teLibroMayor">
+              <PropertyRef Name="iSolicitudFondo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="teBovedapaSucursal">
+          <End Type="ModelSIGEF.teBoveda" Role="teBoveda" Multiplicity="*" />
+          <End Type="ModelSIGEF.paSucursal" Role="paSucursal" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="paSucursal">
+              <PropertyRef Name="iSucursal_id" />
+            </Principal>
+            <Dependent Role="teBoveda">
+              <PropertyRef Name="iSucursal_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="teSolicitudFondomcLibroCaja">
+          <End Type="ModelSIGEF.teSolicitudFondo" Role="teSolicitudFondo" Multiplicity="1" />
+          <End Type="ModelSIGEF.mcLibroCaja" Role="mcLibroCaja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="teSolicitudFondo">
+              <PropertyRef Name="iSolicitudFondo_id" />
+            </Principal>
+            <Dependent Role="mcLibroCaja">
+              <PropertyRef Name="iSolicitudFondo_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="mcCajateSolicitudFondo">
+          <End Type="ModelSIGEF.mcCaja" Role="mcCaja" Multiplicity="1" />
+          <End Type="ModelSIGEF.teSolicitudFondo" Role="teSolicitudFondo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mcCaja">
+              <PropertyRef Name="iCaja_id" />
+            </Principal>
+            <Dependent Role="teSolicitudFondo">
+              <PropertyRef Name="iCaja_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="acCajaAhorro">
+          <Key>
+            <PropertyRef Name="iCajaAhorro_id" />
+          </Key>
+          <Property Name="iCajaAhorro_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sCajaAhorro_num" Type="String" Nullable="false" />
+          <Property Name="iTipoCaja_fl" Type="Int32" Nullable="false" />
+          <Property Name="iMoneda_fl" Type="Int32" Nullable="false" />
+          <Property Name="dCajaAhorro_saldo" Type="Decimal" Nullable="false" />
+          <Property Name="dCajaAhorro_montoMaximoRetiro" Type="Decimal" Nullable="false" />
+          <Property Name="iEstadoCajaAhorro_fl" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="peCliente" Relationship="ModelSIGEF.acCajaAhorropeCliente" FromRole="acCajaAhorro" ToRole="peCliente" />
+          <Property Name="iCliente_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="acTarjetaDebito" Relationship="ModelSIGEF.acCajaAhorroacTarjetaDebito" FromRole="acCajaAhorro" ToRole="acTarjetaDebito" />
+          <Property Name="iTarjetaDebito_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="acDetalleCajaAhorro" Relationship="ModelSIGEF.acCajaAhorroacDetalleCajaAhorro" FromRole="acCajaAhorro" ToRole="acDetalleCajaAhorro" />
+        </EntityType>
+        <EntityType Name="acTarjetaDebito">
+          <Key>
+            <PropertyRef Name="iTarjetaDebito_id" />
+          </Key>
+          <Property Name="iTarjetaDebito_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sTarjetaDebito_num" Type="String" Nullable="false" />
+          <Property Name="sTarjetaDebito_cvc" Type="String" Nullable="false" />
+          <Property Name="iTarjetaDebito_PIN" Type="String" Nullable="false" />
+          <NavigationProperty Name="acCajaAhorro" Relationship="ModelSIGEF.acCajaAhorroacTarjetaDebito" FromRole="acTarjetaDebito" ToRole="acCajaAhorro" />
+          <NavigationProperty Name="peCliente" Relationship="ModelSIGEF.acTarjetaDebitopeCliente" FromRole="acTarjetaDebito" ToRole="peCliente" />
+          <Property Name="iCliente_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="acDPF">
+          <Key>
+            <PropertyRef Name="iDPF_id" />
+          </Key>
+          <Property Name="iDPF_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dtDPF_fechaInicio" Type="DateTime" Nullable="false" />
+          <Property Name="iDuracionDPF_fl" Type="Int32" Nullable="false" />
+          <Property Name="dtDPF_fechaCaducidad" Type="DateTime" Nullable="false" />
+          <Property Name="dDPF_interes" Type="Decimal" Nullable="false" />
+          <Property Name="dDPF_monto" Type="Decimal" Nullable="false" />
+          <Property Name="iEstadoDPF_fl" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="peCliente" Relationship="ModelSIGEF.acDPFpeCliente" FromRole="acDPF" ToRole="peCliente" />
+          <Property Name="iCliente_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="acDetalleDPF" Relationship="ModelSIGEF.acDetalleDPFacDPF" FromRole="acDPF" ToRole="acDetalleDPF" />
+        </EntityType>
+        <EntityType Name="acDetalleCajaAhorro">
+          <Key>
+            <PropertyRef Name="iDetalleCajaAhorro_id" />
+          </Key>
+          <Property Name="iDetalleCajaAhorro_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="acCajaAhorro" Relationship="ModelSIGEF.acCajaAhorroacDetalleCajaAhorro" FromRole="acDetalleCajaAhorro" ToRole="acCajaAhorro" />
+          <Property Name="iCajaAhorro_id" Type="Int32" Nullable="false" />
+          <Property Name="dDebe_caja" Type="Decimal" Nullable="false" />
+          <Property Name="dHaber_caja" Type="Decimal" Nullable="false" />
+          <Property Name="dSaldo_caja" Type="Decimal" Nullable="false" />
+          <Property Name="dtDetalle_fecha" Type="DateTime" Nullable="false" />
+          <Property Name="iMoneda_fl" Type="Int32" Nullable="false" />
+          <Property Name="sDetalle_desc" Type="String" Nullable="false" />
+          <NavigationProperty Name="mcTransaccion" Relationship="ModelSIGEF.mcTransaccionacDetalleCajaAhorro" FromRole="acDetalleCajaAhorro" ToRole="mcTransaccion" />
+          <Property Name="iTransaccion_id" Type="Int32" Nullable="true" />
+        </EntityType>
+        <EntityType Name="acDetalleDPF">
+          <Key>
+            <PropertyRef Name="iDetalleDPF_id" />
+          </Key>
+          <Property Name="iDetalleDPF_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="acDPF" Relationship="ModelSIGEF.acDetalleDPFacDPF" FromRole="acDetalleDPF" ToRole="acDPF" />
+          <Property Name="iDPF_id" Type="Int32" Nullable="false" />
+          <Property Name="iTipoTransaccionDPF" Type="Int32" Nullable="false" />
+          <Property Name="dDetalleDPF_monto" Type="Decimal" Nullable="false" />
+          <Property Name="dtDetalleDPF_fecha" Type="DateTime" Nullable="false" />
+          <Property Name="sDetalleDPF_desc" Type="String" Nullable="false" />
+          <NavigationProperty Name="mcTransaccion" Relationship="ModelSIGEF.acDetalleDPFmcTransaccion" FromRole="acDetalleDPF" ToRole="mcTransaccion" />
+          <Property Name="iTransaccion_id" Type="Int32" Nullable="true" />
+        </EntityType>
+        <Association Name="acCajaAhorropeCliente">
+          <End Type="ModelSIGEF.acCajaAhorro" Role="acCajaAhorro" Multiplicity="*" />
+          <End Type="ModelSIGEF.peCliente" Role="peCliente" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="peCliente">
+              <PropertyRef Name="iCliente_id" />
+            </Principal>
+            <Dependent Role="acCajaAhorro">
+              <PropertyRef Name="iCliente_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="acCajaAhorroacTarjetaDebito">
+          <End Type="ModelSIGEF.acCajaAhorro" Role="acCajaAhorro" Multiplicity="*" />
+          <End Type="ModelSIGEF.acTarjetaDebito" Role="acTarjetaDebito" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="acTarjetaDebito">
+              <PropertyRef Name="iTarjetaDebito_id" />
+            </Principal>
+            <Dependent Role="acCajaAhorro">
+              <PropertyRef Name="iTarjetaDebito_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="acCajaAhorroacDetalleCajaAhorro">
+          <End Type="ModelSIGEF.acCajaAhorro" Role="acCajaAhorro" Multiplicity="1" />
+          <End Type="ModelSIGEF.acDetalleCajaAhorro" Role="acDetalleCajaAhorro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="acCajaAhorro">
+              <PropertyRef Name="iCajaAhorro_id" />
+            </Principal>
+            <Dependent Role="acDetalleCajaAhorro">
+              <PropertyRef Name="iCajaAhorro_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="acDPFpeCliente">
+          <End Type="ModelSIGEF.acDPF" Role="acDPF" Multiplicity="*" />
+          <End Type="ModelSIGEF.peCliente" Role="peCliente" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="peCliente">
+              <PropertyRef Name="iCliente_id" />
+            </Principal>
+            <Dependent Role="acDPF">
+              <PropertyRef Name="iCliente_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="acDetalleDPFacDPF">
+          <End Type="ModelSIGEF.acDetalleDPF" Role="acDetalleDPF" Multiplicity="*" />
+          <End Type="ModelSIGEF.acDPF" Role="acDPF" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="acDPF">
+              <PropertyRef Name="iDPF_id" />
+            </Principal>
+            <Dependent Role="acDetalleDPF">
+              <PropertyRef Name="iDPF_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="acTarjetaDebitopeCliente">
+          <End Type="ModelSIGEF.acTarjetaDebito" Role="acTarjetaDebito" Multiplicity="*" />
+          <End Type="ModelSIGEF.peCliente" Role="peCliente" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="peCliente">
+              <PropertyRef Name="iCliente_id" />
+            </Principal>
+            <Dependent Role="acTarjetaDebito">
+              <PropertyRef Name="iCliente_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="mcTransaccionacDetalleCajaAhorro">
+          <End Type="ModelSIGEF.mcTransaccion" Role="mcTransaccion" Multiplicity="1" />
+          <End Type="ModelSIGEF.acDetalleCajaAhorro" Role="acDetalleCajaAhorro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="mcTransaccion">
+              <PropertyRef Name="iTransaccion_id" />
+            </Principal>
+            <Dependent Role="acDetalleCajaAhorro">
+              <PropertyRef Name="iTransaccion_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="acDetalleDPFmcTransaccion">
+          <End Type="ModelSIGEF.acDetalleDPF" Role="acDetalleDPF" Multiplicity="*" />
+          <End Type="ModelSIGEF.mcTransaccion" Role="mcTransaccion" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="mcTransaccion">
+              <PropertyRef Name="iTransaccion_id" />
+            </Principal>
+            <Dependent Role="acDetalleDPF">
+              <PropertyRef Name="iTransaccion_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="acDetalleCredito">
+          <Key>
+            <PropertyRef Name="iDetalleCredito_id" />
+          </Key>
+          <Property Name="iDetalleCredito_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
